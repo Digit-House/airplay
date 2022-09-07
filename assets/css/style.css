@@ -1,4 +1,5 @@
 @import url(./reset.css);
+@import url(./leaderBoard.css);
 
 html {
   font-family: 'Mouse Memoirs', sans-serif;
@@ -47,17 +48,8 @@ body {
   html {
     font-size: 18px;
   }
-
   .container {
     width: 1200px;
     height: 700px;
-  }
-
-  .left__circle {
-    left: 1.3rem;
-  }
-
-  .right__circle {
-    right: 1.3rem;
   }
 }

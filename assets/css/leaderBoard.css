@@ -1,0 +1,99 @@
+.achievementContainer{
+    background-color: white;
+    width: 100%;
+    height:100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 45px;
+    gap: 1rem;
+}
+.achievementContainer h5{
+    background-color: #ffe600;
+    color: #ea5300;
+    font-size: 3rem;
+    padding: 0.5rem 3rem;
+    border-radius: 50px;
+    letter-spacing: 3px;
+}
+.achievementTable{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffe600;
+    padding: 8px;
+    border-radius: 35px;
+}
+.achievementPerson{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 8px solid #ffe600;
+    overflow: hidden;
+}
+.achievementPersonFirstChild{
+    border-start-end-radius: 30px;
+    border-start-start-radius: 30px;
+}
+.achievementPersonLastChild{
+    border-bottom: 0;
+    border-end-end-radius: 30px;
+    border-end-start-radius: 30px;
+}
+.achievementName{
+    flex: 1;
+    font-size: 2.2rem;
+    color: #ea5300;
+    background-color: white;
+    border-right: 8px #ffe600 solid;
+    text-align: end;
+    padding: 1% 8px 1% 0;
+    letter-spacing: 3px;
+}
+.achievementPoint{
+    flex: 2;
+    font-size: 2.2rem;
+    color: #ea5300;
+    background-color: white;
+    padding: 1% 0 1% 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+.gold{
+    color: #F7D000;
+    margin-right: 1rem;
+}
+.silver{
+    color: #BABABA;
+    margin-right: 1rem;
+}
+.copper{
+    color: #B87333;
+    margin-right: 1rem;
+}
+
+.achievementbackBtn{
+    position: absolute;
+    top: 25px;
+    left: 30px;
+    color: white;
+    font-size: 3rem;
+    background-image: linear-gradient(to bottom, #ffe600, #ff7b01);
+    padding:4px 16px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    cursor: pointer;
+}
+
+@media (min-width: 1400px){
+    .achievementName,
+    .achievementPoint{
+        font-size: 2.6rem;
+    }
+  }
