@@ -1,7 +1,8 @@
 @import url(./reset.css);
+@import url(./aboutBettingSlots.css);
 
 html {
-  font-family: 'Mouse Memoirs', sans-serif;
+  font-family: "Mouse Memoirs", sans-serif;
 }
 
 body {
