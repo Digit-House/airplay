@@ -20,9 +20,15 @@ const bettingTime = document.querySelector(".bettingTime");
 const bettingTimePlusBtn = document.querySelector(".bettingTimePlusBtn");
 const bettingTimeMinusBtn = document.querySelector(".bettingTimeMinusBtn");
 const settingBackBtn = document.querySelector(".settingBackBtn");
+const aboutBettingSlotsBtn = document.querySelector(".aboutBettingSlotsBtn");
+const aboutBettingSlotsBackBtn = document.querySelector(
+  ".aboutBettingSlotsBackBtn"
+);
+const privacy = document.querySelector(".privacy");
+const userAgreement = document.querySelector(".userAgreement");
+const aboutBettingSlots = document.querySelector(".aboutBettingSlots");
 const volumeBtn = document.querySelector(".volumeBtn");
 const gameContainer = document.querySelector(".game__container");
-console.log(gameContainer);
 const betBtn = document.querySelectorAll(".animalCircleImg");
 const myValue = document.querySelectorAll(".myValue");
 const centerImg = document.querySelectorAll(".img");
@@ -116,7 +122,6 @@ function gamePreloader() {
     gameWelcome.style.display = "none";
     loadingBox.style.display = "none";
     gameContainer.style.display = "flex";
-    console.log("hello", gameContainer);
   });
 }
 let menuController = true;
@@ -251,6 +256,38 @@ bettingTimeMinusBtn.addEventListener("click", function () {
   setting.bettingTime -= setting.bettingTime > 10 ? 5 : 0;
   bettingTime.textContent = setting.bettingTime;
   localStorage.setItem("setting", JSON.stringify(setting));
+});
+aboutBettingSlotsBtn.addEventListener("click", function () {
+  bubbleClick.play();
+  this.classList.add("zoomoutAnimate");
+  setTimeout(() => {
+    this.classList.remove("zoomoutAnimate");
+    aboutBettingSlots.style.display = "flex";
+    settingContainer.style.display = "none";
+  }, 210);
+});
+aboutBettingSlotsBackBtn.addEventListener("click", function () {
+  bubbleClick.play();
+  this.classList.add("zoomoutAnimate");
+  setTimeout(() => {
+    this.classList.remove("zoomoutAnimate");
+    aboutBettingSlots.style.display = "none";
+    settingContainer.style.display = "flex";
+  }, 210);
+});
+privacy.addEventListener("click", function () {
+  bubbleClick.play();
+  this.classList.add("zoomoutAnimate");
+  setTimeout(() => {
+    this.classList.remove("zoomoutAnimate");
+  }, 210);
+});
+userAgreement.addEventListener("click", function () {
+  bubbleClick.play();
+  this.classList.add("zoomoutAnimate");
+  setTimeout(() => {
+    this.classList.remove("zoomoutAnimate");
+  }, 210);
 });
 
 profileBtn.addEventListener("click", function () {
