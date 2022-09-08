@@ -2,6 +2,8 @@ const bubbleClick = document.querySelector('.bubbleClick');
 const mainBackgroundSound = document.querySelector('.mainBackgroundSound');
 const coinDropAudio = document.querySelector('.coinDropAudio');
 const selectSound = document.querySelector('.selectSound');
+const backGroundSound = document.querySelector('.backGroundSound');
+const clockTick = document.querySelector('.clockTick');
 const loadingScreen = document.querySelector('.loading-screen');
 const gameWelcome = document.querySelector('.game__welcome');
 const profileBtn = document.querySelector('.game__welcome-top-item2-name');
@@ -51,6 +53,43 @@ const secondSpan = document.querySelector('#count-down span');
 const quitConfirm = document.querySelector('.quitConfirm');
 const yesBtn = document.querySelector('.yesBtn');
 const noBtn = document.querySelector('.noBtn');
+const randomAnimal = document.querySelector(".randomAnimal");
+const showMenuCoin = document.querySelector(".wellcomeTotal");
+const showCoinInProfile = document.querySelector(".showCoinInProfile");
+
+const animalsBar = document.querySelector(".animalsBar");
+let animalList = [];
+let srcStart = "./assets/images/square-buttons/";
+
+function renderAnimalList(animalsBar,animalList){
+    cleanAniamlList();
+    if(animalList.length > 10){
+        for(let i = 0; i < 10; i++){
+            const animal = animalList[i];
+            const animalItem = generateAnimalImg(animal);
+            animalsBar.appendChild(animalItem);
+        }
+    }else{
+        for(let i = 0; i < animalList.length; i++){
+            const animal = animalList[i];
+            const animalItem = generateAnimalImg(animal);
+            animalsBar.appendChild(animalItem);
+        }
+    }
+}
+
+function cleanAniamlList(){
+    let animalsBar = document.querySelector(".animalsBar");
+    while(animalsBar.firstChild){
+        animalsBar.removeChild(animalsBar.firstChild);
+    }
+}
+
+function generateAnimalImg(item){
+    const img = document.createElement("img");
+    img.src = `${srcStart}${item.srcEnd}`;
+    return img;
+}
 
 function getImage(url) {
   return new Promise(function (resolve, reject) {
@@ -119,8 +158,8 @@ function gamePreloader() {
     getImage('./assets/images/animation-gif/shark.gif'),
     getImage('./assets/images/animation-gif/whale.gif'),
     getImage('./assets/images/animation-gif/monkey.gif'),
-    getImage('./assets/images/24265652.jpg'),
-    getImage('./assets/images/animation-gif/loseAnimation.gif'),
+    getImage('./assets/images/animation-gif/birdAnimation.png'),
+    getImage('./assets/images/animation-gif/outOfCoin.gif'),
   ]).then(() => {
     gameWelcome.style.display = 'none';
     loadingBox.style.display = 'none';
@@ -130,7 +169,7 @@ function gamePreloader() {
 let menuController = true;
 welcomePlay.addEventListener('click', function () {
   bubbleClick.play();
-  // mainBackgroundSound.play();
+  mainBackgroundSound.play();
   menuController = false;
   this.classList.add('zoomoutAnimate');
   setTimeout(() => {
@@ -338,6 +377,28 @@ achievementbackBtn.addEventListener('click', function () {
 });
 
 // InGameScreen----------------------------------------
+
+okBtn.addEventListener("click", function () {
+  bubbleClick.play();
+  mainBackgroundSound.play();
+  this.classList.add("zoomoutAnimate");
+  setTimeout(() => {
+    this.classList.remove("zoomoutAnimate");
+    playPermission = true;
+    warning.style.display = "none";
+  }, 100);
+});
+okBtn2.addEventListener("click", function () {
+    bubbleClick.play();
+    mainBackgroundSound.play();
+    this.classList.add("zoomoutAnimate");
+    setTimeout(() => {
+      this.classList.remove("zoomoutAnimate");
+      playPermission = true;
+      outOfCoinWarning.style.display = "none";
+    }, 100);
+});
+
 for (let i = 0; i < betBtn.length; i++) {
   betBtn[i].addEventListener('click', function () {
     coinDropAudio.play();
@@ -353,8 +414,8 @@ for (let i = 0; i < betBtn.length; i++) {
           +myValue[i].firstElementChild.textContent + 1;
         myOwnCoin.firstElementChild.textContent =
           +myOwnCoin.firstElementChild.textContent - 1;
-        // showMenuCoin.textContent = +myOwnCoin.firstElementChild.textContent
-        // showCoinInProfile.textContent = +myOwnCoin.firstElementChild.textContent
+        showMenuCoin.textContent = +myOwnCoin.firstElementChild.textContent;
+        showCoinInProfile.textContent = +myOwnCoin.firstElementChild.textContent;
         betCoins.firstElementChild.textContent =
           +betCoins.firstElementChild.textContent + 1;
       }
@@ -370,20 +431,15 @@ getCoinBtn.addEventListener('click', function () {
   }, 210);
 });
 
-// quitBtn.addEventListener('click', function () {
-//   bubbleClick.play();
-//   this.classList.add('zoomoutAnimate');
-//   setTimeout(() => {
-//     this.classList.remove('zoomoutAnimate');
-//   }, 210);
-// });
-
 let count = setting.bettingTime;
 let timerId = 0;
 let playPermission = true;
 let betPermission = false;
+let preAmount;
 startBtn.addEventListener('click', function () {
   bubbleClick.play();
+  mainBackgroundSound.pause();
+  backGroundSound.play();
   this.classList.add('zoomoutAnimate');
   setTimeout(() => {
     this.classList.remove('zoomoutAnimate');
@@ -402,6 +458,7 @@ startBtn.addEventListener('click', function () {
       circleEle.style.stroke = '#ff7b01';
       secondSpan.style.color = '#ffe600';
       if (timerId !== 0) return;
+      preAmount = +myOwnCoin.firstElementChild.textContent;
       timerId = setInterval(function () {
         let s = count;
         s = s < 10 ? '0' + s : s;
@@ -416,16 +473,16 @@ startBtn.addEventListener('click', function () {
           barLength + ' ' + circumference
         );
 
-        if (betPermission == false) {
-          preAmount = +myOwnCoin.firstElementChild.textContent;
-        }
-
         betPermission = true;
         if (count == Math.floor(setting.bettingTime / 3)) {
+          backGroundSound.pause();
+          clockTick.load();
+          clockTick.play();
           circleEle.style.stroke = 'red';
           secondSpan.style.color = 'red';
         }
         if (count === 0) {
+          clockTick.pause();
           secondSpan.textContent = 'GO';
         }
         if (count < 0) {
@@ -467,8 +524,6 @@ startBtn.addEventListener('click', function () {
 function countingEnd() {
   clearInterval(timerId);
   timerId = 0;
-  // count = +countText.innerText;
-  // countDown.innerHTML = count;
   count = setting.bettingTime;
   countDown.style.display = 'none';
   circleEle.style.stroke = '#ff7b01';
@@ -489,8 +544,8 @@ removeBetBtn.addEventListener('click', function () {
       myOwnCoin.firstElementChild.textContent =
         +myOwnCoin.firstElementChild.textContent +
         +myValue[i].firstElementChild.textContent;
-      // showMenuCoin.textContent = +myOwnCoin.firstElementChild.textContent
-      // showCoinInProfile.textContent = +myOwnCoin.firstElementChild.textContent
+      showMenuCoin.textContent = +myOwnCoin.firstElementChild.textContent;
+      showCoinInProfile.textContent = +myOwnCoin.firstElementChild.textContent;
     }
     for (let i = 0; i < betBtn.length; i++) {
       myValue[i].firstElementChild.textContent = 0;
@@ -508,9 +563,9 @@ quitBtn.addEventListener('click', function () {
     this.classList.remove('zoomoutAnimate');
   }, 210);
   if (!playPermission) return;
-  console.log(quitConfirm);
   quitConfirm.style.display = 'flex';
   yesBtn.onclick = () => {
+    menuController = true;
     gameContainer.style.display = 'none';
     gameWelcome.style.display = 'block';
     quitConfirm.style.display = 'none';
@@ -519,3 +574,228 @@ quitBtn.addEventListener('click', function () {
     quitConfirm.style.display = 'none';
   };
 });
+
+function check(x){
+  animalsBar.style.display = "block";
+  if(x == 1 || x == 2 || x == 3){
+      myOwnCoin.firstElementChild.textContent = +myOwnCoin.firstElementChild.textContent + (+myValue[0].firstElementChild.textContent * 4);
+      randomAnimal.style.display = "block";
+      randomAnimal.src = "./assets/images/animation-gif/dog.gif";
+      const animalItem = {srcEnd: "dog(top corner).png"};
+      animalList.unshift(animalItem);
+      renderAnimalList(animalsBar,animalList);
+  }
+  if(x == 29 || x == 30 || x == 31){
+      myOwnCoin.firstElementChild.textContent = +myOwnCoin.firstElementChild.textContent + (+myValue[1].firstElementChild.textContent * 6);
+      randomAnimal.style.display = "block";
+      randomAnimal.src = "./assets/images/animation-gif/monkey.gif";
+      const animalItem = {srcEnd: "monkey(left side).png"};
+      animalList.unshift(animalItem);
+      renderAnimalList(animalsBar,animalList);
+  }
+  if(x == 25 || x == 26 || x == 27){
+      myOwnCoin.firstElementChild.textContent = +myOwnCoin.firstElementChild.textContent + (+myValue[2].firstElementChild.textContent * 12);
+      randomAnimal.style.display = "block";
+      randomAnimal.src = "./assets/images/animation-gif/sheep.gif";
+      const animalItem = {srcEnd: "sheep(left side).png"};
+      animalList.unshift(animalItem);
+      renderAnimalList(animalsBar,animalList);
+  }
+  if(x == 21 || x == 22 || x == 23){
+      myOwnCoin.firstElementChild.textContent = +myOwnCoin.firstElementChild.textContent + (+myValue[3].firstElementChild.textContent * 24);
+      randomAnimal.style.display = "block";
+      randomAnimal.src = "./assets/images/animation-gif/elephant.gif";
+      const animalItem = {srcEnd: "elephant(bottom).png"};
+      animalList.unshift(animalItem);
+      renderAnimalList(animalsBar,animalList);
+  }
+  if(x == 5 || x == 6 || x == 7){
+      myOwnCoin.firstElementChild.textContent = +myOwnCoin.firstElementChild.textContent + (+myValue[4].firstElementChild.textContent * 4);
+      randomAnimal.style.display = "block";
+      randomAnimal.src = "./assets/images/animation-gif/seahorse.gif";
+      const animalItem = {srcEnd: "seahorse(right side).png"};
+      animalList.unshift(animalItem);
+      renderAnimalList(animalsBar,animalList);
+  }
+  if(x == 9 || x == 10 || x == 11){
+      myOwnCoin.firstElementChild.textContent = +myOwnCoin.firstElementChild.textContent + (+myValue[5].firstElementChild.textContent * 6);
+      randomAnimal.style.display = "block";
+      randomAnimal.src = "./assets/images/animation-gif/jellyfish.gif";
+      const animalItem = {srcEnd: "jellyfish(top corner).png"};
+      animalList.unshift(animalItem);
+      renderAnimalList(animalsBar,animalList);
+  }
+  if(x == 13 || x == 14 || x == 15){
+      myOwnCoin.firstElementChild.textContent = +myOwnCoin.firstElementChild.textContent + (+myValue[6].firstElementChild.textContent * 12);
+      randomAnimal.style.display = "block";
+      randomAnimal.src = "./assets/images/animation-gif/dolphin.gif";
+      const animalItem = {srcEnd: "dolphin(bottom).png"};
+      animalList.unshift(animalItem);
+      renderAnimalList(animalsBar,animalList);
+  }
+  if(x == 17 || x == 18 || x == 19){
+      myOwnCoin.firstElementChild.textContent = +myOwnCoin.firstElementChild.textContent + (+myValue[7].firstElementChild.textContent * 24);
+      randomAnimal.style.display = "block";
+      randomAnimal.src = "./assets/images/animation-gif/shark.gif";
+      const animalItem = {srcEnd: "shark(right side).png"};
+      animalList.unshift(animalItem);
+      renderAnimalList(animalsBar,animalList);
+  }
+  if(x == 0 || x == 8 || x == 16 || x == 24){
+      myOwnCoin.firstElementChild.textContent = +myOwnCoin.firstElementChild.textContent + (+myValue[8].firstElementChild.textContent * 24);
+      randomAnimal.style.display = "block";
+      randomAnimal.src = "./assets/images/animation-gif/birdAnimation.png";
+      const animalItem = {srcEnd: "bird.png"};
+      animalList.unshift(animalItem);
+      renderAnimalList(animalsBar,animalList);
+  }
+  if(x == 4 || x == 12 || x == 20 || x == 28){
+      myOwnCoin.firstElementChild.textContent = +myOwnCoin.firstElementChild.textContent + (+myValue[9].firstElementChild.textContent * 48);
+      randomAnimal.style.display = "block";
+      randomAnimal.src = "./assets/images/animation-gif/whale.gif";
+      const animalItem = {srcEnd: "whale(left+bottom).png"};
+      animalList.unshift(animalItem);
+      renderAnimalList(animalsBar,animalList);
+  }
+  if(x == 5 || x == 6 || x == 7 || x == 9 || x == 10 || x == 11 || x == 13 || x == 14 || x == 15 || x == 17 || x == 18 || x == 19){
+      myOwnCoin.firstElementChild.textContent = +myOwnCoin.firstElementChild.textContent + (+myValue[10].firstElementChild.textContent * 2);
+  }
+  if(x == 1 || x == 2 || x == 3 || x == 21 || x == 22 || x == 23 || x == 25 || x == 26 || x == 27 || x == 29 || x == 30 || x == 31){
+      myOwnCoin.firstElementChild.textContent = +myOwnCoin.firstElementChild.textContent + (+myValue[11].firstElementChild.textContent * 2);
+  }
+  finalAmount = +myOwnCoin.firstElementChild.textContent;
+  showMenuCoin.textContent = +myOwnCoin.firstElementChild.textContent;
+  showCoinInProfile.textContent = +myOwnCoin.firstElementChild.textContent
+}
+
+function winOrLose(x,y){
+  if(x > y || x === y){
+      // playWinningSound();
+      showWinOrLose.textContent = "WIN";
+      showWinOrLose.style.color = "greenyellow";
+      winCount.firstElementChild.textContent = x - y;
+      winCount.firstElementChild.style.color = "greenyellow";
+      // winBgAnimation.style.display = "block";
+      // winBackground.style.display = "block";
+  }else{
+      // playLosingSound();
+      showWinOrLose.textContent = "LOSE";
+      showWinOrLose.style.color = "rgb(253, 38, 38)";
+      winCount.firstElementChild.textContent = y - x;
+      winCount.firstElementChild.style.color = "rgb(253, 38, 38)";
+      // rightLoseAnimation.style.display = "block";
+      // leftLoseAnimation.style.display = "block";
+      // loseInterval = setInterval(() => {
+      //     if(!body.className.includes("loseBg")){
+      //         body.classList.add("loseBg");
+      //     }else{
+      //         body.classList.remove("loseBg");
+      //     }
+      // },400);
+  }
+}
+
+function getRandomInt(num){
+  return Math.floor((Math.random() * num)+1);
+}
+
+let gameIntervel = 0;
+let i = 0;
+
+function  animationCircle(random,speed){
+  let number = random;
+  if(gameIntervel !== 0){
+      return ;
+  }
+  gameIntervel = setInterval(() => {
+      if(i == 32){
+          i = 0;
+      }
+      if(!centerImg[i].className.includes("animate")) {
+          centerImg[i].classList.add("animate");
+      }
+      if(i > 0){
+          centerImg[i-1].classList.remove("animate");
+      }else{
+          centerImg[31].classList.remove("animate");
+      }
+      i++;
+      number--;
+      if(number == 0){
+          clearInterval(gameIntervel);
+          let y = i - 1;
+          check(y);
+
+          setTimeout (()=>{
+              selectSound.play();
+              centerImg[i-1].classList.remove("animate");
+              setTimeout (()=>{
+                selectSound.play();
+                  centerImg[i-1].classList.add("animate");
+              },200)
+              setTimeout (()=>{
+                  selectSound.play();
+                  centerImg[i-1].classList.remove("animate");
+              },400) 
+              setTimeout (()=>{
+                  selectSound.play();
+                  centerImg[i-1].classList.add("animate");
+              },600) 
+              setTimeout (()=>{
+                  selectSound.play();
+                  centerImg[i-1].classList.remove("animate");
+              },800) 
+              setTimeout (()=>{
+                  selectSound.play();
+                  centerImg[i-1].classList.add("animate");
+              },1000) 
+              setTimeout (()=>{
+                  selectSound.play();
+                  centerImg[i-1].classList.remove("animate");
+              },1200)
+              setTimeout (()=>{
+                  selectSound.play();
+                  centerImg[i-1].classList.add("animate");
+              },1400) 
+              setTimeout (()=>{
+                  selectSound.play();
+                  centerImg[i-1].classList.remove("animate");
+              },1600)  
+          },500) 
+
+          setTimeout (()=>{
+              winOrLose(finalAmount,preAmount);
+              setTimeout(() => {
+                  randomAnimal.style.display = "none";
+                  // winBgAnimation.style.display = "none";
+                  // winBackground.style.display = "none";
+                  // rightLoseAnimation.style.display = "none";
+                  // leftLoseAnimation.style.display = "none";
+                  // clearInterval(loseInterval);
+                  // body.classList.remove("loseBg");
+                  // stopWinningSound();
+              },10000)
+          },2000)
+          
+          setTimeout(() => {
+              for(let i = 0; i < betBtn.length; i++){
+                  myValue[i].firstElementChild.textContent = 0;
+              }
+              betCoins.firstElementChild.textContent = 0;
+              showWinOrLose.textContent = "WIN";
+              showWinOrLose.style.color = "white";
+              winCount.firstElementChild.textContent = 0;
+              winCount.firstElementChild.style.color = "orange";
+              playPermission = true;
+              // playBackgroundSound();
+          },12500);
+
+          setTimeout(() => {
+              if(playPermission == true && +myOwnCoin.firstElementChild.textContent == 0){
+                  outOfCoinAnimation.style.display = "block";
+              }
+          },13000);
+      }
+      bubbleClick.play();
+  }, speed);
+}
