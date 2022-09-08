@@ -25,8 +25,8 @@
   margin-left: 5rem;
 }
 
-.vloume {
-  width: 60px;
+.volumeBtn {
+  width: 25.5%;
   height: 37.8%;
   background-image: linear-gradient(to bottom, #ffe600, #ff7b01);
   border-radius: 15px;
@@ -41,13 +41,13 @@
   margin-right: 0.1rem;
 }
 
-.vloume:hover {
+.volumeBtn:hover {
   transform: translateX(-10%);
 }
 
-.vloume i {
+.volumeBtn i {
   color: #fff;
-  font-size: 1.8rem;
+  font-size: 2rem;
 }
 
 .game__welcome-top-item1 img {
@@ -222,7 +222,7 @@
   animation: zoomout 200ms;
 }
 
-@keyframes zoomout{
+@keyframes zoomout {
   0% {
     transform: scale(1);
   }
