@@ -25,6 +25,21 @@
   <body>
     <section class="container">
       <section class="game">
+        <!-- loading-screen start -->
+        <div class="loading-screen">
+          <div class="wrapper">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="shadow"></div>
+            <div class="shadow"></div>
+            <div class="shadow"></div>
+            <span>Loading</span>
+          </div>
+        </div>
+        <!-- loading-screen end -->
+
+        <!-- profileContainer start -->
         <div class="profileContainer">
           <i class="profilebackBtn fa-solid fa-caret-left"></i>
           <div class="leftprofileContainer">
@@ -45,23 +60,30 @@
             <img src="./assets/images/menu-board/person icon.png" alt="" />
           </div>
         </div>
+        <!-- profileContainer end  -->
 
         <!-- LeaderBoard_Start -->
         <div class="achievementContainer">
-          <i class=" achievementbackBtn fa-solid fa-caret-left"></i>
+          <i class="achievementbackBtn fa-solid fa-caret-left"></i>
           <h5>Leaderboard</h5>
           <div class="achievementTable">
             <div class="achievementPerson achievementPersonFirstChild">
               <p class="achievementName">Andrew</p>
-              <div class="achievementPoint">1200<i class="fa-solid fa-trophy gold"></i></div>
+              <div class="achievementPoint">
+                1200<i class="fa-solid fa-trophy gold"></i>
+              </div>
             </div>
             <div class="achievementPerson">
               <p class="achievementName">Randy</p>
-              <div class="achievementPoint">1199<i class="fa-solid fa-trophy silver"></i></div>
+              <div class="achievementPoint">
+                1199<i class="fa-solid fa-trophy silver"></i>
+              </div>
             </div>
             <div class="achievementPerson">
               <p class="achievementName">John</p>
-              <div class="achievementPoint">1198<i class="fa-solid fa-trophy copper"></i></div>
+              <div class="achievementPoint">
+                1198<i class="fa-solid fa-trophy copper"></i>
+              </div>
             </div>
             <div class="achievementPerson">
               <p class="achievementName">John Doe</p>
@@ -83,22 +105,75 @@
         </div>
         <!-- LeaderBoard_End -->
 
-        <div class="loading-screen">
-          <div class="wrapper">
-            <div class="circle"></div>
-            <div class="circle"></div>
-            <div class="circle"></div>
-            <div class="shadow"></div>
-            <div class="shadow"></div>
-            <div class="shadow"></div>
-            <span>Loading</span>
+        <!-- settingContainer start -->
+        <div class="settingContainer">
+          <h3>Setting</h3>
+          <div>
+            <div>
+              <span>Music</span>
+            </div>
+            <div class="right">
+              <div class="switch">
+                <input type="checkbox" class="musicBtn" />
+                <label for="switcher"></label>
+              </div>
+            </div>
           </div>
+          <div>
+            <div>
+              <span>Volume</span>
+            </div>
+            <div class="right">
+              <div class="volCon">
+                <input
+                  class="volumeControl"
+                  type="range"
+                  min="0"
+                  max="100"
+                  step="1"
+                  value="100"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="bettingTimeCon">
+            <div>
+              <span>Betting Time</span>
+            </div>
+            <div class="right">
+              <div class="bettingTimeMinusBtn">-</div>
+              <p class="bettingTime">30</p>
+              <div class="bettingTimePlusBtn">+</div>
+            </div>
+          </div>
+          <div>
+            <div>
+              <div class="privacy">
+                <p>Privacy & Policy</p>
+              </div>
+            </div>
+            <div class="right">
+              <div class="userAgreement">
+                <p>User Agreement</p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="center">
+              <div class="aboutBettingSlots">
+                <p>About Betting Slots</p>
+              </div>
+            </div>
+          </div>
+          <i class="settingBackBtn fa-solid fa-caret-left"></i>
         </div>
+        <!-- settingContainer end -->
+
         <!--wellcome start=====================================================================================-->
         <div class="game__welcome">
           <div class="game__welcome-top">
             <div class="game__welcome-top-item1">
-              <div class="vloume">
+              <div class="volumeBtn">
                 <i class="fa-solid fa-volume-high"></i>
               </div>
               <!-- <img src="./assets/images/menu-board/sound.png" alt="" class="vloume"> -->
@@ -110,7 +185,7 @@
               <img
                 src="./assets/images/menu-board/setting.png"
                 alt=""
-                class="settingIn"
+                class="settingBtn"
               />
             </div>
             <div class="game__welcome-top-item2">
@@ -121,10 +196,7 @@
                     <div class="level-bar"></div>
                   </div>
                 </div>
-                <img
-                  src="./assets/images/menu-board/person icon.png"
-                  alt=""
-                />
+                <img src="./assets/images/menu-board/person icon.png" alt="" />
               </div>
               <div class="game__welcome-top-item2-coin">
                 <img src="./assets/images/btn/coin1.png" alt="" />
@@ -141,27 +213,32 @@
           </div>
         </div>
         <!--welcome end===================================================================================-->
-      </section>
-      <div class="left__circle">
-        <i class="fa-solid fa-circle"></i>
-        <i class="fa-solid fa-circle"></i>
-        <i class="fa-solid fa-circle"></i>
-        <i class="fa-solid fa-circle"></i>
-        <i class="fa-solid fa-circle"></i>
-        <i class="fa-solid fa-circle"></i>
-        <i class="fa-solid fa-circle"></i>
-      </div>
-      <div class="right__circle">
-        <i class="fa-solid fa-circle"></i>
-        <i class="fa-solid fa-circle"></i>
-        <i class="fa-solid fa-circle"></i>
-        <i class="fa-solid fa-circle"></i>
-        <i class="fa-solid fa-circle"></i>
-        <i class="fa-solid fa-circle"></i>
-        <i class="fa-solid fa-circle"></i>
-      </div>
+
+        <div class="left__circle">
+          <i class="fa-solid fa-circle"></i>
+          <i class="fa-solid fa-circle"></i>
+          <i class="fa-solid fa-circle"></i>
+          <i class="fa-solid fa-circle"></i>
+          <i class="fa-solid fa-circle"></i>
+          <i class="fa-solid fa-circle"></i>
+          <i class="fa-solid fa-circle"></i>
+        </div>
+        <div class="right__circle">
+          <i class="fa-solid fa-circle"></i>
+          <i class="fa-solid fa-circle"></i>
+          <i class="fa-solid fa-circle"></i>
+          <i class="fa-solid fa-circle"></i>
+          <i class="fa-solid fa-circle"></i>
+          <i class="fa-solid fa-circle"></i>
+          <i class="fa-solid fa-circle"></i>
+        </div>
       </section>
     </section>
+
+    <audio src="./assets/audios/BubbleClick.mov" class="bubbleClick">
+      Your browser does not support the
+      <code>audio</code> element.
+    </audio>
     <script src="./index.js"></script>
   </body>
 </html>
