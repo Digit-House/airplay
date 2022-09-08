@@ -1,0 +1,274 @@
+.settingBackBtn {
+  position: absolute;
+  top: 25px;
+  left: 30px;
+  color: white;
+  font-size: 3rem;
+  background-image: linear-gradient(to bottom, #ffe600, #ff7b01);
+  padding: 2px 16px;
+  border-radius: 12px;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+    rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+    rgba(0, 0, 0, 0.09) 0px 32px 16px;
+
+  cursor: pointer;
+}
+
+.settingContainer {
+  position: relative;
+  display: none;
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 45px;
+  padding: 50px 0;
+  box-sizing: border-box;
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+  box-sizing: border-box;
+}
+
+.settingContainer h3 {
+  font-size: 3.9rem;
+  font-weight: 900;
+  background-image: linear-gradient(to bottom, #ffe600 40%, #ffa900);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  margin-bottom: 2%;
+}
+
+.settingContainer > div span {
+  color: #ffa900;
+  font-size: 2.5rem;
+  font-weight: 900;
+  background: linear-gradient(to bottom, #ffe600, #ff7b01);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+
+.settingContainer > div {
+  width: 100%;
+  display: flex;
+  gap: 50px;
+}
+/* .bettingTimeCon {
+  display: flex;
+  gap: 50px;
+} */
+
+/* .bettingTimeCon > div {
+  flex: 1;
+} */
+
+.settingContainer > div > div {
+  width: 50%;
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+.right {
+  justify-content: flex-start !important;
+}
+
+.center {
+  justify-content: center !important;
+}
+
+.settingContainer .volCon {
+  width: 200px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  border-radius: 20px;
+  background: linear-gradient(to bottom, #ffe600, #ff7b01);
+}
+
+.bettingTimeCon .right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 1.5rem;
+  font-weight: 900;
+  text-align: center;
+}
+
+.bettingTimeCon .right > div {
+  width: 40px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.bettingTimeCon .right > p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 40px;
+  border-radius: 10px;
+  background: linear-gradient(to bottom, #ffe600, #ff7b01);
+  letter-spacing: 4px;
+  color: #fff;
+  cursor: default;
+}
+
+.volumeControl {
+  width: 90%;
+  height: 10px;
+  appearance: none;
+  -webkit-appearance: none;
+  background: cornsilk;
+  background-image: linear-gradient(rgb(13, 181, 181), rgb(7, 255, 255));
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.volumeControl::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 27px;
+  height: 27px;
+  background-color: #fff;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.switch {
+  position: relative;
+  width: 110px;
+  height: 45px;
+  border-radius: 25px;
+}
+
+#musicBtn {
+  cursor: pointer;
+}
+
+.switch input {
+  appearance: none;
+  width: 110px;
+  height: 45px;
+  border-radius: 25px;
+  background: linear-gradient(to bottom, #ffe600, #ff7b01);
+  outline: none;
+  cursor: pointer;
+}
+
+.switch input::before,
+.switch input::after {
+  z-index: 2;
+  position: absolute;
+  top: 56%;
+  transform: translateY(-58%);
+  font-weight: 900;
+  font-size: 1rem;
+}
+
+.switch input::before {
+  color: #ff7b01;
+  content: 'OFF';
+  left: 10px;
+  transition: color 0.5s;
+}
+
+.switch input::after {
+  color: #fff;
+  content: 'ON';
+  right: 15px;
+  transition: color 0.5s;
+}
+
+.switch input:checked {
+  background: linear-gradient(to bottom, #ffe600, #ff7b01);
+}
+
+.switch label {
+  z-index: 1;
+  position: absolute;
+  top: 5px;
+  bottom: 4px;
+  border-radius: 20px;
+}
+
+.switch input {
+  transition: 0.25s;
+}
+
+.switch input:checked + label {
+  left: 5px;
+  right: 55px;
+  background: #fff;
+  transition: left 0.5s, right 0.4s 0.2s;
+}
+
+.switch input:not(:checked) {
+  background: linear-gradient(to bottom, #ffe600, #ff7b01);
+  transition: background 0.4s;
+}
+
+.switch input:not(:checked)::before {
+  color: #fff;
+  transition: color 0.5s;
+}
+
+.switch input:not(:checked)::after {
+  color: #ff7b01;
+  transition: color 0.5s 0.2s;
+}
+
+.switch input:not(:checked) + label {
+  left: 55px;
+  right: 5px;
+  background: #fff;
+  transition: left 0.4s 0.2s, right 0.5s, background 0.35s;
+}
+
+.privacy,
+.userAgreement,
+.aboutBettingSlots,
+.leaderboardHeader {
+  /* width: 180px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 1.9rem;
+  font-weight: 500;
+  text-align: unset !important;
+  padding: 10px 36px;
+  border-radius: 30px;
+  background: linear-gradient(to bottom, #ffe600, #ff7b01);
+  box-shadow: rgb(0 0 0 / 9%) 0px 2px 1px, rgb(0 0 0 / 9%) 0px 4px 2px,
+    rgb(0 0 0 / 9%) 0px 8px 4px, rgb(0 0 0 / 9%) 0px 16px 8px,
+    rgb(0 0 0 / 9%) 0px 32px 16px;
+  cursor: pointer;
+}
+
+.privacy,
+.userAgreement > p {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.aboutBettingSlots {
+  padding: 10px 60px;
+}
