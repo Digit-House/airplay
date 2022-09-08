@@ -2,6 +2,7 @@
 @import url(./profileScreen.css);
 @import url(./loading.css);
 @import url(./welcome.css);
+@import url(./leaderBoard.css);
 
 html {
   font-family: "Mouse Memoirs", sans-serif;

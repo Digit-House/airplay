@@ -1,8 +1,11 @@
 const loadingScreen = document.querySelector(".loading-screen");
 const gameWelcome = document.querySelector(".game__welcome");
-const profileBtn = document.querySelector(".game__welcome-top-item2");
+const profileBtn = document.querySelector(".game__welcome-top-item2-name");
 const profileContainer = document.querySelector(".profileContainer");
 const profilebackBtn = document.querySelector(".profilebackBtn");
+const achievementBtn = document.querySelector(".achievementBtn");
+const achievementContainer = document.querySelector(".achievementContainer");
+const achievementbackBtn = document.querySelector(".achievementbackBtn");
 
 function getImage(url) {
   return new Promise(function (resolve, reject) {
@@ -62,4 +65,33 @@ profilebackBtn.addEventListener("click", function () {
     gameWelcome.style.display = "block";
     profileContainer.style.display = "none";
   }, 100);
+});
+
+achievementBtn.addEventListener("click", function(){
+  // playBubbleSound();
+  // if(menuController == false){
+  //     return ;
+  // }else{
+  //     this.classList.add('menuTopLeftBtnClickAnimation');
+  //     setTimeout (()=>{
+  //         this.classList.remove('menuTopLeftBtnClickAnimation');
+  //         menuBoard.style.display = "none";
+  //         achievementContainer.style.display = "flex";
+  //     },100)
+  // }
+  this.classList.add('zoomoutAnimate');
+    setTimeout (()=>{
+        this.classList.remove('zoomoutAnimate');
+        gameWelcome.style.display = "none";
+        achievementContainer.style.display = "flex";
+    },100)
+})
+achievementbackBtn.addEventListener("click",function(){
+  // playBubbleSound();
+  this.classList.add('zoomoutAnimate');
+    setTimeout (()=>{
+        this.classList.remove('zoomoutAnimate');
+        gameWelcome.style.display="block";
+        achievementContainer.style.display="none";
+    },100)
 });
