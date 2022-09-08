@@ -7,9 +7,10 @@
 @import url(./inGameScreen.css);
 @import url(./gameLoading.css);
 @import url(./aboutBettingSlots.css);
+@import url(./quitConfirm.css);
 
 html {
-  font-family: "Mouse Memoirs", sans-serif;
+  font-family: 'Mouse Memoirs', sans-serif;
   user-select: none;
 }
 
@@ -89,7 +90,7 @@ body {
 
 .left__circle i::after,
 .right__circle i::after {
-  content: "";
+  content: '';
   position: absolute;
   border-right: 3px solid rgba(255, 255, 255, 0.6);
   border-radius: 50%;
