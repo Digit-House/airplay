@@ -1,3 +1,7 @@
+const bubbleClick = document.querySelector('.bubbleClick');
+const mainBackgroundSound = document.querySelector(".mainBackgroundSound");
+const coinDropAudio = document.querySelector(".coinDropAudio");
+const selectSound = document.querySelector(".selectSound");
 const loadingScreen = document.querySelector('.loading-screen');
 const gameWelcome = document.querySelector('.game__welcome');
 const profileBtn = document.querySelector('.game__welcome-top-item2-name');
@@ -14,8 +18,27 @@ const bettingTime = document.querySelector('.bettingTime');
 const bettingTimePlusBtn = document.querySelector('.bettingTimePlusBtn');
 const bettingTimeMinusBtn = document.querySelector('.bettingTimeMinusBtn');
 const settingBackBtn = document.querySelector('.settingBackBtn');
-const bubbleClick = document.querySelector('.bubbleClick');
 const volumeBtn = document.querySelector('.volumeBtn');
+const gameContainer = document.querySelector(".game__container");
+const betBtn = document.querySelectorAll(".animalCircleImg");
+const myValue = document.querySelectorAll(".myValue");
+const centerImg = document.querySelectorAll(".img");
+const betCoins = document.querySelector(".betCoins");
+const myOwnCoin = document.querySelector(".myOwnCoin");
+const startBtn = document.querySelector(".startBtn");
+const removeBetBtn = document.querySelector(".removeBetBtn");
+const showWinOrLose = document.querySelector(".showWinOrLose");
+const winCount = document.querySelector(".winCount");
+const getCoinBtn = document.querySelector(".get-coin");
+const quitBtn = document.querySelector(".quitBtn");
+const warning = document.querySelector(".warning");
+const okBtn = document.querySelector(".okBtn");
+const outOfCoinWarning = document.querySelector(".outOfCoinWarning");
+const okBtn2 = document.querySelector(".okBtn2");
+const outOfCoinAnimation = document.querySelector(".outOfCoinAnimation");
+const circle = document.querySelector(".timerCircle");
+let ss = document.getElementById("ss");
+const countDown = document.querySelector(".countDown");
 
 function getImage(url) {
   return new Promise(function (resolve, reject) {
@@ -42,7 +65,7 @@ function menuBoardPreloader() {
   ])
     .then(() => {
       loadingScreen.style.display = 'none';
-      gameWelcome.style.display = 'block';
+      // gameWelcome.style.display = 'block';
     })
     .catch((e) => console.log(e));
 }
@@ -222,4 +245,152 @@ achievementbackBtn.addEventListener('click', function () {
     gameWelcome.style.display = 'block';
     achievementContainer.style.display = 'none';
   }, 210);
+});
+
+// InGameScreen----------------------------------------
+let betPermission = true;
+for(let i = 0; i < betBtn.length; i++){
+  betBtn[i].addEventListener("click",function(){
+      coinDropAudio.play();
+      this.classList.add('animalBtnClickAnimation');
+      setTimeout (()=>{
+          this.classList.remove('animalBtnClickAnimation');
+      },100) 
+      if(betPermission === false){
+          return ;
+      }else{
+          if(+myOwnCoin.firstChild.textContent > 0){
+              myValue[i].firstChild.textContent = +myValue[i].firstChild.textContent + 1;
+              myOwnCoin.firstChild.textContent = +myOwnCoin.firstChild.textContent - 1;
+              // showMenuCoin.textContent = +myOwnCoin.firstChild.textContent
+              // showCoinInProfile.textContent = +myOwnCoin.firstChild.textContent
+              betCoins.firstChild.textContent = +betCoins.firstChild.textContent + 1;
+          }
+      }
+  })
+}
+
+getCoinBtn.addEventListener("click", function(){
+  coinDropAudio.play();
+  this.classList.add('zoomoutAnimate');
+  setTimeout (()=>{
+      this.classList.remove('zoomoutAnimate');
+  },210)
+})
+
+quitBtn.addEventListener("click", function(){
+  bubbleClick.play();
+  this.classList.add('zoomoutAnimate');
+  setTimeout (()=>{
+      this.classList.remove('zoomoutAnimate');
+  },210)
+})
+
+let count = 7;
+let timerId = 0;
+let playPermission = true;
+  startBtn.addEventListener("click", function(){
+  bubbleClick.play();
+  this.classList.add('zoomoutAnimate');
+  setTimeout (()=>{
+      this.classList.remove('zoomoutAnimate');
+  },210) 
+  if(playPermission === false){
+      return ;
+  }else{
+      playPermission = false;
+      if(+myOwnCoin.firstChild.textContent === 0){
+          outOfCoinWarning.style.display = "flex";
+      }else{
+          circle.style.display = "block";
+          if(timerId !== 0) return;
+
+          timerId = setInterval(function(){
+              count--;
+              let s = count
+              s = (s <10)? "0" + s : s;
+              countDown.innerHTML = s;
+
+              if(betPermission == false){
+                  preAmount = +myOwnCoin.firstChild.textContent;
+              }
+
+              betPermission = true;
+              if(count > 0 && count <= 5){
+                  countDown.style.color = "rgb(253, 38, 38)";
+                  ss.style.stroke = "rgb(253, 38, 38)";
+              }
+              if(count === 0){
+                  countDown.innerHTML = "GO";
+                  countDown.style.color = "orange";
+              }
+              if(count < 0){
+                  countingEnd();
+                  if(+betCoins.firstChild.textContent === 0){
+                      warning.style.display = "flex";
+                  }else{
+                      gameIntervel = 0;
+                  let random = getRandomInt(32);
+                  animationCircle(null,100);
+                  setTimeout(() => {
+                      clearInterval(gameIntervel);
+                      gameIntervel = 0;
+                      animationCircle(null,200);
+                  },3000)
+                  setTimeout(() => {
+                      clearInterval(gameIntervel);
+                      gameIntervel = 0;
+                      animationCircle(null,250);
+                  },5000)
+                  setTimeout(() => {
+                      clearInterval(gameIntervel);
+                      gameIntervel = 0;
+                      animationCircle(null,300);
+                  },6000)
+                  setTimeout(() => {
+                      clearInterval(gameIntervel);
+                      gameIntervel = 0;
+                      animationCircle(random,350);
+                  },7000)
+                  }
+              }
+              ss.style.strokeDashoffset = 440 - (440 * count) / 30;
+          },1000)
+      }
+  }
+});
+
+function countingEnd(){
+  clearInterval(timerId);
+  timerId = 0;
+  // count = +countText.innerText;
+  // countDown.innerHTML = count;
+  count = 7;
+  circle.style.display = "none"
+  betPermission = false;
+  ss.style.stroke = "orange";
+  countDown.style.color = "orange";
+};
+
+removeBetBtn.addEventListener("click", function(){
+  bubbleClick.play();
+  this.classList.add('zoomoutAnimate');
+  setTimeout (()=>{
+      this.classList.remove('zoomoutAnimate');
+  },210)
+  if(betPermission === false){
+      return ;
+  }else{
+      for(let i = 0; i < betBtn.length; i++){
+          myOwnCoin.firstChild.textContent = +myOwnCoin.firstChild.textContent + +myValue[i].firstChild.textContent;
+          // showMenuCoin.textContent = +myOwnCoin.firstChild.textContent
+          // showCoinInProfile.textContent = +myOwnCoin.firstChild.textContent
+      };
+      for(let i = 0; i < betBtn.length; i++){
+          myValue[i].firstChild.textContent = 0;
+      };
+      betCoins.firstChild.textContent = 0;
+      countingEnd();
+      playPermission = true;
+  }
 });
