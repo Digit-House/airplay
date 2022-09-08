@@ -185,14 +185,14 @@
 
 .switch input::before {
   color: #ff7b01;
-  content: 'OFF';
+  content: "OFF";
   left: 10px;
   transition: color 0.5s;
 }
 
 .switch input::after {
   color: #fff;
-  content: 'ON';
+  content: "ON";
   right: 15px;
   transition: color 0.5s;
 }
@@ -244,8 +244,7 @@
 
 .privacy,
 .userAgreement,
-.aboutBettingSlots,
-.leaderboardHeader {
+.aboutBettingSlotsBtn {
   /* width: 180px; */
   display: flex;
   justify-content: center;
