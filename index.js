@@ -48,6 +48,9 @@ const outOfCoinAnimation = document.querySelector('.outOfCoinAnimation');
 const countDown = document.getElementById('count-down');
 const circleEle = document.getElementById('circle');
 const secondSpan = document.querySelector('#count-down span');
+const quitConfirm = document.querySelector('.quitConfirm');
+const yesBtn = document.querySelector('.yesBtn');
+const noBtn = document.querySelector('.noBtn');
 
 function getImage(url) {
   return new Promise(function (resolve, reject) {
@@ -334,7 +337,6 @@ achievementbackBtn.addEventListener('click', function () {
   }, 210);
 });
 
-console.log(myOwnCoin.firstElementChild.textContent);
 // InGameScreen----------------------------------------
 for (let i = 0; i < betBtn.length; i++) {
   betBtn[i].addEventListener('click', function () {
@@ -368,13 +370,13 @@ getCoinBtn.addEventListener('click', function () {
   }, 210);
 });
 
-quitBtn.addEventListener('click', function () {
-  bubbleClick.play();
-  this.classList.add('zoomoutAnimate');
-  setTimeout(() => {
-    this.classList.remove('zoomoutAnimate');
-  }, 210);
-});
+// quitBtn.addEventListener('click', function () {
+//   bubbleClick.play();
+//   this.classList.add('zoomoutAnimate');
+//   setTimeout(() => {
+//     this.classList.remove('zoomoutAnimate');
+//   }, 210);
+// });
 
 let count = setting.bettingTime;
 let timerId = 0;
@@ -389,6 +391,7 @@ startBtn.addEventListener('click', function () {
   if (playPermission === false) {
     return;
   } else {
+    quitConfirm.style.display = 'none';
     playPermission = false;
     betPermission = true;
     if (+myOwnCoin.firstElementChild.textContent === 0) {
@@ -427,7 +430,7 @@ startBtn.addEventListener('click', function () {
         }
         if (count < 0) {
           countingEnd();
-          if (+betCoins.firstChild.textContent === 0) {
+          if (+betCoins.firstElementChild.textContent === 0) {
             warning.style.display = 'flex';
           } else {
             gameIntervel = 0;
@@ -496,4 +499,23 @@ removeBetBtn.addEventListener('click', function () {
     countingEnd();
     playPermission = true;
   }
+});
+
+quitBtn.addEventListener('click', function () {
+  bubbleClick.play();
+  this.classList.add('zoomoutAnimate');
+  setTimeout(() => {
+    this.classList.remove('zoomoutAnimate');
+  }, 210);
+  if (!playPermission) return;
+  console.log(quitConfirm);
+  quitConfirm.style.display = 'flex';
+  yesBtn.onclick = () => {
+    gameContainer.style.display = 'none';
+    gameWelcome.style.display = 'block';
+    quitConfirm.style.display = 'none';
+  };
+  noBtn.onclick = () => {
+    quitConfirm.style.display = 'none';
+  };
 });

@@ -1,0 +1,101 @@
+.quitConfirm {
+  width: 55%;
+  height: 40%;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  border-radius: 20px;
+  color: #fff;
+  background: linear-gradient(
+    65deg,
+    rgba(4, 125, 180, 0.85),
+    rgba(4, 125, 180, 0.7)
+  );
+  position: absolute;
+  z-index: 10;
+  display: none;
+  position: absolute;
+  animation: time 500ms ease-in-out forwards;
+}
+
+.quitConfirm p {
+  letter-spacing: 2px;
+  font-weight: 400;
+}
+
+.quitConfirm > div {
+  display: flex;
+  width: 100%;
+
+  justify-content: space-evenly;
+}
+
+.button:focus:not(:focus-visible),
+.button:focus {
+  outline: 0;
+}
+
+.button:active {
+  background-color: #3e3bba;
+  background-image: none;
+  border-color: #3a38ae;
+  box-shadow: rgba(46, 54, 80, 0.125) 0 3px 5px inset;
+}
+
+.noBtn:active {
+  background: rgb(190, 9, 9);
+  border-color: rgba(255, 9, 9, 0.5);
+}
+
+.button:active:focus {
+  box-shadow: rgba(46, 54, 80, 0.125) 0 3px 5px inset,
+    rgba(104, 101, 235, 0.5) 0 0 0 0.2rem;
+}
+.noBtn:active:focus {
+  box-shadow: rgba(46, 54, 80, 0.125) 0 3px 5px inset,
+    rgba(203, 1, 1, 0.5) 0 0 0 0.2rem;
+}
+
+.noBtn,
+.yesBtn,
+.okBtn {
+  appearance: button;
+  background-color: #4d4ae8;
+  background-image: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.15),
+    rgba(255, 255, 255, 0)
+  );
+  border: 1px solid #4d4ae8;
+  border-radius: 1rem;
+  box-shadow: rgba(255, 255, 255, 0.15) 0 1px 0 inset,
+    rgba(46, 54, 80, 0.075) 0 1px 1px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.noBtn {
+  background: rgb(226, 12, 12);
+  border: 1px solid rgb(226, 12, 12);
+}
+
+@keyframes time {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

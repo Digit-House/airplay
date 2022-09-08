@@ -103,6 +103,9 @@
   position: relative;
   background-image: url(../images/square-buttons/sea-bg.png);
   background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .game__container-center-top .img1 {
   position: absolute;
