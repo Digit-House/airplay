@@ -1,0 +1,37 @@
+.loadingBox {
+  display: none;
+  width: 50%;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.loadingBox h3 {
+  letter-spacing: 4px;
+  font-size: 3.5rem;
+  text-align: center;
+  color: orange;
+  /* background: linear-gradient(to bottom, #ffe600, #ff7b01);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
+}
+.spinner {
+  height: 2rem;
+  width: 2rem;
+  border: 10px solid orange;
+  /* border-left: 20px solid rgb(96, 47, 153); */
+  border-left: 10px solid yellow;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: spin infinite 1.5s linear;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
