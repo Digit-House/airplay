@@ -382,7 +382,7 @@
 }
 
 .animate::after {
-  content: "";
+  content: '';
   background-image: linear-gradient(to bottom, #ffe600, #ff7b01);
   background-size: contain;
   opacity: 0.7;
@@ -401,15 +401,21 @@
   z-index: 2;
 }
 
-.timerCircle {
+#count-down {
+  color: #ffe600;
+  font-size: 3.2rem;
+  font-weight: 900;
   position: relative;
-  width: 150px;
-  height: 150px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  transform: scale(0);
   display: none;
-  animation: time 1s ease-in-out;
+  animation: time 500ms ease-in-out forwards;
+}
+
+#count-down span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 @keyframes time {
@@ -419,36 +425,6 @@
   100% {
     transform: scale(1);
   }
-}
-
-.time .countDown {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 80px;
-  color: orange;
-}
-
-.timerCircle svg {
-  position: relative;
-  width: 150px;
-  height: 150px;
-  transform: rotate(270deg);
-}
-
-.timerCircle svg circle {
-  width: 100%;
-  height: 100%;
-  fill: transparent;
-  stroke: aliceblue;
-  stroke-width: 4;
-  transform: translate(5px, 5px);
-}
-
-.timerCircle svg circle:nth-child(2) {
-  stroke: orange;
-  stroke-dasharray: 440;
 }
 
 .randomAnimal {

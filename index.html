@@ -611,12 +611,31 @@
                 </div>
               </div>
               <div class="time">
-                <div class="timerCircle">
-                  <svg>
-                    <circle cx="70" cy="70" r="70"></circle>
-                    <circle cx="70" cy="70" r="70" id="ss"></circle>
+                <div id="count-down">
+                  <svg
+                    width="12.5rem"
+                    height="12.5rem"
+                    viewBox="0 0 300 300"
+                    style="transform: rotateY(180deg)"
+                  >
+                    <g fill="none" stroke-width="20">
+                      <circle
+                        cx="150"
+                        cy="150"
+                        r="100"
+                        stroke="rgba(0,0,0,0)"
+                      />
+                      <circle
+                        id="circle"
+                        cx="150"
+                        cy="150"
+                        r="100"
+                        stroke="#ff7b01"
+                        transform="rotate(-90 150 150)"
+                      />
+                    </g>
                   </svg>
-                  <div class="countDown"></div>
+                  <span>30</span>
                 </div>
 
                 <img class="randomAnimal" src=" " alt="" />
