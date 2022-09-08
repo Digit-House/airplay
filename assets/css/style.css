@@ -4,6 +4,7 @@
 @import url(./welcome.css);
 @import url(./leaderBoard.css);
 @import url(./setting.css);
+@import url(./inGameScreen.css);
 
 html {
   font-family: 'Mouse Memoirs', sans-serif;
