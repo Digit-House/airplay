@@ -1,78 +1,78 @@
-const bubbleClick = document.querySelector('.bubbleClick');
-const mainBackgroundSound = document.querySelector('.mainBackgroundSound');
+const bubbleClick = document.querySelector(".bubbleClick");
+const mainBackgroundSound = document.querySelector(".mainBackgroundSound");
 mainBackgroundSound.autoplay = true;
 mainBackgroundSound.loop = true;
 
-const coinDropAudio = document.querySelector('.coinDropAudio');
-const selectSound = document.querySelector('.selectSound');
-const backGroundSound = document.querySelector('.backGroundSound');
+const coinDropAudio = document.querySelector(".coinDropAudio");
+const selectSound = document.querySelector(".selectSound");
+const backGroundSound = document.querySelector(".backGroundSound");
 backGroundSound.loop = true;
 
-const clockTick = document.querySelector('.clockTick');
-const winSound = document.querySelector('.winSound');
-const loseSound = document.querySelector('.loseSound');
-const loadingScreen = document.querySelector('.loading-screen');
-const gameWelcome = document.querySelector('.game__welcome');
-const profileBtn = document.querySelector('.game__welcome-top-item2-name');
-const profileContainer = document.querySelector('.profileContainer');
-const profilebackBtn = document.querySelector('.profilebackBtn');
-const achievementBtn = document.querySelector('.achievementBtn');
-const achievementContainer = document.querySelector('.achievementContainer');
-const achievementbackBtn = document.querySelector('.achievementbackBtn');
-const settingBtn = document.querySelector('.settingBtn');
-const settingContainer = document.querySelector('.settingContainer');
-const welcomePlay = document.querySelector('#welcomePlay');
-const loadingBox = document.querySelector('.loadingBox');
-const volumeControl = document.querySelector('.volumeControl');
-const musicBtn = document.querySelector('.musicBtn');
-const bettingTime = document.querySelector('.bettingTime');
-const bettingTimePlusBtn = document.querySelector('.bettingTimePlusBtn');
-const bettingTimeMinusBtn = document.querySelector('.bettingTimeMinusBtn');
-const settingBackBtn = document.querySelector('.settingBackBtn');
-const aboutBettingSlotsBtn = document.querySelector('.aboutBettingSlotsBtn');
+const clockTick = document.querySelector(".clockTick");
+const winSound = document.querySelector(".winSound");
+const loseSound = document.querySelector(".loseSound");
+const loadingScreen = document.querySelector(".loading-screen");
+const gameWelcome = document.querySelector(".game__welcome");
+const profileBtn = document.querySelector(".game__welcome-top-item2-name");
+const profileContainer = document.querySelector(".profileContainer");
+const profilebackBtn = document.querySelector(".profilebackBtn");
+const achievementBtn = document.querySelector(".achievementBtn");
+const achievementContainer = document.querySelector(".achievementContainer");
+const achievementbackBtn = document.querySelector(".achievementbackBtn");
+const settingBtn = document.querySelector(".settingBtn");
+const settingContainer = document.querySelector(".settingContainer");
+const welcomePlay = document.querySelector("#welcomePlay");
+const loadingBox = document.querySelector(".loadingBox");
+const volumeControl = document.querySelector(".volumeControl");
+const musicBtn = document.querySelector(".musicBtn");
+const bettingTime = document.querySelector(".bettingTime");
+const bettingTimePlusBtn = document.querySelector(".bettingTimePlusBtn");
+const bettingTimeMinusBtn = document.querySelector(".bettingTimeMinusBtn");
+const settingBackBtn = document.querySelector(".settingBackBtn");
+const aboutBettingSlotsBtn = document.querySelector(".aboutBettingSlotsBtn");
 const aboutBettingSlotsBackBtn = document.querySelector(
-  '.aboutBettingSlotsBackBtn'
+  ".aboutBettingSlotsBackBtn"
 );
-const privacy = document.querySelector('.privacy');
-const userAgreement = document.querySelector('.userAgreement');
-const aboutBettingSlots = document.querySelector('.aboutBettingSlots');
-const volumeBtn = document.querySelector('.volumeBtn');
-const gameContainer = document.querySelector('.game__container');
-const betBtn = document.querySelectorAll('.animalCircleImg');
-const myValue = document.querySelectorAll('.myValue');
-const centerImg = document.querySelectorAll('.img');
-const betCoins = document.querySelector('.betCoins');
-const myOwnCoin = document.querySelector('.myOwnCoin');
-const startBtn = document.querySelector('.startBtn');
-const removeBetBtn = document.querySelector('.removeBetBtn');
-const showWinOrLose = document.querySelector('.showWinOrLose');
-const winCount = document.querySelector('.winCount');
-const getCoinBtn = document.querySelector('.get-coin');
-const quitBtn = document.querySelector('.quitBtn');
-const warning = document.querySelector('.warning');
-const okBtn = document.querySelector('.okBtn');
-const outOfCoinWarning = document.querySelector('.outOfCoinWarning');
-const okBtn2 = document.querySelector('.okBtn2');
-const outOfCoinAnimation = document.querySelector('.outOfCoinAnimation');
-const countDown = document.getElementById('count-down');
-const circleEle = document.getElementById('circle');
-const secondSpan = document.querySelector('#count-down span');
-const quitConfirm = document.querySelector('.quitConfirm');
-const yesBtn = document.querySelector('.yesBtn');
-const noBtn = document.querySelector('.noBtn');
-const randomAnimal = document.querySelector('.randomAnimal');
-const showMenuCoin = document.querySelector('.wellcomeTotal');
-const showCoinInProfile = document.querySelector('.showCoinInProfile');
-const winOne = document.querySelector('.winning1');
-const winTwo = document.querySelector('.winning2');
-const winThree = document.querySelector('.winning3');
-const winFour = document.querySelector('.winning4');
-const loseGif = document.querySelector('.loserGif');
-const celebration = document.querySelector('.celebration');
+const privacy = document.querySelector(".privacy");
+const userAgreement = document.querySelector(".userAgreement");
+const aboutBettingSlots = document.querySelector(".aboutBettingSlots");
+const volumeBtn = document.querySelector(".volumeBtn");
+const gameContainer = document.querySelector(".game__container");
+const betBtn = document.querySelectorAll(".animalCircleImg");
+const myValue = document.querySelectorAll(".myValue");
+const centerImg = document.querySelectorAll(".img");
+const betCoins = document.querySelector(".betCoins");
+const myOwnCoin = document.querySelector(".myOwnCoin");
+const startBtn = document.querySelector(".startBtn");
+const removeBetBtn = document.querySelector(".removeBetBtn");
+const showWinOrLose = document.querySelector(".showWinOrLose");
+const winCount = document.querySelector(".winCount");
+const getCoinBtn = document.querySelector(".get-coin");
+const quitBtn = document.querySelector(".quitBtn");
+const warning = document.querySelector(".warning");
+const okBtn = document.querySelector(".okBtn");
+const outOfCoinWarning = document.querySelector(".outOfCoinWarning");
+const okBtn2 = document.querySelector(".okBtn2");
+const outOfCoinAnimation = document.querySelector(".outOfCoinAnimation");
+const countDown = document.getElementById("count-down");
+const circleEle = document.getElementById("circle");
+const secondSpan = document.querySelector("#count-down span");
+const quitConfirm = document.querySelector(".quitConfirm");
+const yesBtn = document.querySelector(".yesBtn");
+const noBtn = document.querySelector(".noBtn");
+const randomAnimal = document.querySelector(".randomAnimal");
+const showMenuCoin = document.querySelector(".wellcomeTotal");
+const showCoinInProfile = document.querySelector(".showCoinInProfile");
+const winOne = document.querySelector(".winning1");
+const winTwo = document.querySelector(".winning2");
+const winThree = document.querySelector(".winning3");
+const winFour = document.querySelector(".winning4");
+const loseGif = document.querySelector(".loserGif");
+const celebration = document.querySelector(".celebration");
 
-const animalsBar = document.querySelector('.animalsBar');
+const animalsBar = document.querySelector(".animalsBar");
 let animalList = [];
-let srcStart = './assets/images/square-buttons/';
+let srcStart = "./assets/images/square-buttons/";
 
 function renderAnimalList(animalsBar, animalList) {
   cleanAniamlList();
@@ -92,14 +92,14 @@ function renderAnimalList(animalsBar, animalList) {
 }
 
 function cleanAniamlList() {
-  let animalsBar = document.querySelector('.animalsBar');
+  let animalsBar = document.querySelector(".animalsBar");
   while (animalsBar.firstChild) {
     animalsBar.removeChild(animalsBar.firstChild);
   }
 }
 
 function generateAnimalImg(item) {
-  const img = document.createElement('img');
+  const img = document.createElement("img");
   img.src = `${srcStart}${item.srcEnd}`;
   return img;
 }
@@ -119,85 +119,85 @@ function getImage(url) {
 
 function menuBoardPreloader() {
   Promise.all([
-    getImage('./assets/images/menu-board/menuBoardBg.jpg'),
-    getImage('./assets/images/btn/coin1.png'),
-    getImage('./assets/images/menu-board/person icon.png'),
-    getImage('./assets/images/menu-board/play.png'),
-    getImage('./assets/images/menu-board/victory.png'),
-    getImage('./assets/images/menu-board/setting.png'),
-    getImage('./assets/images/gameicon copy 2.png'),
+    getImage("./assets/images/menu-board/menuBoardBg.jpg"),
+    getImage("./assets/images/btn/coin1.png"),
+    getImage("./assets/images/menu-board/person icon.png"),
+    getImage("./assets/images/menu-board/play.png"),
+    getImage("./assets/images/menu-board/victory.png"),
+    getImage("./assets/images/menu-board/setting.png"),
+    getImage("./assets/images/gameicon copy 2.png"),
   ])
     .then(() => {
-      loadingScreen.style.display = 'none';
-      gameWelcome.style.display = 'block';
+      loadingScreen.style.display = "none";
+      gameWelcome.style.display = "block";
     })
     .catch((e) => console.log(e));
 }
 menuBoardPreloader();
 function gamePreloader() {
   return Promise.all([
-    getImage('./assets/images/square-buttons/sea-bg.png'),
-    getImage('./assets/images/btn/play.png'),
-    getImage('./assets/images/btn/cross.png'),
-    getImage('./assets/images/round-buttons/dog.png'),
-    getImage('./assets/images/round-buttons/monkey.png'),
-    getImage('./assets/images/round-buttons/sheep.png'),
-    getImage('./assets/images/round-buttons/elephant.png'),
-    getImage('./assets/images/round-buttons/seahorse.png'),
-    getImage('./assets/images/round-buttons/jellyfish.png'),
-    getImage('./assets/images/round-buttons/dolphin.png'),
-    getImage('./assets/images/round-buttons/shark.png'),
-    getImage('./assets/images/square-buttons/bird.png'),
-    getImage('./assets/images/round-buttons/whale.png'),
-    getImage('./assets/images/round-buttons/sea.png'),
-    getImage('./assets/images/round-buttons/land.png'),
-    getImage('./assets/images/square-buttons/dog(top corner).png'),
-    getImage('./assets/images/square-buttons/whale(top corner).png'),
-    getImage('./assets/images/square-buttons/seahorse(right side).png'),
-    getImage('./assets/images/square-buttons/jellyfish(top corner).png'),
-    getImage('./assets/images/square-buttons/whale(right side).png'),
-    getImage('./assets/images/square-buttons/dolphin(bottom).png'),
-    getImage('./assets/images/square-buttons/shark(right side).png'),
-    getImage('./assets/images/square-buttons/elephant(bottom).png'),
-    getImage('./assets/images/round-buttons/bird.png'),
-    getImage('./assets/images/square-buttons/sheep(left side).png'),
-    getImage('./assets/images/square-buttons/monkey(left side).png'),
-    getImage('./assets/images/animation-gif/dog.gif'),
-    getImage('./assets/images/animation-gif/sheep.gif'),
-    getImage('./assets/images/animation-gif/elephant.gif'),
-    getImage('./assets/images/animation-gif/seahorse.gif'),
-    getImage('./assets/images/animation-gif/jellyfish.gif'),
-    getImage('./assets/images/animation-gif/dolphin.gif'),
-    getImage('./assets/images/animation-gif/shark.gif'),
-    getImage('./assets/images/animation-gif/whale.gif'),
-    getImage('./assets/images/animation-gif/monkey.gif'),
-    getImage('./assets/images/animation-gif/birdAnimation.png'),
-    getImage('./assets/images/animation-gif/outOfCoin.gif'),
+    getImage("./assets/images/square-buttons/sea-bg.png"),
+    getImage("./assets/images/btn/play.png"),
+    getImage("./assets/images/btn/cross.png"),
+    getImage("./assets/images/round-buttons/dog.png"),
+    getImage("./assets/images/round-buttons/monkey.png"),
+    getImage("./assets/images/round-buttons/sheep.png"),
+    getImage("./assets/images/round-buttons/elephant.png"),
+    getImage("./assets/images/round-buttons/seahorse.png"),
+    getImage("./assets/images/round-buttons/jellyfish.png"),
+    getImage("./assets/images/round-buttons/dolphin.png"),
+    getImage("./assets/images/round-buttons/shark.png"),
+    getImage("./assets/images/square-buttons/bird.png"),
+    getImage("./assets/images/round-buttons/whale.png"),
+    getImage("./assets/images/round-buttons/sea.png"),
+    getImage("./assets/images/round-buttons/land.png"),
+    getImage("./assets/images/square-buttons/dog(top corner).png"),
+    getImage("./assets/images/square-buttons/whale(top corner).png"),
+    getImage("./assets/images/square-buttons/seahorse(right side).png"),
+    getImage("./assets/images/square-buttons/jellyfish(top corner).png"),
+    getImage("./assets/images/square-buttons/whale(right side).png"),
+    getImage("./assets/images/square-buttons/dolphin(bottom).png"),
+    getImage("./assets/images/square-buttons/shark(right side).png"),
+    getImage("./assets/images/square-buttons/elephant(bottom).png"),
+    getImage("./assets/images/round-buttons/bird.png"),
+    getImage("./assets/images/square-buttons/sheep(left side).png"),
+    getImage("./assets/images/square-buttons/monkey(left side).png"),
+    getImage("./assets/images/animation-gif/dog.gif"),
+    getImage("./assets/images/animation-gif/sheep.gif"),
+    getImage("./assets/images/animation-gif/elephant.gif"),
+    getImage("./assets/images/animation-gif/seahorse.gif"),
+    getImage("./assets/images/animation-gif/jellyfish.gif"),
+    getImage("./assets/images/animation-gif/dolphin.gif"),
+    getImage("./assets/images/animation-gif/shark.gif"),
+    getImage("./assets/images/animation-gif/whale.gif"),
+    getImage("./assets/images/animation-gif/monkey.gif"),
+    getImage("./assets/images/animation-gif/birdAnimation.png"),
+    getImage("./assets/images/animation-gif/outOfCoin.gif"),
     getImage(
-      './assets/images/animation-gif/a7e63493c33a7b364f81ed6d71526908.gif'
+      "./assets/images/animation-gif/a7e63493c33a7b364f81ed6d71526908.gif"
     ),
-    getImage('./assets/images/animation-gif/giphy.gif'),
-    getImage('./assets/images/animation-gif/NR7Y.gif'),
+    getImage("./assets/images/animation-gif/giphy.gif"),
+    getImage("./assets/images/animation-gif/NR7Y.gif"),
   ]).then(() => {
-    gameWelcome.style.display = 'none';
-    loadingBox.style.display = 'none';
-    gameContainer.style.display = 'flex';
+    gameWelcome.style.display = "none";
+    loadingBox.style.display = "none";
+    gameContainer.style.display = "flex";
   });
 }
 let menuController = true;
-welcomePlay.addEventListener('click', function () {
+welcomePlay.addEventListener("click", function () {
   bubbleClick.play();
   mainBackgroundSound.play();
   menuController = false;
-  this.classList.add('zoomoutAnimate');
+  this.classList.add("zoomoutAnimate");
   setTimeout(() => {
-    this.classList.remove('zoomoutAnimate');
+    this.classList.remove("zoomoutAnimate");
   }, 210);
-  loadingBox.style.display = 'flex';
+  loadingBox.style.display = "flex";
   gamePreloader();
 });
 
-let setting = JSON.parse(localStorage.getItem('setting')) || {
+let setting = JSON.parse(localStorage.getItem("setting")) || {
   isMusicOff: false,
   volume: 50,
   bettingTime: 30,
@@ -213,7 +213,7 @@ const setSetting = () => {
   bettingTime.textContent = setting.bettingTime;
 };
 let played = false;
-document.addEventListener('click', () => {
+document.addEventListener("click", () => {
   if (!played) {
     mainBackgroundSound.play();
     played = true;
@@ -224,24 +224,24 @@ setSetting();
 
 function musicControlFunction() {
   if (musicBtn.checked) {
-    volumeBtn.firstElementChild.classList = 'fa-solid fa-volume-xmark';
+    volumeBtn.firstElementChild.classList = "fa-solid fa-volume-xmark";
     // startAudio.pause();
     isMuted = true;
-    mainBackgroundSound.src = '';
-    backGroundSound.src = '';
+    mainBackgroundSound.src = "";
+    backGroundSound.src = "";
   } else {
-    volumeBtn.firstElementChild.classList = 'fa-solid fa-volume-high';
+    volumeBtn.firstElementChild.classList = "fa-solid fa-volume-high";
     // startAudio.play();
     isMuted = false;
-    mainBackgroundSound.src = './assets/audios/mainBackgroundSound.mp3';
-    backGroundSound.src = './assets/audios/backgroundSound.wav';
+    mainBackgroundSound.src = "./assets/audios/mainBackgroundSound.mp3";
+    backGroundSound.src = "./assets/audios/backgroundSound.wav";
   }
   setting.isMusicOff = musicBtn.checked;
-  localStorage.setItem('setting', JSON.stringify(setting));
+  localStorage.setItem("setting", JSON.stringify(setting));
 }
 
 function volumeBarFunction(value) {
-  volumeControl.style.backgroundSize = value + '% 100%';
+  volumeControl.style.backgroundSize = value + "% 100%";
   // startAudio.volume = value / 100;
   // centerAnimationAudio.volume = value / 100;
   // clockAudio.volume = value / 100;
@@ -257,182 +257,182 @@ function volumeBarFunction(value) {
   loseSound.volume = value / 100;
 
   setting.volume = value;
-  localStorage.setItem('setting', JSON.stringify(setting));
+  localStorage.setItem("setting", JSON.stringify(setting));
   // if (isMuted) {
   //   startAudio.pause();
   // }
 }
 
-settingBtn.addEventListener('click', function () {
+settingBtn.addEventListener("click", function () {
   bubbleClick.play();
   if (menuController == false) {
     return;
   }
-  this.classList.add('zoomoutAnimate');
+  this.classList.add("zoomoutAnimate");
   setTimeout(() => {
-    this.classList.remove('zoomoutAnimate');
-    gameWelcome.style.display = 'none';
-    settingContainer.style.display = 'flex';
+    this.classList.remove("zoomoutAnimate");
+    gameWelcome.style.display = "none";
+    settingContainer.style.display = "flex";
   }, 210);
 });
 
-settingBackBtn.addEventListener('click', function () {
+settingBackBtn.addEventListener("click", function () {
   bubbleClick.play();
-  this.classList.add('zoomoutAnimate');
+  this.classList.add("zoomoutAnimate");
   setTimeout(() => {
-    this.classList.remove('zoomoutAnimate');
-    gameWelcome.style.display = 'block';
-    settingContainer.style.display = 'none';
+    this.classList.remove("zoomoutAnimate");
+    gameWelcome.style.display = "block";
+    settingContainer.style.display = "none";
   }, 210);
 });
 
-volumeBtn.addEventListener('click', function () {
+volumeBtn.addEventListener("click", function () {
   bubbleClick.play();
-  this.classList.add('zoomoutAnimate');
+  this.classList.add("zoomoutAnimate");
   setTimeout(() => {
-    this.classList.remove('zoomoutAnimate');
+    this.classList.remove("zoomoutAnimate");
   }, 210);
   musicBtn.checked = !musicBtn.checked;
   musicControlFunction();
 });
 
-musicBtn.addEventListener('input', () => {
+musicBtn.addEventListener("input", () => {
   bubbleClick.play();
   musicControlFunction();
 });
 
-volumeControl.addEventListener('input', () => {
+volumeControl.addEventListener("input", () => {
   let { value } = volumeControl;
   volumeBarFunction(value);
 });
 
-bettingTimePlusBtn.addEventListener('click', function () {
+bettingTimePlusBtn.addEventListener("click", function () {
   bubbleClick.play();
-  this.classList.add('zoomoutAnimate');
+  this.classList.add("zoomoutAnimate");
   setTimeout(() => {
-    this.classList.remove('zoomoutAnimate');
+    this.classList.remove("zoomoutAnimate");
   }, 250);
   setting.bettingTime += setting.bettingTime < 60 ? 5 : 0;
   bettingTime.textContent = setting.bettingTime;
-  localStorage.setItem('setting', JSON.stringify(setting));
+  localStorage.setItem("setting", JSON.stringify(setting));
 });
 
-bettingTimeMinusBtn.addEventListener('click', function () {
+bettingTimeMinusBtn.addEventListener("click", function () {
   bubbleClick.play();
-  this.classList.add('zoomoutAnimate');
+  this.classList.add("zoomoutAnimate");
   setTimeout(() => {
-    this.classList.remove('zoomoutAnimate');
+    this.classList.remove("zoomoutAnimate");
   }, 250);
   setting.bettingTime -= setting.bettingTime > 10 ? 5 : 0;
   bettingTime.textContent = setting.bettingTime;
-  localStorage.setItem('setting', JSON.stringify(setting));
+  localStorage.setItem("setting", JSON.stringify(setting));
 });
-aboutBettingSlotsBtn.addEventListener('click', function () {
+aboutBettingSlotsBtn.addEventListener("click", function () {
   bubbleClick.play();
-  this.classList.add('zoomoutAnimate');
+  this.classList.add("zoomoutAnimate");
   setTimeout(() => {
-    this.classList.remove('zoomoutAnimate');
-    aboutBettingSlots.style.display = 'flex';
-    settingContainer.style.display = 'none';
+    this.classList.remove("zoomoutAnimate");
+    aboutBettingSlots.style.display = "flex";
+    settingContainer.style.display = "none";
   }, 210);
 });
-aboutBettingSlotsBackBtn.addEventListener('click', function () {
+aboutBettingSlotsBackBtn.addEventListener("click", function () {
   bubbleClick.play();
-  this.classList.add('zoomoutAnimate');
+  this.classList.add("zoomoutAnimate");
   setTimeout(() => {
-    this.classList.remove('zoomoutAnimate');
-    aboutBettingSlots.style.display = 'none';
-    settingContainer.style.display = 'flex';
+    this.classList.remove("zoomoutAnimate");
+    aboutBettingSlots.style.display = "none";
+    settingContainer.style.display = "flex";
   }, 210);
 });
-privacy.addEventListener('click', function () {
+privacy.addEventListener("click", function () {
   bubbleClick.play();
-  this.classList.add('zoomoutAnimate');
+  this.classList.add("zoomoutAnimate");
   setTimeout(() => {
-    this.classList.remove('zoomoutAnimate');
+    this.classList.remove("zoomoutAnimate");
   }, 210);
 });
-userAgreement.addEventListener('click', function () {
+userAgreement.addEventListener("click", function () {
   bubbleClick.play();
-  this.classList.add('zoomoutAnimate');
+  this.classList.add("zoomoutAnimate");
   setTimeout(() => {
-    this.classList.remove('zoomoutAnimate');
+    this.classList.remove("zoomoutAnimate");
   }, 210);
 });
 
-profileBtn.addEventListener('click', function () {
+profileBtn.addEventListener("click", function () {
   bubbleClick.play();
   if (menuController == false) {
     return;
   }
-  this.classList.add('zoomoutAnimate');
+  this.classList.add("zoomoutAnimate");
   setTimeout(() => {
-    this.classList.remove('zoomoutAnimate');
-    gameWelcome.style.display = 'none';
-    profileContainer.style.display = 'flex';
+    this.classList.remove("zoomoutAnimate");
+    gameWelcome.style.display = "none";
+    profileContainer.style.display = "flex";
   }, 210);
 });
-profilebackBtn.addEventListener('click', function () {
+profilebackBtn.addEventListener("click", function () {
   bubbleClick.play();
-  this.classList.add('zoomoutAnimate');
+  this.classList.add("zoomoutAnimate");
   setTimeout(() => {
-    this.classList.remove('zoomoutAnimate');
-    gameWelcome.style.display = 'block';
-    profileContainer.style.display = 'none';
+    this.classList.remove("zoomoutAnimate");
+    gameWelcome.style.display = "block";
+    profileContainer.style.display = "none";
   }, 210);
 });
 
-achievementBtn.addEventListener('click', function () {
+achievementBtn.addEventListener("click", function () {
   bubbleClick.play();
   if (menuController == false) {
     return;
   }
-  this.classList.add('zoomoutAnimate');
+  this.classList.add("zoomoutAnimate");
   setTimeout(() => {
-    this.classList.remove('zoomoutAnimate');
-    gameWelcome.style.display = 'none';
-    achievementContainer.style.display = 'flex';
+    this.classList.remove("zoomoutAnimate");
+    gameWelcome.style.display = "none";
+    achievementContainer.style.display = "flex";
   }, 210);
 });
-achievementbackBtn.addEventListener('click', function () {
+achievementbackBtn.addEventListener("click", function () {
   bubbleClick.play();
-  this.classList.add('zoomoutAnimate');
+  this.classList.add("zoomoutAnimate");
   setTimeout(() => {
-    this.classList.remove('zoomoutAnimate');
-    gameWelcome.style.display = 'block';
-    achievementContainer.style.display = 'none';
+    this.classList.remove("zoomoutAnimate");
+    gameWelcome.style.display = "block";
+    achievementContainer.style.display = "none";
   }, 210);
 });
 
 // InGameScreen----------------------------------------
 
-okBtn.addEventListener('click', function () {
+okBtn.addEventListener("click", function () {
   bubbleClick.play();
   mainBackgroundSound.play();
-  this.classList.add('zoomoutAnimate');
+  this.classList.add("zoomoutAnimate");
   setTimeout(() => {
-    this.classList.remove('zoomoutAnimate');
+    this.classList.remove("zoomoutAnimate");
     playPermission = true;
-    warning.style.display = 'none';
+    warning.style.display = "none";
   }, 100);
 });
-okBtn2.addEventListener('click', function () {
+okBtn2.addEventListener("click", function () {
   bubbleClick.play();
   mainBackgroundSound.play();
-  this.classList.add('zoomoutAnimate');
+  this.classList.add("zoomoutAnimate");
   setTimeout(() => {
-    this.classList.remove('zoomoutAnimate');
+    this.classList.remove("zoomoutAnimate");
     playPermission = true;
-    outOfCoinWarning.style.display = 'none';
+    outOfCoinWarning.style.display = "none";
   }, 100);
 });
 
 for (let i = 0; i < betBtn.length; i++) {
-  betBtn[i].addEventListener('click', function () {
+  betBtn[i].addEventListener("click", function () {
     coinDropAudio.play();
-    this.classList.add('animalBtnClickAnimation');
+    this.classList.add("animalBtnClickAnimation");
     setTimeout(() => {
-      this.classList.remove('animalBtnClickAnimation');
+      this.classList.remove("animalBtnClickAnimation");
     }, 100);
     if (betPermission === false) {
       return;
@@ -452,11 +452,11 @@ for (let i = 0; i < betBtn.length; i++) {
   });
 }
 
-getCoinBtn.addEventListener('click', function () {
+getCoinBtn.addEventListener("click", function () {
   coinDropAudio.play();
-  this.classList.add('zoomoutAnimate');
+  this.classList.add("zoomoutAnimate");
   setTimeout(() => {
-    this.classList.remove('zoomoutAnimate');
+    this.classList.remove("zoomoutAnimate");
   }, 210);
 });
 
@@ -465,41 +465,41 @@ let timerId = 0;
 let playPermission = true;
 let betPermission = false;
 let preAmount;
-startBtn.addEventListener('click', function () {
+startBtn.addEventListener("click", function () {
   bubbleClick.play();
   mainBackgroundSound.pause();
   backGroundSound.play();
-  this.classList.add('zoomoutAnimate');
+  this.classList.add("zoomoutAnimate");
   setTimeout(() => {
-    this.classList.remove('zoomoutAnimate');
+    this.classList.remove("zoomoutAnimate");
   }, 210);
   if (playPermission === false) {
     return;
   } else {
-    quitConfirm.style.display = 'none';
+    quitConfirm.style.display = "none";
     playPermission = false;
     betPermission = true;
     if (+myOwnCoin.firstElementChild.textContent === 0) {
-      outOfCoinWarning.style.display = 'flex';
+      outOfCoinWarning.style.display = "flex";
     } else {
       count = setting.bettingTime;
-      circle.style.display = 'block';
-      circleEle.style.stroke = '#ff7b01';
-      secondSpan.style.color = '#ffe600';
+      circle.style.display = "block";
+      circleEle.style.stroke = "#ff7b01";
+      secondSpan.style.color = "#ffe600";
       if (timerId !== 0) return;
       preAmount = +myOwnCoin.firstElementChild.textContent;
       timerId = setInterval(function () {
         let s = count;
-        s = s < 10 ? '0' + s : s;
+        s = s < 10 ? "0" + s : s;
         secondSpan.textContent = s;
 
-        countDown.style.display = 'block';
+        countDown.style.display = "block";
         let radius = circleEle.r.baseVal.value;
         let circumference = radius * 2 * Math.PI;
         let barLength = (count * circumference) / setting.bettingTime;
         circleEle.setAttribute(
-          'stroke-dasharray',
-          barLength + ' ' + circumference
+          "stroke-dasharray",
+          barLength + " " + circumference
         );
 
         betPermission = true;
@@ -507,17 +507,17 @@ startBtn.addEventListener('click', function () {
           backGroundSound.pause();
           clockTick.load();
           clockTick.play();
-          circleEle.style.stroke = 'red';
-          secondSpan.style.color = 'red';
+          circleEle.style.stroke = "red";
+          secondSpan.style.color = "red";
         }
         if (count === 0) {
           clockTick.pause();
-          secondSpan.textContent = 'GO';
+          secondSpan.textContent = "GO";
         }
         if (count < 0) {
           countingEnd();
           if (+betCoins.firstElementChild.textContent === 0) {
-            warning.style.display = 'flex';
+            warning.style.display = "flex";
           } else {
             gameIntervel = 0;
             let random = getRandomInt(32);
@@ -556,17 +556,17 @@ function countingEnd() {
   clockTick.pause();
   backGroundSound.pause();
   count = setting.bettingTime;
-  countDown.style.display = 'none';
-  circleEle.style.stroke = '#ff7b01';
-  secondSpan.style.color = '#ffe600';
+  countDown.style.display = "none";
+  circleEle.style.stroke = "#ff7b01";
+  secondSpan.style.color = "#ffe600";
   betPermission = false;
 }
 
-removeBetBtn.addEventListener('click', function () {
+removeBetBtn.addEventListener("click", function () {
   bubbleClick.play();
-  this.classList.add('zoomoutAnimate');
+  this.classList.add("zoomoutAnimate");
   setTimeout(() => {
-    this.classList.remove('zoomoutAnimate');
+    this.classList.remove("zoomoutAnimate");
   }, 210);
   if (betPermission === false) {
     return;
@@ -588,34 +588,35 @@ removeBetBtn.addEventListener('click', function () {
   }
 });
 
-quitBtn.addEventListener('click', function () {
+quitBtn.addEventListener("click", function () {
   bubbleClick.play();
-  this.classList.add('zoomoutAnimate');
+  this.classList.add("zoomoutAnimate");
   setTimeout(() => {
-    this.classList.remove('zoomoutAnimate');
+    this.classList.remove("zoomoutAnimate");
   }, 210);
   if (!playPermission) return;
-  quitConfirm.style.display = 'flex';
+  quitConfirm.style.display = "flex";
   yesBtn.onclick = () => {
     menuController = true;
-    gameContainer.style.display = 'none';
-    gameWelcome.style.display = 'block';
-    quitConfirm.style.display = 'none';
+    gameContainer.style.display = "none";
+    animalsBar.style.display = "none";
+    gameWelcome.style.display = "block";
+    quitConfirm.style.display = "none";
   };
   noBtn.onclick = () => {
-    quitConfirm.style.display = 'none';
+    quitConfirm.style.display = "none";
   };
 });
 
 function check(x) {
-  animalsBar.style.display = 'flex';
+  animalsBar.style.display = "flex";
   if (x == 1 || x == 2 || x == 3) {
     myOwnCoin.firstElementChild.textContent =
       +myOwnCoin.firstElementChild.textContent +
       +myValue[0].firstElementChild.textContent * 4;
-    randomAnimal.style.display = 'block';
-    randomAnimal.src = './assets/images/animation-gif/dog.gif';
-    const animalItem = { srcEnd: 'dog(top corner).png' };
+    randomAnimal.style.display = "block";
+    randomAnimal.src = "./assets/images/animation-gif/dog.gif";
+    const animalItem = { srcEnd: "dog(top corner).png" };
     animalList.unshift(animalItem);
     renderAnimalList(animalsBar, animalList);
   }
@@ -623,9 +624,9 @@ function check(x) {
     myOwnCoin.firstElementChild.textContent =
       +myOwnCoin.firstElementChild.textContent +
       +myValue[1].firstElementChild.textContent * 6;
-    randomAnimal.style.display = 'block';
-    randomAnimal.src = './assets/images/animation-gif/monkey.gif';
-    const animalItem = { srcEnd: 'monkey(left side).png' };
+    randomAnimal.style.display = "block";
+    randomAnimal.src = "./assets/images/animation-gif/monkey.gif";
+    const animalItem = { srcEnd: "monkey(left side).png" };
     animalList.unshift(animalItem);
     renderAnimalList(animalsBar, animalList);
   }
@@ -633,9 +634,9 @@ function check(x) {
     myOwnCoin.firstElementChild.textContent =
       +myOwnCoin.firstElementChild.textContent +
       +myValue[2].firstElementChild.textContent * 12;
-    randomAnimal.style.display = 'block';
-    randomAnimal.src = './assets/images/animation-gif/sheep.gif';
-    const animalItem = { srcEnd: 'sheep(left side).png' };
+    randomAnimal.style.display = "block";
+    randomAnimal.src = "./assets/images/animation-gif/sheep.gif";
+    const animalItem = { srcEnd: "sheep(left side).png" };
     animalList.unshift(animalItem);
     renderAnimalList(animalsBar, animalList);
   }
@@ -643,9 +644,9 @@ function check(x) {
     myOwnCoin.firstElementChild.textContent =
       +myOwnCoin.firstElementChild.textContent +
       +myValue[3].firstElementChild.textContent * 24;
-    randomAnimal.style.display = 'block';
-    randomAnimal.src = './assets/images/animation-gif/elephant.gif';
-    const animalItem = { srcEnd: 'elephant(bottom).png' };
+    randomAnimal.style.display = "block";
+    randomAnimal.src = "./assets/images/animation-gif/elephant.gif";
+    const animalItem = { srcEnd: "elephant(bottom).png" };
     animalList.unshift(animalItem);
     renderAnimalList(animalsBar, animalList);
   }
@@ -653,9 +654,9 @@ function check(x) {
     myOwnCoin.firstElementChild.textContent =
       +myOwnCoin.firstElementChild.textContent +
       +myValue[4].firstElementChild.textContent * 4;
-    randomAnimal.style.display = 'block';
-    randomAnimal.src = './assets/images/animation-gif/seahorse.gif';
-    const animalItem = { srcEnd: 'seahorse(right side).png' };
+    randomAnimal.style.display = "block";
+    randomAnimal.src = "./assets/images/animation-gif/seahorse.gif";
+    const animalItem = { srcEnd: "seahorse(right side).png" };
     animalList.unshift(animalItem);
     renderAnimalList(animalsBar, animalList);
   }
@@ -663,9 +664,9 @@ function check(x) {
     myOwnCoin.firstElementChild.textContent =
       +myOwnCoin.firstElementChild.textContent +
       +myValue[5].firstElementChild.textContent * 6;
-    randomAnimal.style.display = 'block';
-    randomAnimal.src = './assets/images/animation-gif/jellyfish.gif';
-    const animalItem = { srcEnd: 'jellyfish(top corner).png' };
+    randomAnimal.style.display = "block";
+    randomAnimal.src = "./assets/images/animation-gif/jellyfish.gif";
+    const animalItem = { srcEnd: "jellyfish(top corner).png" };
     animalList.unshift(animalItem);
     renderAnimalList(animalsBar, animalList);
   }
@@ -673,9 +674,9 @@ function check(x) {
     myOwnCoin.firstElementChild.textContent =
       +myOwnCoin.firstElementChild.textContent +
       +myValue[6].firstElementChild.textContent * 12;
-    randomAnimal.style.display = 'block';
-    randomAnimal.src = './assets/images/animation-gif/dolphin.gif';
-    const animalItem = { srcEnd: 'dolphin(bottom).png' };
+    randomAnimal.style.display = "block";
+    randomAnimal.src = "./assets/images/animation-gif/dolphin.gif";
+    const animalItem = { srcEnd: "dolphin(bottom).png" };
     animalList.unshift(animalItem);
     renderAnimalList(animalsBar, animalList);
   }
@@ -683,9 +684,9 @@ function check(x) {
     myOwnCoin.firstElementChild.textContent =
       +myOwnCoin.firstElementChild.textContent +
       +myValue[7].firstElementChild.textContent * 24;
-    randomAnimal.style.display = 'block';
-    randomAnimal.src = './assets/images/animation-gif/shark.gif';
-    const animalItem = { srcEnd: 'shark(right side).png' };
+    randomAnimal.style.display = "block";
+    randomAnimal.src = "./assets/images/animation-gif/shark.gif";
+    const animalItem = { srcEnd: "shark(right side).png" };
     animalList.unshift(animalItem);
     renderAnimalList(animalsBar, animalList);
   }
@@ -693,9 +694,9 @@ function check(x) {
     myOwnCoin.firstElementChild.textContent =
       +myOwnCoin.firstElementChild.textContent +
       +myValue[8].firstElementChild.textContent * 24;
-    randomAnimal.style.display = 'block';
-    randomAnimal.src = './assets/images/animation-gif/birdAnimation.png';
-    const animalItem = { srcEnd: 'bird.png' };
+    randomAnimal.style.display = "block";
+    randomAnimal.src = "./assets/images/animation-gif/birdAnimation.png";
+    const animalItem = { srcEnd: "bird.png" };
     animalList.unshift(animalItem);
     renderAnimalList(animalsBar, animalList);
   }
@@ -703,9 +704,9 @@ function check(x) {
     myOwnCoin.firstElementChild.textContent =
       +myOwnCoin.firstElementChild.textContent +
       +myValue[9].firstElementChild.textContent * 48;
-    randomAnimal.style.display = 'block';
-    randomAnimal.src = './assets/images/animation-gif/whale.gif';
-    const animalItem = { srcEnd: 'whale(left+bottom).png' };
+    randomAnimal.style.display = "block";
+    randomAnimal.src = "./assets/images/animation-gif/whale.gif";
+    const animalItem = { srcEnd: "whale(left+bottom).png" };
     animalList.unshift(animalItem);
     renderAnimalList(animalsBar, animalList);
   }
@@ -754,23 +755,23 @@ function winOrLose(x, y) {
   if (x > y || x === y) {
     winSound.load();
     winSound.play();
-    showWinOrLose.textContent = 'WIN';
-    showWinOrLose.style.color = 'greenyellow';
+    showWinOrLose.textContent = "WIN";
+    showWinOrLose.style.color = "greenyellow";
     winCount.firstElementChild.textContent = x - y;
-    winCount.firstElementChild.style.color = 'greenyellow';
-    winOne.style.display = 'block';
-    winTwo.style.display = 'block';
-    winThree.style.display = 'block';
-    winFour.style.display = 'block';
-    celebration.style.display = 'block';
+    winCount.firstElementChild.style.color = "greenyellow";
+    winOne.style.display = "block";
+    winTwo.style.display = "block";
+    winThree.style.display = "block";
+    winFour.style.display = "block";
+    celebration.style.display = "block";
   } else {
     loseSound.load();
     loseSound.play();
-    showWinOrLose.textContent = 'LOSE';
-    showWinOrLose.style.color = 'rgb(253, 38, 38)';
+    showWinOrLose.textContent = "LOSE";
+    showWinOrLose.style.color = "rgb(253, 38, 38)";
     winCount.firstElementChild.textContent = y - x;
-    winCount.firstElementChild.style.color = 'rgb(253, 38, 38)';
-    loseGif.style.display = 'block';
+    winCount.firstElementChild.style.color = "rgb(253, 38, 38)";
+    loseGif.style.display = "block";
   }
 }
 
@@ -790,13 +791,13 @@ function animationCircle(random, speed) {
     if (i == 32) {
       i = 0;
     }
-    if (!centerImg[i].className.includes('animate')) {
-      centerImg[i].classList.add('animate');
+    if (!centerImg[i].className.includes("animate")) {
+      centerImg[i].classList.add("animate");
     }
     if (i > 0) {
-      centerImg[i - 1].classList.remove('animate');
+      centerImg[i - 1].classList.remove("animate");
     } else {
-      centerImg[31].classList.remove('animate');
+      centerImg[31].classList.remove("animate");
     }
     i++;
     number--;
@@ -807,51 +808,51 @@ function animationCircle(random, speed) {
 
       setTimeout(() => {
         selectSound.play();
-        centerImg[i - 1].classList.remove('animate');
+        centerImg[i - 1].classList.remove("animate");
         setTimeout(() => {
           selectSound.play();
-          centerImg[i - 1].classList.add('animate');
+          centerImg[i - 1].classList.add("animate");
         }, 200);
         setTimeout(() => {
           selectSound.play();
-          centerImg[i - 1].classList.remove('animate');
+          centerImg[i - 1].classList.remove("animate");
         }, 400);
         setTimeout(() => {
           selectSound.play();
-          centerImg[i - 1].classList.add('animate');
+          centerImg[i - 1].classList.add("animate");
         }, 600);
         setTimeout(() => {
           selectSound.play();
-          centerImg[i - 1].classList.remove('animate');
+          centerImg[i - 1].classList.remove("animate");
         }, 800);
         setTimeout(() => {
           selectSound.play();
-          centerImg[i - 1].classList.add('animate');
+          centerImg[i - 1].classList.add("animate");
         }, 1000);
         setTimeout(() => {
           selectSound.play();
-          centerImg[i - 1].classList.remove('animate');
+          centerImg[i - 1].classList.remove("animate");
         }, 1200);
         setTimeout(() => {
           selectSound.play();
-          centerImg[i - 1].classList.add('animate');
+          centerImg[i - 1].classList.add("animate");
         }, 1400);
         setTimeout(() => {
           selectSound.play();
-          centerImg[i - 1].classList.remove('animate');
+          centerImg[i - 1].classList.remove("animate");
         }, 1600);
       }, 500);
 
       setTimeout(() => {
         winOrLose(finalAmount, preAmount);
         setTimeout(() => {
-          randomAnimal.style.display = 'none';
-          loseGif.style.display = 'none';
-          winOne.style.display = 'none';
-          winTwo.style.display = 'none';
-          winThree.style.display = 'none';
-          winFour.style.display = 'none';
-          celebration.style.display = 'none';
+          randomAnimal.style.display = "none";
+          loseGif.style.display = "none";
+          winOne.style.display = "none";
+          winTwo.style.display = "none";
+          winThree.style.display = "none";
+          winFour.style.display = "none";
+          celebration.style.display = "none";
           winSound.pause();
           loseSound.pause();
         }, 10000);
@@ -862,10 +863,10 @@ function animationCircle(random, speed) {
           myValue[i].firstElementChild.textContent = 0;
         }
         betCoins.firstElementChild.textContent = 0;
-        showWinOrLose.textContent = 'WIN';
-        showWinOrLose.style.color = 'white';
+        showWinOrLose.textContent = "WIN";
+        showWinOrLose.style.color = "white";
         winCount.firstElementChild.textContent = 0;
-        winCount.firstElementChild.style.color = 'orange';
+        winCount.firstElementChild.style.color = "orange";
         playPermission = true;
         // playBackgroundSound();
         mainBackgroundSound.play();
@@ -876,7 +877,7 @@ function animationCircle(random, speed) {
           playPermission == true &&
           +myOwnCoin.firstElementChild.textContent == 0
         ) {
-          outOfCoinAnimation.style.display = 'block';
+          outOfCoinAnimation.style.display = "block";
         }
       }, 13000);
     }
