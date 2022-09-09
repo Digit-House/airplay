@@ -1,7 +1,7 @@
 .animalsBar {
   position: absolute;
   transform: translateY(-50%, -50%);
-  right: 2.5%;
+  right: -105px;
   width: 80px;
   height: auto;
   background: linear-gradient(90deg, #ffe600, #ff7b01);
@@ -729,8 +729,8 @@
   position: absolute;
   width: 50%;
   height: auto;
-  bottom: 8%;
-  left: 30%;
+  bottom: -4%;
+  left: 29%;
   display: none;
   animation: win 1s ease-in-out;
 }
@@ -738,7 +738,6 @@
 .celebration {
   position: absolute;
   display: none;
-  width: 100%;
+  width: 80%;
   top: 0%;
-  left: 0%;
 }
