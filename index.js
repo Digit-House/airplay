@@ -11,6 +11,8 @@ backGroundSound.loop = true;
 const clockTick = document.querySelector(".clockTick");
 const winSound = document.querySelector(".winSound");
 const loseSound = document.querySelector(".loseSound");
+const gameSpin = document.querySelector(".gameSpin");
+gameSpin.loop = true;
 const loadingScreen = document.querySelector(".loading-screen");
 const gameWelcome = document.querySelector(".game__welcome");
 const profileBtn = document.querySelector(".game__welcome-top-item2-name");
@@ -69,6 +71,7 @@ const winThree = document.querySelector(".winning3");
 const winFour = document.querySelector(".winning4");
 const loseGif = document.querySelector(".loserGif");
 const celebration = document.querySelector(".celebration");
+const loserDolphin = document.querySelector(".loserDolphin");
 
 const animalsBar = document.querySelector(".animalsBar");
 let animalList = [];
@@ -249,12 +252,15 @@ function volumeBarFunction(value) {
   // lossAudio.volume = value / 100;
   // winAudio.volume = value / 100;
   // endAudio.volume = value / 100;
-  // coinDropAudio.volume = value / 100;
+  coinDropAudio.volume = value / 100;
   mainBackgroundSound.volume = value / 100;
   backGroundSound.volume = value / 100;
   clockTick.volume = value / 100;
   winSound.volume = value / 100;
   loseSound.volume = value / 100;
+  selectSound.volume = value / 100;
+  gameSpin.volume = value / 100;
+  selectSound.volume = value / 100;
 
   setting.volume = value;
   localStorage.setItem("setting", JSON.stringify(setting));
@@ -520,6 +526,8 @@ startBtn.addEventListener("click", function () {
             warning.style.display = "flex";
           } else {
             gameIntervel = 0;
+            gameSpin.load();
+            gameSpin.play();
             let random = getRandomInt(32);
             animationCircle(null, 100);
             setTimeout(() => {
@@ -772,6 +780,7 @@ function winOrLose(x, y) {
     winCount.firstElementChild.textContent = y - x;
     winCount.firstElementChild.style.color = "rgb(253, 38, 38)";
     loseGif.style.display = "block";
+    loserDolphin.style.display = "block";
   }
 }
 
@@ -804,6 +813,7 @@ function animationCircle(random, speed) {
     if (number == 0) {
       clearInterval(gameIntervel);
       let y = i - 1;
+      gameSpin.pause();
       check(y);
 
       setTimeout(() => {
@@ -848,6 +858,7 @@ function animationCircle(random, speed) {
         setTimeout(() => {
           randomAnimal.style.display = "none";
           loseGif.style.display = "none";
+          loserDolphin.style.display = "none";
           winOne.style.display = "none";
           winTwo.style.display = "none";
           winThree.style.display = "none";
