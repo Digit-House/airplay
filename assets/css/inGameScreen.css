@@ -730,7 +730,7 @@
   width: 50%;
   height: auto;
   bottom: -4%;
-  left: 29%;
+  left: 27.5%;
   display: none;
   animation: win 1s ease-in-out;
 }
@@ -740,4 +740,11 @@
   display: none;
   width: 80%;
   top: 0%;
+}
+
+.loserDolphin {
+  position: absolute;
+  height: 80%;
+  left: -22%;
+  display: none;
 }
