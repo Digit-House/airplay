@@ -16,7 +16,7 @@
   );
   position: absolute;
   z-index: 10;
-  display: none;
+  display: flex;
   position: absolute;
   animation: time 500ms ease-in-out forwards;
 }
@@ -39,9 +39,9 @@
 }
 
 .button:active {
-  background-color: #3e3bba;
+  background-color: rgb(47, 70, 220);
   background-image: none;
-  border-color: #3a38ae;
+  border-color: #0063ff;
   box-shadow: rgba(46, 54, 80, 0.125) 0 3px 5px inset;
 }
 
@@ -63,13 +63,14 @@
 .yesBtn,
 .okBtn {
   appearance: button;
-  background-color: #4d4ae8;
   background-image: linear-gradient(
     180deg,
-    rgba(255, 255, 255, 0.15),
+    rgba(255, 255, 255, 0.3) 10%,
     rgba(255, 255, 255, 0)
   );
-  border: 1px solid #4d4ae8;
+  background-color: #0063ff;
+
+  border: 1px solid #0063ff;
   border-radius: 1rem;
   box-shadow: rgba(255, 255, 255, 0.15) 0 1px 0 inset,
     rgba(46, 54, 80, 0.075) 0 1px 1px;
