@@ -464,10 +464,14 @@ for (let i = 0; i < betBtn.length; i++) {
   betBtn[i].addEventListener('mousedown', function(){
     betHold = setInterval(function(){
       betting(i);
-    },400)
+    },120)
   })
 
   betBtn[i].addEventListener('mouseup', function(){
+    clearInterval(betHold);
+  })
+
+  betBtn[i].addEventListener('mouseleave', function(){
     clearInterval(betHold);
   })
 }
