@@ -433,12 +433,11 @@ okBtn2.addEventListener('click', function () {
   }, 100);
 });
 
-for (let i = 0; i < betBtn.length; i++) {
-  betBtn[i].addEventListener('click', function () {
-    coinDropAudio.play();
-    this.classList.add('animalBtnClickAnimation');
+function betting(i){
+  coinDropAudio.play();
+    betBtn[i].classList.add('animalBtnClickAnimation');
     setTimeout(() => {
-      this.classList.remove('animalBtnClickAnimation');
+      betBtn[i].classList.remove('animalBtnClickAnimation');
     }, 100);
     if (betPermission === false) {
       return;
@@ -455,7 +454,22 @@ for (let i = 0; i < betBtn.length; i++) {
           +betCoins.firstElementChild.textContent + 1;
       }
     }
+};
+
+for (let i = 0; i < betBtn.length; i++) {
+  betBtn[i].addEventListener('click', function () {
+    betting(i);
   });
+
+  betBtn[i].addEventListener('mousedown', function(){
+    betHold = setInterval(function(){
+      betting(i);
+    },400)
+  })
+
+  betBtn[i].addEventListener('mouseup', function(){
+    clearInterval(betHold);
+  })
 }
 
 getCoinBtn.addEventListener('click', function () {
