@@ -1,0 +1,129 @@
+.profileContainer {
+  display: none;
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  border-radius: 45px;
+  cursor: pointer;
+  position: relative;
+}
+.profileContainer .leftprofileContainer {
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 1.2rem;
+}
+.name {
+  font-size: 4rem;
+  background-image: linear-gradient(to bottom, #ffe600, #ff7b01);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.levelLine2 {
+  width: 97%;
+  height: 30px;
+  border: 10px solid white;
+  border-radius: 50px;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.09) 3px 3px 6px 0px inset,
+    rgba(0, 0, 0, 0.09) -3px -3px 6px 1px inset,
+    rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.currentLevel2 {
+  background-image: linear-gradient(to bottom, #ffe600, #ff7b01);
+  width: 50%;
+  height: 100%;
+}
+.coinBox2 {
+  width: 60%;
+  height: 90px;
+  background-image: linear-gradient(to bottom, #ffe600, #ff7b01);
+  border-radius: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 2.8rem;
+  font-weight: 1000;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+    rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+    rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+.coinBox2 p {
+  font-size: 3.5rem;
+  letter-spacing: 4px;
+  text-shadow: 5px 5px 2px #5b5959;
+}
+.coinBox2 img {
+  width: 65px;
+  height: 65px;
+  margin-right: 1rem;
+}
+.redeem {
+  width: 100%;
+  height: 90px;
+  background-image: linear-gradient(to bottom, #ffe600, #ff7b01);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+    rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+    rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+.redeem input {
+  width: 80%;
+  height: 60px;
+  border-radius: 10px;
+  font-size: 2.5rem;
+  font-weight: bolder;
+  padding: 0 1rem;
+  outline: none;
+  border: none;
+  color: silver;
+  font-family: "Mouse Memoirs", sans-serif;
+  letter-spacing: 2px;
+}
+.redeem input::placeholder {
+  color: silver;
+}
+.redeem i {
+  font-size: 4rem;
+  color: white;
+}
+.profileContainer .rightprofileContainer {
+  width: 35%;
+  height: 70%;
+  border-radius: 3rem;
+  background-image: linear-gradient(to bottom, #ffe600, #ff7b01);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.profileContainer .rightprofileContainer img {
+  width: 90%;
+  height: 90%;
+  border-radius: 2rem;
+}
+.profilebackBtn {
+  position: absolute;
+  top: 25px;
+  left: 30px;
+  color: white;
+  font-size: 3rem;
+  background-image: linear-gradient(to bottom, #ffe600, #ff7b01);
+  padding: 4px 16px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+    rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+    rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  cursor: pointer;
+}

@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Air Play</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="./assets/images/gameicon copy 2.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4350857596140901"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/b053ab4793.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <section class="container">
+      <img
+        src="./assets/images/animation-gif/ezgif.com-gif-maker.gif"
+        alt=""
+        class="loserDolphin"
+      />
+      <section class="animalsBar">
+        <!-- <img src="" alt=""> -->
+      </section>
+      <section class="game">
+        <!-- loading-screen start -->
+        <div class="loading-screen">
+          <div class="wrapper">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="shadow"></div>
+            <div class="shadow"></div>
+            <div class="shadow"></div>
+            <span>Loading</span>
+          </div>
+        </div>
+        <!-- loading-screen end -->
+
+        <!-- profileContainer start -->
+        <div class="profileContainer">
+          <i class="profilebackBtn fa-solid fa-caret-left"></i>
+          <div class="leftprofileContainer">
+            <p class="name">John</p>
+            <div class="levelLine2">
+              <div class="currentLevel2"></div>
+            </div>
+            <div class="coinBox2">
+              <img src="./assets/images/btn/coin1.png" alt="" />
+              <p class="showCoinInProfile">600</p>
+            </div>
+            <div class="redeem">
+              <input type="text" placeholder="Redeem Code " />
+              <i class="fa-solid fa-caret-right"></i>
+            </div>
+          </div>
+          <div class="rightprofileContainer">
+            <img src="./assets/images/menu-board/person icon.png" alt="" />
+          </div>
+        </div>
+        <!-- profileContainer end -->
+
+        <!-- LeaderBoard_Start -->
+        <div class="achievementContainer">
+          <i class="achievementbackBtn fa-solid fa-caret-left"></i>
+          <h5>Leaderboard</h5>
+          <div class="achievementTable">
+            <div class="achievementPerson achievementPersonFirstChild">
+              <p class="achievementName">Andrew</p>
+              <div class="achievementPoint">
+                1200<i class="fa-solid fa-trophy gold"></i>
+              </div>
+            </div>
+            <div class="achievementPerson">
+              <p class="achievementName">Randy</p>
+              <div class="achievementPoint">
+                1199<i class="fa-solid fa-trophy silver"></i>
+              </div>
+            </div>
+            <div class="achievementPerson">
+              <p class="achievementName">John</p>
+              <div class="achievementPoint">
+                1198<i class="fa-solid fa-trophy copper"></i>
+              </div>
+            </div>
+            <div class="achievementPerson">
+              <p class="achievementName">John Doe</p>
+              <div class="achievementPoint">1197</div>
+            </div>
+            <div class="achievementPerson">
+              <p class="achievementName">Jake</p>
+              <div class="achievementPoint">1196</div>
+            </div>
+            <div class="achievementPerson">
+              <p class="achievementName">Snoop</p>
+              <div class="achievementPoint">1195</div>
+            </div>
+            <div class="achievementPerson achievementPersonLastChild">
+              <p class="achievementName">John Wick</p>
+              <div class="achievementPoint">1194</div>
+            </div>
+          </div>
+        </div>
+        <!-- LeaderBoard_End -->
+
+        <!-- settingContainer start -->
+        <div class="settingContainer">
+          <h3>Setting</h3>
+          <div>
+            <div>
+              <span>Music</span>
+            </div>
+            <div class="right">
+              <div class="switch">
+                <input type="checkbox" class="musicBtn" />
+                <label for="switcher"></label>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div>
+              <span>Volume</span>
+            </div>
+            <div class="right">
+              <div class="volCon">
+                <input
+                  class="volumeControl"
+                  type="range"
+                  min="0"
+                  max="100"
+                  step="1"
+                  value="100"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="bettingTimeCon">
+            <div>
+              <span>Betting Time</span>
+            </div>
+            <div class="right">
+              <div class="bettingTimeMinusBtn">-</div>
+              <p class="bettingTime">30</p>
+              <div class="bettingTimePlusBtn">+</div>
+            </div>
+          </div>
+          <div>
+            <div>
+              <div class="privacy">
+                <p>Privacy & Policy</p>
+              </div>
+            </div>
+            <div class="right">
+              <div class="userAgreement">
+                <p>User Agreement</p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="center">
+              <div class="aboutBettingSlotsBtn">
+                <p>About Betting Slots</p>
+              </div>
+            </div>
+          </div>
+          <i class="settingBackBtn fa-solid fa-caret-left"></i>
+        </div>
+        <!-- settingContainer end -->
+
+        <!-- aboutBettingSlots start -->
+        <div class="aboutBettingSlots">
+          <img class="logo" src="./assets/images/gameicon copy 2.png" alt="" />
+          <div class="info">
+            <h3 class="gameName">Betting Slots</h3>
+            <p>Version 1.0.0</p>
+            <div>
+              <h4>Version</h4>
+              <p>1.0.0_3eb6f01_210926</p>
+            </div>
+            <div>
+              <h4>Engine version</h4>
+              <p>1065</p>
+            </div>
+          </div>
+          <div class="aboutBettingSlotsBackBtn">
+            <i class="fa-solid fa-caret-left"></i>
+          </div>
+        </div>
+        <!-- aboutBettingSlots end -->
+
+        <!--privacy & policy start=============================================================================-->
+        <div class="privacy__container">
+          <h1>Privacy Policy</h1>
+
+          <p>
+            At airplay, accessible from https://mmairplay.com, one of our main
+            priorities is the privacy of our visitors. This Privacy Policy
+            document contains types of information that is collected and
+            recorded by airplay and how we use it.
+          </p>
+
+          <p>
+            If you have additional questions or require more information about
+            our Privacy Policy, do not hesitate to contact us.
+          </p>
+
+          <p>
+            This Privacy Policy applies only to our online activities and is
+            valid for visitors to our website with regards to the information
+            that they shared and/or collect in airplay. This policy is not
+            applicable to any information collected offline or via channels
+            other than this website. Our Privacy Policy was created with the
+            help of the
+            <a href="https://www.privacypolicygenerator.info/"
+              >Free Privacy Policy Generator</a
+            >.
+          </p>
+
+          <h2>Consent</h2>
+
+          <p>
+            By using our website, you hereby consent to our Privacy Policy and
+            agree to its terms.
+          </p>
+
+          <h2>Information we collect</h2>
+
+          <p>
+            The personal information that you are asked to provide, and the
+            reasons why you are asked to provide it, will be made clear to you
+            at the point we ask you to provide your personal information.
+          </p>
+          <p>
+            If you contact us directly, we may receive additional information
+            about you such as your name, email address, phone number, the
+            contents of the message and/or attachments you may send us, and any
+            other information you may choose to provide.
+          </p>
+          <p>
+            When you register for an Account, we may ask for your contact
+            information, including items such as name, company name, address,
+            email address, and telephone number.
+          </p>
+
+          <h2>How we use your information</h2>
+
+          <p>
+            We use the information we collect in various ways, including to:
+          </p>
+
+          <ul>
+            <li>Provide, operate, and maintain our website</li>
+            <li>Improve, personalize, and expand our website</li>
+            <li>Understand and analyze how you use our website</li>
+            <li>Develop new products, services, features, and functionality</li>
+            <li>
+              Communicate with you, either directly or through one of our
+              partners, including for customer service, to provide you with
+              updates and other information relating to the website, and for
+              marketing and promotional purposes
+            </li>
+            <li>Send you emails</li>
+            <li>Find and prevent fraud</li>
+          </ul>
+
+          <h2>Log Files</h2>
+
+          <p>
+            airplay follows a standard procedure of using log files. These files
+            log visitors when they visit websites. All hosting companies do this
+            and a part of hosting services' analytics. The information collected
+            by log files include internet protocol (IP) addresses, browser type,
+            Internet Service Provider (ISP), date and time stamp, referring/exit
+            pages, and possibly the number of clicks. These are not linked to
+            any information that is personally identifiable. The purpose of the
+            information is for analyzing trends, administering the site,
+            tracking users' movement on the website, and gathering demographic
+            information.
+          </p>
+
+          <h2>Google DoubleClick DART Cookie</h2>
+
+          <p>
+            Google is one of a third-party vendor on our site. It also uses
+            cookies, known as DART cookies, to serve ads to our site visitors
+            based upon their visit to www.website.com and other sites on the
+            internet. However, visitors may choose to decline the use of DART
+            cookies by visiting the Google ad and content network Privacy Policy
+            at the following URL –
+            <a href="https://policies.google.com/technologies/ads"
+              >https://policies.google.com/technologies/ads</a
+            >
+          </p>
+
+          <h2>Advertising Partners Privacy Policies</h2>
+
+          <p>
+            You may consult this list to find the Privacy Policy for each of the
+            advertising partners of airplay.
+          </p>
+
+          <p>
+            Third-party ad servers or ad networks uses technologies like
+            cookies, JavaScript, or Web Beacons that are used in their
+            respective advertisements and links that appear on airplay, which
+            are sent directly to users' browser. They automatically receive your
+            IP address when this occurs. These technologies are used to measure
+            the effectiveness of their advertising campaigns and/or to
+            personalize the advertising content that you see on websites that
+            you visit.
+          </p>
+
+          <p>
+            Note that airplay has no access to or control over these cookies
+            that are used by third-party advertisers.
+          </p>
+
+          <h2>Third Party Privacy Policies</h2>
+
+          <p>
+            airplay's Privacy Policy does not apply to other advertisers or
+            websites. Thus, we are advising you to consult the respective
+            Privacy Policies of these third-party ad servers for more detailed
+            information. It may include their practices and instructions about
+            how to opt-out of certain options.
+          </p>
+
+          <p>
+            You can choose to disable cookies through your individual browser
+            options. To know more detailed information about cookie management
+            with specific web browsers, it can be found at the browsers'
+            respective websites.
+          </p>
+
+          <h2>CCPA Privacy Rights (Do Not Sell My Personal Information)</h2>
+
+          <p>
+            Under the CCPA, among other rights, California consumers have the
+            right to:
+          </p>
+          <p>
+            Request that a business that collects a consumer's personal data
+            disclose the categories and specific pieces of personal data that a
+            business has collected about consumers.
+          </p>
+          <p>
+            Request that a business delete any personal data about the consumer
+            that a business has collected.
+          </p>
+          <p>
+            Request that a business that sells a consumer's personal data, not
+            sell the consumer's personal data.
+          </p>
+          <p>
+            If you make a request, we have one month to respond to you. If you
+            would like to exercise any of these rights, please contact us.
+          </p>
+
+          <h2>GDPR Data Protection Rights</h2>
+
+          <p>
+            We would like to make sure you are fully aware of all of your data
+            protection rights. Every user is entitled to the following:
+          </p>
+          <p>
+            The right to access – You have the right to request copies of your
+            personal data. We may charge you a small fee for this service.
+          </p>
+          <p>
+            The right to rectification – You have the right to request that we
+            correct any information you believe is inaccurate. You also have the
+            right to request that we complete the information you believe is
+            incomplete.
+          </p>
+          <p>
+            The right to erasure – You have the right to request that we erase
+            your personal data, under certain conditions.
+          </p>
+          <p>
+            The right to restrict processing – You have the right to request
+            that we restrict the processing of your personal data, under certain
+            conditions.
+          </p>
+          <p>
+            The right to object to processing – You have the right to object to
+            our processing of your personal data, under certain conditions.
+          </p>
+          <p>
+            The right to data portability – You have the right to request that
+            we transfer the data that we have collected to another organization,
+            or directly to you, under certain conditions.
+          </p>
+          <p>
+            If you make a request, we have one month to respond to you. If you
+            would like to exercise any of these rights, please contact us.
+          </p>
+
+          <h2>Children's Information</h2>
+
+          <p>
+            Another part of our priority is adding protection for children while
+            using the internet. We encourage parents and guardians to observe,
+            participate in, and/or monitor and guide their online activity.
+          </p>
+
+          <p class="privacy-end">
+            airplay does not knowingly collect any Personal Identifiable
+            Information from children under the age of 13. If you think that
+            your child provided this kind of information on our website, we
+            strongly encourage you to contact us immediately and we will do our
+            best efforts to promptly remove such information from our records.
+          </p>
+
+          <button class="privacyBack">Go Setting</button>
+
+          <div class="privacyBackBtn">
+            <i class="fa-solid fa-caret-left"></i>
+          </div>
+        </div>
+        <!--privacy & policy end=============================================================================-->
+
+        <!--wellcome start=====================================================================================-->
+        <div class="game__welcome">
+          <div class="game__welcome-top">
+            <div class="game__welcome-top-item1">
+              <div class="volumeBtn">
+                <i class="fa-solid fa-volume-high"></i>
+              </div>
+              <!-- <img src="./assets/images/menu-board/sound.png" alt="" class="vloume"> -->
+              <img
+                src="./assets/images/menu-board/victory.png"
+                alt=""
+                class="achievementBtn"
+              />
+              <img
+                src="./assets/images/menu-board/setting.png"
+                alt=""
+                class="settingBtn"
+              />
+            </div>
+            <div class="game__welcome-top-item2">
+              <div class="game__welcome-top-item2-name">
+                <div class="game__welcome-top-item2-name-left">
+                  <p>John</p>
+                  <div class="game__welcome-top-item2-name-left-level">
+                    <div class="level-bar"></div>
+                  </div>
+                </div>
+                <img src="./assets/images/menu-board/person icon.png" alt="" />
+              </div>
+              <div class="game__welcome-top-item2-coin">
+                <img src="./assets/images/btn/coin1.png" alt="" />
+                <p class="wellcomeTotal">600</p>
+              </div>
+            </div>
+          </div>
+          <div class="game__welcome-center">
+            <img
+              src="./assets/images/menu-board/play.png"
+              alt=""
+              id="welcomePlay"
+            />
+            <div class="loadingBox">
+              <div class="loadingTitle">
+                <span class="title-word title-word-1">L</span>
+                <span class="title-word title-word-2">O</span>
+                <span class="title-word title-word-3">A</span>
+                <span class="title-word title-word-4">D</span>
+                <span class="title-word title-word-2">I</span>
+                <span class="title-word title-word-1">N</span>
+                <span class="title-word title-word-3">G</span>
+              </div>
+              <div class="spinner"></div>
+            </div>
+          </div>
+        </div>
+        <!--welcome end===================================================================================-->
+
+        <!-- InGameScreen_Start -->
+        <div class="game__container">
+          <div class="game__container-left">
+            <div class="leftSideBoxContainer">
+              <div class="box">
+                <div class="btnGroup">
+                  <img
+                    class="animalCircleImg"
+                    src="./assets/images/round-buttons/dog.png"
+                    alt=""
+                  />
+                </div>
+                <div class="amountField">
+                  <section class="myValue"><span>0</span></section>
+                  <section class="maxValue"><span>4</span></section>
+                </div>
+              </div>
+              <div class="box">
+                <div class="btnGroup">
+                  <img
+                    class="animalCircleImg"
+                    src="./assets/images/round-buttons/monkey.png"
+                    alt=""
+                  />
+                </div>
+                <div class="amountField">
+                  <section class="myValue"><span>0</span></section>
+                  <section class="maxValue"><span>6</span></section>
+                </div>
+              </div>
+              <div class="box">
+                <div class="btnGroup">
+                  <img
+                    class="animalCircleImg"
+                    src="./assets/images/round-buttons/sheep.png"
+                    alt=""
+                  />
+                </div>
+                <div class="amountField">
+                  <section class="myValue"><span>0</span></section>
+                  <section class="maxValue"><span>12</span></section>
+                </div>
+              </div>
+              <div class="box">
+                <div class="btnGroup">
+                  <img
+                    class="animalCircleImg"
+                    src="./assets/images/round-buttons/elephant.png"
+                    alt=""
+                  />
+                </div>
+                <div class="amountField">
+                  <section class="myValue"><span>0</span></section>
+                  <section class="maxValue"><span>24</span></section>
+                </div>
+              </div>
+            </div>
+
+            <div class="rightSideBoxContainer">
+              <div class="box">
+                <div class="btnGroup">
+                  <img
+                    class="animalCircleImg"
+                    src="./assets/images/round-buttons/seahorse.png"
+                    alt=""
+                  />
+                </div>
+                <div class="amountField">
+                  <section class="myValue"><span>0</span></section>
+                  <section class="maxValue"><span>4</span></section>
+                </div>
+              </div>
+              <div class="box">
+                <div class="btnGroup">
+                  <img
+                    class="animalCircleImg"
+                    src="./assets/images/round-buttons/jellyfish.png"
+                    alt=""
+                  />
+                </div>
+                <div class="amountField">
+                  <section class="myValue"><span>0</span></section>
+                  <section class="maxValue"><span>6</span></section>
+                </div>
+              </div>
+              <div class="box">
+                <div class="btnGroup">
+                  <img
+                    class="animalCircleImg"
+                    src="./assets/images/round-buttons/dolphin.png"
+                    alt=""
+                  />
+                </div>
+                <div class="amountField">
+                  <section class="myValue"><span>0</span></section>
+                  <section class="maxValue"><span>12</span></section>
+                </div>
+              </div>
+              <div class="box">
+                <div class="btnGroup">
+                  <img
+                    class="animalCircleImg"
+                    src="./assets/images/round-buttons/shark.png"
+                    alt=""
+                  />
+                </div>
+                <div class="amountField">
+                  <section class="myValue"><span>0</span></section>
+                  <section class="maxValue"><span>24</span></section>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="game__container-center">
+            <div class="game__container-center-top">
+              <div class="img1">
+                <div class="img">
+                  <img
+                    src="./assets/images/square-buttons/bird.png"
+                    alt="tortoise(top corner)"
+                  />
+                </div>
+              </div>
+              <div class="img2">
+                <div class="img">
+                  <img
+                    src="./assets/images/square-buttons/dog(top corner).png"
+                    alt="buttons/dog(top corner)"
+                  />
+                </div>
+              </div>
+              <div class="img3">
+                <div class="img">
+                  <img
+                    src="./assets/images/square-buttons/dog(top corner).png"
+                    alt="buttons/dog(top corner)"
+                  />
+                </div>
+              </div>
+              <div class="img4">
+                <div class="img">
+                  <img
+                    src="./assets/images/square-buttons/dog(top corner).png"
+                    alt="buttons/dog(top corner)"
+                  />
+                </div>
+              </div>
+              <div class="img5">
+                <div class="img">
+                  <img
+                    src="./assets/images/square-buttons/whale(top corner).png"
+                    alt="whale(top corner)"
+                  />
+                </div>
+              </div>
+              <div class="img6">
+                <div class="img">
+                  <img
+                    src="./assets/images/square-buttons/seahorse(right side).png"
+                    alt=""
+                  />
+                </div>
+              </div>
+              <div class="img7">
+                <div class="img">
+                  <img
+                    src="./assets/images/square-buttons/seahorse(right side).png"
+                    alt=""
+                  />
+                </div>
+              </div>
+              <div class="img8">
+                <div class="img">
+                  <img
+                    src="./assets/images/square-buttons/seahorse(right side).png"
+                    alt=""
+                  />
+                </div>
+              </div>
+              <div class="img9">
+                <div class="img">
+                  <img
+                    src="./assets/images/square-buttons/bird.png"
+                    alt="tortoise(top corner)"
+                  />
+                </div>
+              </div>
+              <div class="img10">
+                <div class="img">
+                  <img
+                    src="./assets/images/square-buttons/jellyfish(top corner).png"
+                    alt=""
+                  />
+                </div>
+              </div>
+              <div class="img11">
+                <div class="img">
+                  <img
+                    src="./assets/images/square-buttons/jellyfish(top corner).png"
+                    alt=""
+                  />
+                </div>
+              </div>
+              <div class="img12">
+                <div class="img">
+                  <img
+                    src="./assets/images/square-buttons/jellyfish(top corner).png"
+                    alt=""
+                  />
+                </div>
+              </div>
+              <div class="img13">
+                <div class="img">
+                  <img
+                    src="./assets/images/square-buttons/whale(right side).png"
+                    alt="whale(right side).png"
+                  />
+                </div>
+              </div>
+              <div class="img14">
+                <div class="img">
+                  <img
+                    src="./assets/images/square-buttons/dolphin(bottom).png"
+                    alt=""
+                  />
+                </div>
+              </div>
+              <div class="img15">
+                <div class="img">
+                  <img
+                    src="./assets/images/square-buttons/dolphin(bottom).png"
+                    alt=""
+                  />
+                </div>
+              </div>
+              <div class="img16">
+                <div class="img">
+                  <img
+                    src="./assets/images/square-buttons/dolphin(bottom).png"
+                    alt=""
+                  />
+                </div>
+              </div>
+              <div class="img17">
+                <div class="img">
+                  <img
+                    src="./assets/images/square-buttons/bird.png"
+                    alt="tortoise(top corner)"
+                  />
+                </div>
+              </div>
+              <div class="img18">
+                <div class="img">
+                  <img
+                    src="./assets/images/square-buttons/shark(right side).png"
+                    alt=""
+                  />
+                </div>
+              </div>
+              <div class="img19">
+                <div class="img">
+                  <img
+                    src="./assets/images/square-buttons/shark(right side).png"
+                    alt=""
+                  />
+                </div>
+              </div>
+              <div class="img20">
+                <div class="img">
+                  <img
+                    src="./assets/images/square-buttons/shark(right side).png"
+                    alt=""
+                  />
+                </div>
+              </div>
+              <div class="img21">
+                <div class="img">
+                  <img
+                    src="./assets/images/square-buttons/whale(top corner).png"
+                    alt="whale(top corner).png"
+                  />
+                </div>
+              </div>
+              <div class="img22">
+                <div class="img">
+                  <img
+                    src="./assets/images/square-buttons/elephant(bottom).png"
+                    alt="elephant(bottom).png"
+                  />
+                </div>
+              </div>
+              <div class="img23">
+                <div class="img">
+                  <img
+                    src="./assets/images/square-buttons/elephant(bottom).png"
+                    alt="elephant(bottom).png"
+                  />
+                </div>
+              </div>
+              <div class="img24">
+                <div class="img">
+                  <img
+                    src="./assets/images/square-buttons/elephant(bottom).png"
+                    alt="elephant(bottom).png"
+                  />
+                </div>
+              </div>
+              <div class="img25">
+                <div class="img">
+                  <img
+                    src="./assets/images/square-buttons/bird.png"
+                    alt="tortoise(bottom).png"
+                  />
+                </div>
+              </div>
+              <div class="img26">
+                <div class="img">
+                  <img
+                    src="./assets/images/square-buttons/sheep(left side).png"
+                    alt="sheep(left side).png"
+                  />
+                </div>
+              </div>
+              <div class="img27">
+                <div class="img">
+                  <img
+                    src="./assets/images/square-buttons/sheep(left side).png"
+                    alt="sheep(left side).png"
+                  />
+                </div>
+              </div>
+              <div class="img28">
+                <div class="img">
+                  <img
+                    src="./assets/images/square-buttons/sheep(left side).png"
+                    alt="sheep(left side).png"
+                  />
+                </div>
+              </div>
+              <div class="img29">
+                <div class="img">
+                  <img
+                    src="./assets/images/square-buttons/whale(top corner).png"
+                    alt=""
+                  />
+                </div>
+              </div>
+              <div class="img30">
+                <div class="img">
+                  <img
+                    src="./assets/images/square-buttons/monkey(left side).png"
+                    alt="monkey(left side).png"
+                  />
+                </div>
+              </div>
+              <div class="img31">
+                <div class="img">
+                  <img
+                    src="./assets/images/square-buttons/monkey(left side).png"
+                    alt="monkey(left side).png"
+                  />
+                </div>
+              </div>
+              <div class="img32">
+                <div class="img">
+                  <img
+                    src="./assets/images/square-buttons/monkey(left side).png"
+                    alt="monkey(left side).png"
+                  />
+                </div>
+              </div>
+
+              <div class="quitConfirm">
+                <p>Do you want to quit?</p>
+                <div>
+                  <button class="noBtn button" role="button">NO</button>
+                  <button class="yesBtn button" role="button">YES</button>
+                </div>
+              </div>
+
+              <div class="time">
+                <div id="count-down">
+                  <svg
+                    width="12.5rem"
+                    height="12.5rem"
+                    viewBox="0 0 300 300"
+                    style="transform: rotateY(180deg)"
+                  >
+                    <g fill="none" stroke-width="20">
+                      <circle
+                        cx="150"
+                        cy="150"
+                        r="100"
+                        stroke="rgba(0,0,0,0)"
+                      />
+                      <circle
+                        id="circle"
+                        cx="150"
+                        cy="150"
+                        r="100"
+                        stroke="#ff7b01"
+                        transform="rotate(-90 150 150)"
+                      />
+                    </g>
+                  </svg>
+                  <span>30</span>
+                </div>
+
+                <img class="randomAnimal" src=" " alt="" />
+
+                <div class="warning">
+                  <h3>Please bet at least one coin.</h3>
+                  <span class="okBtn">OK</span>
+                </div>
+                <img
+                  src="./assets/images/animation-gif/a7e63493c33a7b364f81ed6d71526908.gif"
+                  alt=""
+                  class="loserGif"
+                />
+                <div class="outOfCoinWarning">
+                  <h3>You have "0" coin.</h3>
+                  <span class="okBtn2">OK</span>
+                </div>
+              </div>
+              <div class="outOfCoinAnimation"></div>
+              <img
+                src="./assets/images/animation-gif/giphy.gif"
+                alt=""
+                class="celebration"
+              />
+            </div>
+            <div class="game__container-center-bottom">
+              <div class="game__container-center-bottom-item">
+                <p>BET COINS</p>
+                <div class="betCoins game__container-center-bottom-item-price">
+                  <span>0</span>
+                </div>
+              </div>
+              <div class="game__container-center-bottom-item">
+                <p class="showWinOrLose">WIN</p>
+                <div class="winCount game__container-center-bottom-item-price">
+                  <span>0</span>
+                </div>
+              </div>
+              <div class="game__container-center-bottom-item">
+                <p>COIN</p>
+                <div class="myOwnCoin game__container-center-bottom-item-price">
+                  <span>600</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="game__container-right">
+            <div class="box">
+              <div class="btnContainer">
+                <img
+                  class="animalCircleImg birdCircleImg"
+                  src="./assets/images/round-buttons/bird.png"
+                  alt=""
+                />
+              </div>
+              <div class="box-amount">
+                <section class="myValue box-amount-item">
+                  <span>0</span>
+                </section>
+                <section class="maxValue box-amount-item-max">
+                  <span>24</span>
+                </section>
+              </div>
+            </div>
+            <div class="box">
+              <div class="btnContainer">
+                <img
+                  class="animalCircleImg"
+                  src="./assets/images/round-buttons/whale.png"
+                  alt=""
+                />
+              </div>
+              <div class="box-amount">
+                <section class="myValue box-amount-item">
+                  <span>0</span>
+                </section>
+                <section class="maxValue box-amount-item-max">
+                  <span>48</span>
+                </section>
+              </div>
+            </div>
+            <div class="box">
+              <div class="btnContainer">
+                <img
+                  class="animalCircleImg"
+                  src="./assets/images/round-buttons/sea.png"
+                  alt=""
+                />
+              </div>
+              <div class="box-amount">
+                <section class="myValue box-amount-item">
+                  <span>0</span>
+                </section>
+                <section class="maxValue box-amount-item-max">
+                  <span>2</span>
+                </section>
+              </div>
+            </div>
+            <div class="box">
+              <div class="btnContainer">
+                <img
+                  class="animalCircleImg"
+                  src="./assets/images/round-buttons/land.png"
+                  alt=""
+                />
+              </div>
+              <div class="box-amount">
+                <section class="myValue box-amount-item">
+                  <span>0</span>
+                </section>
+                <section class="maxValue box-amount-item-max">
+                  <span>2</span>
+                </section>
+              </div>
+            </div>
+            <div class="btn">
+              <img class="startBtn" src="./assets/images/btn/play.png" alt="" />
+              <img
+                class="removeBetBtn"
+                src="./assets/images/btn/cross.png"
+                alt=""
+              />
+            </div>
+            <div class="get-coin">
+              <img src="./assets/images/btn/coin1.png" alt="" />
+              <span>Get 20 coins</span>
+            </div>
+            <div class="quitBtn">
+              <span>QUIT</span>
+            </div>
+          </div>
+        </div>
+        <!-- InGameScreen_End -->
+
+        <div class="left__circle">
+          <i class="fa-solid fa-circle"></i>
+          <i class="fa-solid fa-circle"></i>
+          <i class="fa-solid fa-circle"></i>
+          <i class="fa-solid fa-circle"></i>
+          <i class="fa-solid fa-circle"></i>
+          <i class="fa-solid fa-circle"></i>
+          <i class="fa-solid fa-circle"></i>
+        </div>
+        <div class="right__circle">
+          <i class="fa-solid fa-circle"></i>
+          <i class="fa-solid fa-circle"></i>
+          <i class="fa-solid fa-circle"></i>
+          <i class="fa-solid fa-circle"></i>
+          <i class="fa-solid fa-circle"></i>
+          <i class="fa-solid fa-circle"></i>
+          <i class="fa-solid fa-circle"></i>
+        </div>
+
+        <img
+          src="./assets/images/animation-gif/NR7Y.gif"
+          alt=""
+          class="game__container-winning winning1"
+        />
+        <img
+          src="./assets/images/animation-gif/NR7Y.gif"
+          alt=""
+          class="game__container-winning winning2"
+        />
+        <img
+          src="./assets/images/animation-gif/NR7Y.gif"
+          alt=""
+          class="game__container-winning winning3"
+        />
+        <img
+          src="./assets/images/animation-gif/NR7Y.gif"
+          alt=""
+          class="game__container-winning winning4"
+        />
+      </section>
+    </section>
+
+    <audio src="./assets/audios/BubbleClick.mov" class="bubbleClick"></audio>
+    <audio src="./assets/audios/CoinDrop.wav" class="coinDropAudio"></audio>
+    <audio
+      src="./assets/audios/mainBackgroundSound.mp3"
+      class="mainBackgroundSound"
+    ></audio>
+    <audio src="./assets/audios/selectSound.wav" class="selectSound"></audio>
+    <audio
+      src="./assets/audios/backgroundSound.wav"
+      class="backGroundSound"
+    ></audio>
+    <audio src="./assets/audios/ClockTick.wav" class="clockTick"></audio>
+    <audio src="./assets/audios/Winning.mp3" class="winSound"></audio>
+    <audio
+      src="./assets/audios/TrumpetCadenceTrum AC052001 (1).mp3"
+      class="loseSound"
+    ></audio>
+    <audio
+      src="./assets/audios/Slot Reel Spin Melody.wav"
+      class="gameSpin"
+    ></audio>
+    <script src="./index.js"></script>
+  </body>
+</html>
