@@ -75,6 +75,10 @@ const loserDolphin = document.querySelector(".loserDolphin");
 const privacyContainer = document.querySelector(".privacy__container");
 const privacyBackBtnOne = document.querySelector(".privacyBack");
 const privacyBackBtnTwo = document.querySelector(".privacyBackBtn");
+const userAgreement_container = document.querySelector(
+  ".userAgreement_container"
+);
+const agreebtn = document.querySelector(".agreebtn");
 
 const animalsBar = document.querySelector(".animalsBar");
 let animalList = [];
@@ -378,12 +382,22 @@ privacyBackBtnTwo.addEventListener("click", function () {
 
 userAgreement.addEventListener("click", function () {
   bubbleClick.play();
+  userAgreement_container.style.display = "block";
+  settingContainer.style.display = "none";
   this.classList.add("zoomoutAnimate");
   setTimeout(() => {
     this.classList.remove("zoomoutAnimate");
   }, 210);
 });
-
+agreebtn.addEventListener("click", function () {
+  bubbleClick.play();
+  userAgreement_container.style.display = "none";
+  settingContainer.style.display = "flex";
+  this.classList.add("zoomoutAnimate");
+  setTimeout(() => {
+    this.classList.remove("zoomoutAnimate");
+  }, 210);
+});
 profileBtn.addEventListener("click", function () {
   bubbleClick.play();
   if (menuController == false) {
