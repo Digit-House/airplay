@@ -1,0 +1,68 @@
+.userAgreement_container {
+  position: relative;
+  height: 100%;
+  background-color: #fff;
+  padding: 2rem 4rem;
+  overflow-y: scroll;
+  animation: title 0.7s linear;
+  display: none;
+}
+.userAgreement_container::-webkit-scrollbar {
+  width: 8px !important;
+}
+
+.userAgreement_container a {
+  text-decoration: none;
+  font-size: 1rem;
+  color: #4361ee;
+  font-style: italic;
+  transition: 0.3s all;
+  cursor: pointer;
+}
+.userAgreement_container a:hover {
+  text-decoration: underline;
+  color: #ff7b01;
+}
+.userAgreement_container h2 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  padding-top: 2rem;
+  width: 100%;
+  background-image: linear-gradient(to bottom, #ffe600, #ff7b01);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.userAgreement_container b {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  padding-top: 2rem;
+  width: 100%;
+  background-image: linear-gradient(to bottom, #ffe600, #ff7b01);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.userAgreement_container p {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  padding-top: 2rem;
+  width: 100%;
+  line-height: 3rem;
+  /* background-image: linear-gradient(to bottom, #ffe600, #ff7b01);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
+}
+.agreebtn {
+  margin-top: 5rem;
+  background-image: linear-gradient(to bottom, #ffe600, #ff7b01);
+  width: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1rem;
+  border-radius: 12px;
+  cursor: pointer;
+}
+.agreebtn span {
+  color: white;
+  font-size: 1.5rem;
+}
