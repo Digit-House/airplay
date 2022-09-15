@@ -69,7 +69,7 @@
   margin-right: 5%;
 }
 .animalBtnClickAnimation {
-  transition: all 0.1s;
+  transition: all 0.07s;
   width: 60% !important;
 }
 
