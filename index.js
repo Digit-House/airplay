@@ -4,6 +4,7 @@ mainBackgroundSound.autoplay = true;
 mainBackgroundSound.loop = true;
 
 const coinDropAudio = document.querySelector(".coinDropAudio");
+const coinDropAudio2 = document.querySelector(".coinDropAudio2");
 const selectSound = document.querySelector(".selectSound");
 const backGroundSound = document.querySelector(".backGroundSound");
 backGroundSound.loop = true;
@@ -457,6 +458,7 @@ okBtn.addEventListener("click", function () {
 okBtn2.addEventListener("click", function () {
   bubbleClick.play();
   mainBackgroundSound.play();
+  backGroundSound.pause();
   this.classList.add("zoomoutAnimate");
   setTimeout(() => {
     this.classList.remove("zoomoutAnimate");
@@ -469,8 +471,10 @@ function betting(i) {
   coinDropAudio.play();
   betBtn[i].classList.add("animalBtnClickAnimation");
   setTimeout(() => {
+    coinDropAudio.pause();
+    coinDropAudio.currentTime = 0;
     betBtn[i].classList.remove("animalBtnClickAnimation");
-  }, 100);
+  }, 70);
   if (betPermission === false) {
     return;
   } else {
@@ -495,7 +499,7 @@ for (let i = 0; i < betBtn.length; i++) {
   betBtn[i].addEventListener("mousedown", function () {
     betHold = setInterval(function () {
       betting(i);
-    }, 120);
+    }, 90);
   });
 
   betBtn[i].addEventListener("mouseup", function () {
@@ -656,6 +660,7 @@ quitBtn.addEventListener("click", function () {
 });
 
 yesBtn.onclick = () => {
+  bubbleClick.play();
   menuController = true;
   gameContainer.style.display = "none";
   animalsBar.style.display = "none";
@@ -663,6 +668,7 @@ yesBtn.onclick = () => {
   quitConfirm.style.display = "none";
 };
 noBtn.onclick = () => {
+  bubbleClick.play();
   quitConfirm.style.display = "none";
 };
 
