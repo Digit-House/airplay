@@ -76,6 +76,21 @@ const loserDolphin = document.querySelector(".loserDolphin");
 const privacyContainer = document.querySelector(".privacy__container");
 const privacyBackBtnOne = document.querySelector(".privacyBack");
 const privacyBackBtnTwo = document.querySelector(".privacyBackBtn");
+const dailySpin = document.querySelectorAll(".lucky");
+const spinBtn = document.querySelector(".spinBtn");
+const spinCount = document.querySelector(".spinCount");
+const spinCountDown = document.querySelector(".spinCountDown");
+const spinHour = document.querySelector(".spinHour");
+const SpinMin = document.querySelector(".SpinMin");
+const spinSec = document.querySelector(".spinSec");
+const spinGO = document.querySelector(".spinGO");
+const dailyResult = document.querySelector(".dailyResult");
+const dailyResultImg = document.querySelector(".dailyResultImg");
+const dailyResultItext = document.querySelector(".dailyResultItext");
+const dailyResultPText = document.querySelector(".dailyResultPText");
+const getMoreCoin = document.querySelector(".get-coin");
+const dailyRewardContainer = document.querySelector(".dailyRewardContainer");
+const DailyRewardBackBtn = document.querySelector(".DailyRewardBackBtn");
 const userAgreement_container = document.querySelector(
   ".userAgreement_container"
 );
@@ -950,4 +965,246 @@ function animationCircle(random, speed) {
     }
     bubbleClick.play();
   }, speed);
+}
+
+getMoreCoin.addEventListener("click", () => {
+  gameContainer.style.display = "none";
+  dailyRewardContainer.style.display = "flex";
+});
+
+DailyRewardBackBtn.addEventListener("click", function () {
+  bubbleClick.play();
+  this.classList.add("zoomoutAnimate");
+  setTimeout(() => {
+    this.classList.remove("zoomoutAnimate");
+  }, 210);
+  if (dailyIntervel) {
+    return;
+  }
+  dailyRewardContainer.style.display = "none";
+  gameContainer.style.display = "flex";
+});
+
+let dailyIntervel = 0;
+let d = 0;
+let dailyNumber = true;
+let counting = 5;
+spinCount.textContent = "Free Spin : " + counting;
+
+function dailySpinCircle(random, speed) {
+  let number = random;
+  if (dailyIntervel !== 0) {
+    return;
+  }
+  dailyIntervel = setInterval(() => {
+    if (d == 8) {
+      d = 0;
+    }
+    if (!dailySpin[d].className.includes("luckyInimate")) {
+      dailySpin[d].classList.add("luckyInimate");
+    }
+    if (d > 0) {
+      dailySpin[d - 1].classList.remove("luckyInimate");
+    } else {
+      dailySpin[7].classList.remove("luckyInimate");
+    }
+    d++;
+    number--;
+    if (number == 0) {
+      clearInterval(dailyIntervel);
+      win(d - 1);
+      setTimeout(() => {
+        selectSound.play();
+        dailySpin[d - 1].classList.remove("luckyInimate");
+        setTimeout(() => {
+          selectSound.play();
+          dailySpin[d - 1].classList.add("luckyInimate");
+        }, 200);
+        setTimeout(() => {
+          selectSound.play();
+          dailySpin[d - 1].classList.remove("luckyInimate");
+        }, 400);
+        setTimeout(() => {
+          selectSound.play();
+          dailySpin[d - 1].classList.add("luckyInimate");
+        }, 600);
+        setTimeout(() => {
+          selectSound.play();
+          dailySpin[d - 1].classList.remove("luckyInimate");
+        }, 800);
+        setTimeout(() => {
+          selectSound.play();
+          dailySpin[d - 1].classList.add("luckyInimate");
+        }, 1000);
+        setTimeout(() => {
+          selectSound.play();
+          dailySpin[d - 1].classList.remove("luckyInimate");
+        }, 1200);
+        setTimeout(() => {
+          selectSound.play();
+          dailySpin[d - 1].classList.add("luckyInimate");
+        }, 1400);
+        setTimeout(() => {
+          dailySpin[d - 1].classList.remove("luckyInimate");
+        }, 1600);
+      }, 500);
+      setTimeout(() => {
+        resultWinOrDraw(d - 1);
+        dailyResult.style.display = "flex";
+      }, 1000);
+      setTimeout(() => {
+        dailyResult.style.display = "none";
+        dailyResultImg.src = "";
+        dailyResultItext.classList.remove("fa-face-sad-tear");
+        dailyNumber = true;
+        dailyIntervel = 0;
+      }, 5000);
+    }
+    bubbleClick.play();
+  }, speed);
+}
+
+spinBtn.addEventListener("click", function () {
+  bubbleClick.play();
+  if (counting == 0) {
+    return;
+  } else {
+    if (!dailyNumber) {
+      return;
+    } else {
+      counting--;
+      spinCount.textContent = "Free Spin : " + counting;
+      dailyNumber = false;
+      let random = getRandomInt(25);
+      dailySpinCircle(null, 100);
+      setTimeout(() => {
+        clearInterval(dailyIntervel);
+        dailyIntervel = 0;
+        dailySpinCircle(null, 200);
+      }, 2000);
+      setTimeout(() => {
+        clearInterval(dailyIntervel);
+        dailyIntervel = 0;
+        dailySpinCircle(null, 300);
+      }, 2500);
+      setTimeout(() => {
+        clearInterval(dailyIntervel);
+        dailyIntervel = 0;
+        dailySpinCircle(random, 350);
+      }, 4000);
+      if (counting == 0) {
+        spinCount.style.display = "none";
+        spinCountDown.style.display = "block";
+        spinGO.style.color = "red";
+        spinCountingStart();
+      }
+    }
+  }
+});
+
+function win(x) {
+  if (x == 0) {
+    myOwnCoin.firstElementChild.textContent =
+      +myOwnCoin.firstElementChild.textContent + 48;
+    showMenuCoin.textContent = +myOwnCoin.firstElementChild.textContent;
+    showCoinInProfile.textContent = +myOwnCoin.firstElementChild.textContent;
+    console.log(myOwnCoin.firstElementChild);
+  }
+  if (x == 1) {
+    myOwnCoin.firstElementChild.textContent =
+      +myOwnCoin.firstElementChild.textContent + 24;
+    showMenuCoin.textContent = +myOwnCoin.firstElementChild.textContent;
+    showCoinInProfile.textContent = +myOwnCoin.firstElementChild.textContent;
+    console.log(myOwnCoin.firstElementChild);
+  }
+  if (x == 2 || x == 6) {
+    myOwnCoin.firstElementChild.textContent =
+      +myOwnCoin.firstElementChild.textContent + 12;
+    showMenuCoin.textContent = +myOwnCoin.firstElementChild.textContent;
+    showCoinInProfile.textContent = +myOwnCoin.firstElementChild.textContent;
+    console.log(myOwnCoin.firstElementChild);
+  }
+  if (x == 3 || x == 7) {
+    myOwnCoin.firstElementChild.textContent =
+      +myOwnCoin.firstElementChild.textContent + 4;
+    showMenuCoin.textContent = +myOwnCoin.firstElementChild.textContent;
+    showCoinInProfile.textContent = +myOwnCoin.firstElementChild.textContent;
+    console.log(myOwnCoin.firstElementChild);
+  }
+  if (x == 4 || x == 5) {
+    myOwnCoin.firstElementChild.textContent =
+      +myOwnCoin.firstElementChild.textContent + 0;
+    showMenuCoin.textContent = +myOwnCoin.firstElementChild.textContent;
+    showCoinInProfile.textContent = +myOwnCoin.firstElementChild.textContent;
+    console.log(myOwnCoin.firstElementChild);
+  }
+}
+
+let spinTimer = 86400;
+let spinTimerId = 0;
+
+function spinCountingStart() {
+  if (spinTimerId !== 0) {
+    return;
+  }
+  spinTimerId = setInterval(function () {
+    spinTimer--;
+    updateText(spinTimer);
+    if (spinTimer < 0) {
+      spinCountingStop();
+      spinTimerId = 0;
+    }
+  }, 1000);
+}
+
+function spinCountingStop() {
+  clearInterval(spinTimerId);
+  spinTimer = 86400;
+  counting = 5;
+  spinGO.style.color = "#00ff2a";
+  spinCountDown.style.display = "none";
+  spinCount.style.display = "block";
+  spinCount.textContent = "Free Spin : " + counting;
+  updateText(spinTimer);
+}
+
+function updateText(timer) {
+  const hour = Math.floor(timer / 3600);
+  const min = Math.floor(timer / 60) % 60;
+  const sec = timer % 60;
+  spinHour.textContent = hour < 10 ? "0" + hour.toString() : hour;
+  SpinMin.textContent = min < 10 ? "0" + min.toString() : min;
+  spinSec.textContent = sec < 10 ? "0" + sec.toString() : sec;
+}
+
+function resultWinOrDraw(x) {
+  if (x == 0) {
+    dailyResultImg.src = "./assets/images/square-buttons/whale(top corner).png";
+    dailyResultPText.textContent = "You Win : 48 Coins";
+  }
+  if (x == 1) {
+    dailyResultImg.src = "./assets/images/square-buttons/bird.png";
+    dailyResultPText.textContent = "You Win : 24 Coins";
+  }
+  if (x == 2) {
+    dailyResultImg.src = "./assets/images/square-buttons/dolphin(bottom).png";
+    dailyResultPText.textContent = "You Win : 12 Coins";
+  }
+  if (x == 3) {
+    dailyResultImg.src =
+      "./assets/images/square-buttons/seahorse(right side).png";
+    dailyResultPText.textContent = "You Win : 4 Coins";
+  }
+  if (x == 6) {
+    dailyResultImg.src = "./assets/images/square-buttons/sheep(left side).png";
+    dailyResultPText.textContent = "You Win : 12 Coins";
+  }
+  if (x == 7) {
+    dailyResultImg.src = "./assets/images/square-buttons/dog(top corner).png";
+    dailyResultPText.textContent = "You Win : 4 Coins";
+  }
+  if (x == 4 || x == 5) {
+    dailyResultItext.classList = "fa-solid fa-face-sad-tear";
+    dailyResultPText.textContent = "Good Luck Next Time";
+  }
 }

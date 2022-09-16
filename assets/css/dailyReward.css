@@ -1,0 +1,247 @@
+.dailyRewardContainer {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  display: none;
+}
+
+.dailyRewardContainer h2 {
+  font-size: 3.2rem;
+  background-image: linear-gradient(to bottom, #ffe600, #ff7b01);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-top: 2rem;
+}
+
+.dailyRewairdSpin {
+  width: 440px;
+  height: 370px;
+  position: relative;
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dailyItem {
+  width: 120px;
+  height: 100px;
+  border: 6px solid #ced4da;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  background: linear-gradient(
+    to top,
+    rgb(9, 32, 63) 0%,
+    rgb(83, 120, 149) 100%
+  );
+}
+
+.lucky {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  position: relative;
+}
+
+.lucky img {
+  width: 40%;
+  height: auto;
+}
+
+.dailyItem span {
+  font-size: 1.2rem;
+  background-image: linear-gradient(to bottom, #ffe600, #ff7b01);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dailyItem i {
+  font-size: 2.5rem;
+  background-image: linear-gradient(to bottom, #ffe600, #ff7b01);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dailyItem p {
+  font-size: 2.5rem;
+  background-image: linear-gradient(to bottom, #ffe600, #ff7b01);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.item1 {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+}
+
+.item2 {
+  position: absolute;
+  top: 0;
+  left: 145px;
+}
+
+.item3 {
+  position: absolute;
+  top: 0;
+  left: 290px;
+}
+
+.item4 {
+  position: absolute;
+  top: 125px;
+  left: 290px;
+}
+
+.item5 {
+  position: absolute;
+  top: 250px;
+  left: 290px;
+}
+
+.item6 {
+  position: absolute;
+  top: 250px;
+  left: 145px;
+}
+
+.item7 {
+  position: absolute;
+  top: 250px;
+  left: 0px;
+}
+
+.item8 {
+  position: absolute;
+  top: 125px;
+  left: 0px;
+}
+
+.item9 {
+  position: absolute;
+  top: 125px;
+  left: 145px;
+}
+
+.luckyInimate::after {
+  content: "";
+  background-image: linear-gradient(to bottom, #ffe600, #ff7b01);
+  background-size: contain;
+  opacity: 0.7;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.spinBtn {
+  transition: 0.3s all;
+  background: radial-gradient(
+    780px at 37.8% 100.3%,
+    rgb(19, 55, 115) 2.2%,
+    rgb(32, 7, 80) 20.2%,
+    rgb(27, 88, 111) 58.6%,
+    rgb(115, 88, 44) 75%,
+    rgb(99, 19, 90) 89.6%,
+    rgb(12, 51, 76) 96.1%
+  );
+}
+
+.spinBtn:active {
+  transform: scale(0.9);
+}
+
+.spinCountDown {
+  display: none;
+}
+
+.spinGO {
+  font-size: 2.5rem;
+  color: #00ff2a;
+}
+
+.dailyResult {
+  width: 50%;
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  background: radial-gradient(
+    780px at 37.8% 100.3%,
+    rgb(19, 55, 115) 2.2%,
+    rgb(32, 7, 80) 20.2%,
+    rgb(27, 88, 111) 58.6%,
+    rgb(115, 88, 44) 75%,
+    rgb(99, 19, 90) 89.6%,
+    rgb(12, 51, 76) 96.1%
+  );
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+    rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+    rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  gap: 0.8rem;
+  animation: time 500ms ease-in-out forwards;
+  display: none;
+}
+
+.dailyResult img {
+  width: 20%;
+  height: auto;
+}
+
+.dailyResult p {
+  font-size: 1.5rem;
+  font-weight: 500;
+  background-image: linear-gradient(to bottom, #ffe600, #ff7b01);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dailyResult i {
+  font-size: 2.5rem;
+  background-image: linear-gradient(to bottom, #ffe600, #ff7b01);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.DailyRewardBackBtn {
+  position: absolute;
+  top: 25px;
+  left: 30px;
+  color: white;
+  font-size: 3rem;
+  background-image: linear-gradient(to bottom, #ffe600, #ff7b01);
+  padding: 4px 16px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+    rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+    rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  cursor: pointer;
+}
+
+@media (min-width: 1000px) and (max-width: 1399px) {
+  .dailyRewardContainer h2 {
+    font-size: 2.5rem;
+    padding-top: 1rem;
+  }
+  .dailyRewairdSpin {
+    margin-top: 1rem;
+  }
+}
