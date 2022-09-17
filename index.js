@@ -95,6 +95,7 @@ const userAgreement_container = document.querySelector(
   ".userAgreement_container"
 );
 const agreebtn = document.querySelector(".agreebtn");
+const termsBackBtn = document.querySelector(".termsBackBtn");
 
 const animalsBar = document.querySelector(".animalsBar");
 let animalList = [];
@@ -406,6 +407,15 @@ userAgreement.addEventListener("click", function () {
   }, 210);
 });
 agreebtn.addEventListener("click", function () {
+  bubbleClick.play();
+  userAgreement_container.style.display = "none";
+  settingContainer.style.display = "flex";
+  this.classList.add("zoomoutAnimate");
+  setTimeout(() => {
+    this.classList.remove("zoomoutAnimate");
+  }, 210);
+});
+termsBackBtn.addEventListener("click", function () {
   bubbleClick.play();
   userAgreement_container.style.display = "none";
   settingContainer.style.display = "flex";

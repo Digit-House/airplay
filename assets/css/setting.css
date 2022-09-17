@@ -245,7 +245,7 @@
 .privacy,
 .userAgreement,
 .aboutBettingSlotsBtn {
-  /* width: 180px; */
+  width: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -270,4 +270,9 @@
 
 .aboutBettingSlots {
   padding: 10px 60px;
+}
+.privacy p,
+.userAgreement p,
+.aboutBettingSlotsBtn p {
+  text-align: center;
 }
