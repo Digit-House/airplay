@@ -1,0 +1,148 @@
+.weeklyRewards {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.weekely {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.weekely h1 {
+  font-size: 2rem;
+  background-image: linear-gradient(to bottom, #ffe600, #ff7b01);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.weeks {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+.days {
+  color: white;
+  font-weight: 300;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  border-radius: 20px;
+  background-image: linear-gradient(to bottom, #ffe600, #ff7b01);
+}
+.days img {
+  width: 30px;
+}
+
+.Progresscontainer {
+  text-align: center;
+}
+
+.progress-bar-container {
+  position: relative;
+}
+
+.progress-bar-container::before {
+  content: "";
+  position: absolute;
+  background-color: yellow;
+  height: 10px;
+  width: 100%;
+  top: 50%;
+  left: 0px;
+  transform: translateY(-50%);
+}
+
+#progress-bar {
+  position: absolute;
+  background-color: orange;
+  height: 10px;
+  width: 0%;
+  top: 50%;
+  left: 0px;
+  transform: translateY(-50%);
+  transition: 0.3s ease;
+}
+
+.circles-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 100%;
+  width: 400px;
+}
+
+.circles {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  position: relative;
+  z-index: 2;
+  border: 2px solid orange;
+  background-color: white;
+  transition: 0.4s ease;
+}
+
+.circles h3 {
+  /* position: absolute;
+    left: 10%;
+    top: 30%; */
+  font-size: 16px;
+  color: orange;
+}
+
+.circles.active {
+  background-color: orange;
+}
+
+.circles.active h3 {
+  color: var(--light-color);
+}
+
+.form-group {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+
+.btnss {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 3px;
+  height: 50px;
+  width: 100px;
+  background-color: yellow;
+  color: white;
+  border-color: yellow;
+  margin-right: 20px;
+}
+
+.btnss:hover {
+  cursor: pointer;
+  background-color: orange;
+}
+
+.btnss:disabled {
+  cursor: not-allowed;
+  background-color: gray;
+  color: black;
+  border-color: gray;
+}
+
+.btnss:active {
+  transform: scale(0.95);
+}
+
+.btnss:focus {
+  outline: none;
+}
