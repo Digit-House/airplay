@@ -8,8 +8,11 @@
   cursor: pointer;
   position: relative;
   display: none;
+  overflow-y: scroll;
 }
-
+.dailyRewardContainer::-webkit-scrollbar {
+  width: 8px !important;
+}
 .dailyRewardContainer h2 {
   font-size: 3.2rem;
   background-image: linear-gradient(to bottom, #ffe600, #ff7b01);
