@@ -4,6 +4,7 @@ mainBackgroundSound.autoplay = true;
 mainBackgroundSound.loop = true;
 
 const coinDropAudio = document.querySelector('.coinDropAudio');
+const coinDropAudio2 = document.querySelector('.coinDropAudio2');
 const selectSound = document.querySelector('.selectSound');
 const backGroundSound = document.querySelector('.backGroundSound');
 backGroundSound.loop = true;
@@ -35,6 +36,50 @@ const aboutBettingSlotsBtn = document.querySelector('.aboutBettingSlotsBtn');
 const aboutBettingSlotsBackBtn = document.querySelector(
   '.aboutBettingSlotsBackBtn'
 );
+// const privacy = document.querySelector('.privacy');
+// const userAgreement = document.querySelector('.userAgreement');
+// const aboutBettingSlots = document.querySelector('.aboutBettingSlots');
+// const volumeBtn = document.querySelector('.volumeBtn');
+// const gameContainer = document.querySelector('.game__container');
+// const betBtn = document.querySelectorAll('.animalCircleImg');
+// const myValue = document.querySelectorAll('.myValue');
+// const centerImg = document.querySelectorAll('.img');
+// const betCoins = document.querySelector('.betCoins');
+// const myOwnCoin = document.querySelector('.myOwnCoin');
+// const startBtn = document.querySelector('.startBtn');
+// const removeBetBtn = document.querySelector('.removeBetBtn');
+// const showWinOrLose = document.querySelector('.showWinOrLose');
+// const winCount = document.querySelector('.winCount');
+// const getCoinBtn = document.querySelector('.get-coin');
+// const quitBtn = document.querySelector('.quitBtn');
+// const warning = document.querySelector('.warning');
+// const okBtn = document.querySelector('.okBtn');
+// const outOfCoinWarning = document.querySelector('.outOfCoinWarning');
+// const okBtn2 = document.querySelector('.okBtn2');
+// const outOfCoinAnimation = document.querySelector('.outOfCoinAnimation');
+// const countDown = document.getElementById('count-down');
+// const circleEle = document.getElementById('circle');
+// const secondSpan = document.querySelector('#count-down span');
+// const quitConfirm = document.querySelector('.quitConfirm');
+// const yesBtn = document.querySelector('.yesBtn');
+// const noBtn = document.querySelector('.noBtn');
+// const randomAnimal = document.querySelector('.randomAnimal');
+// const showMenuCoin = document.querySelector('.wellcomeTotal');
+// const showCoinInProfile = document.querySelector('.showCoinInProfile');
+// const winOne = document.querySelector('.winning1');
+// const winTwo = document.querySelector('.winning2');
+// const winThree = document.querySelector('.winning3');
+// const winFour = document.querySelector('.winning4');
+// const loseGif = document.querySelector('.loserGif');
+// const celebration = document.querySelector('.celebration');
+// const loserDolphin = document.querySelector('.loserDolphin');
+// const privacyContainer = document.querySelector('.privacy__container');
+// const privacyBackBtnOne = document.querySelector('.privacyBack');
+// const privacyBackBtnTwo = document.querySelector('.privacyBackBtn');
+const loginContainer = document.querySelector('.loginContainer');
+const loginBtn = document.querySelector('.loginBtn');
+const name = document.querySelectorAll('.name');
+const signOutBtn = document.querySelector('.signOutBtn');
 const privacy = document.querySelector('.privacy');
 const userAgreement = document.querySelector('.userAgreement');
 const aboutBettingSlots = document.querySelector('.aboutBettingSlots');
@@ -75,10 +120,60 @@ const loserDolphin = document.querySelector('.loserDolphin');
 const privacyContainer = document.querySelector('.privacy__container');
 const privacyBackBtnOne = document.querySelector('.privacyBack');
 const privacyBackBtnTwo = document.querySelector('.privacyBackBtn');
-const loginContainer = document.querySelector('.loginContainer');
-const loginBtn = document.querySelector('.loginBtn');
-const name = document.querySelectorAll('.name');
-const signOutBtn = document.querySelector('.signOutBtn');
+const dailySpin = document.querySelectorAll('.lucky');
+const spinBtn = document.querySelector('.spinBtn');
+const spinCount = document.querySelector('.spinCount');
+const spinCountDown = document.querySelector('.spinCountDown');
+const spinHour = document.querySelector('.spinHour');
+const SpinMin = document.querySelector('.SpinMin');
+const spinSec = document.querySelector('.spinSec');
+const spinGO = document.querySelector('.spinGO');
+const dailyResult = document.querySelector('.dailyResult');
+const dailyResultImg = document.querySelector('.dailyResultImg');
+const dailyResultItext = document.querySelector('.dailyResultItext');
+const dailyResultPText = document.querySelector('.dailyResultPText');
+const getMoreCoin = document.querySelector('.get-coin');
+const dailyRewardContainer = document.querySelector('.dailyRewardContainer');
+const DailyRewardBackBtn = document.querySelector('.DailyRewardBackBtn');
+const userAgreement_container = document.querySelector(
+  '.userAgreement_container'
+);
+const agreebtn = document.querySelector('.agreebtn');
+const termsBackBtn = document.querySelector('.termsBackBtn');
+
+const circles = document.querySelectorAll('.circles');
+const btnNext = document.getElementById('next');
+const btnPrev = document.getElementById('prev');
+const progressBar = document.getElementById('progress-bar');
+
+let circleActive = document.querySelector('.active');
+
+btnNext.addEventListener('click', function () {
+  circleActive = circleActive.nextElementSibling;
+  circleActive.classList.add('active');
+  updateProgressBarWidth();
+});
+
+btnPrev.addEventListener('click', function () {
+  circleActive.classList.remove('active');
+  circleActive = circleActive.previousElementSibling;
+  updateProgressBarWidth();
+});
+function updateProgressBarWidth() {
+  const actives = document.querySelectorAll('.active');
+  const currentWidth = ((actives.length - 1) / (circles.length - 1)) * 100;
+
+  progressBar.style.width = currentWidth + '%';
+
+  if (currentWidth === 0) {
+    btnPrev.setAttribute('disabled', true);
+  } else if (currentWidth === 100) {
+    btnNext.setAttribute('disabled', true);
+  } else {
+    btnPrev.removeAttribute('disabled');
+    btnNext.removeAttribute('disabled');
+  }
+}
 
 import { initializeApp } from 'firebase/app';
 import {
@@ -527,12 +622,31 @@ privacyBackBtnTwo.addEventListener('click', function () {
 
 userAgreement.addEventListener('click', function () {
   bubbleClick.play();
+  userAgreement_container.style.display = 'block';
+  settingContainer.style.display = 'none';
   this.classList.add('zoomoutAnimate');
   setTimeout(() => {
     this.classList.remove('zoomoutAnimate');
   }, 210);
 });
-
+agreebtn.addEventListener('click', function () {
+  bubbleClick.play();
+  userAgreement_container.style.display = 'none';
+  settingContainer.style.display = 'flex';
+  this.classList.add('zoomoutAnimate');
+  setTimeout(() => {
+    this.classList.remove('zoomoutAnimate');
+  }, 210);
+});
+termsBackBtn.addEventListener('click', function () {
+  bubbleClick.play();
+  userAgreement_container.style.display = 'none';
+  settingContainer.style.display = 'flex';
+  this.classList.add('zoomoutAnimate');
+  setTimeout(() => {
+    this.classList.remove('zoomoutAnimate');
+  }, 210);
+});
 profileBtn.addEventListener('click', function () {
   bubbleClick.play();
   if (menuController == false) {
@@ -592,6 +706,7 @@ okBtn.addEventListener('click', function () {
 okBtn2.addEventListener('click', function () {
   bubbleClick.play();
   mainBackgroundSound.play();
+  backGroundSound.pause();
   this.classList.add('zoomoutAnimate');
   setTimeout(() => {
     this.classList.remove('zoomoutAnimate');
@@ -604,8 +719,10 @@ function betting(i) {
   coinDropAudio.play();
   betBtn[i].classList.add('animalBtnClickAnimation');
   setTimeout(() => {
+    coinDropAudio.pause();
+    coinDropAudio.currentTime = 0;
     betBtn[i].classList.remove('animalBtnClickAnimation');
-  }, 100);
+  }, 70);
   if (betPermission === false) {
     return;
   } else {
@@ -631,7 +748,7 @@ for (let i = 0; i < betBtn.length; i++) {
   betBtn[i].addEventListener('mousedown', function () {
     betHold = setInterval(function () {
       betting(i);
-    }, 120);
+    }, 90);
   });
 
   betBtn[i].addEventListener('mouseup', function () {
@@ -795,6 +912,7 @@ quitBtn.addEventListener('click', function () {
 });
 
 yesBtn.onclick = () => {
+  bubbleClick.play();
   menuController = true;
   gameContainer.style.display = 'none';
   animalsBar.style.display = 'none';
@@ -802,6 +920,7 @@ yesBtn.onclick = () => {
   quitConfirm.style.display = 'none';
 };
 noBtn.onclick = () => {
+  bubbleClick.play();
   quitConfirm.style.display = 'none';
 };
 
@@ -1086,4 +1205,246 @@ function animationCircle(random, speed) {
     }
     bubbleClick.play();
   }, speed);
+}
+
+getMoreCoin.addEventListener('click', () => {
+  gameContainer.style.display = 'none';
+  dailyRewardContainer.style.display = 'flex';
+});
+
+DailyRewardBackBtn.addEventListener('click', function () {
+  bubbleClick.play();
+  this.classList.add('zoomoutAnimate');
+  setTimeout(() => {
+    this.classList.remove('zoomoutAnimate');
+  }, 210);
+  if (dailyIntervel) {
+    return;
+  }
+  dailyRewardContainer.style.display = 'none';
+  gameContainer.style.display = 'flex';
+});
+
+let dailyIntervel = 0;
+let d = 0;
+let dailyNumber = true;
+let counting = 5;
+spinCount.textContent = 'Free Spin : ' + counting;
+
+function dailySpinCircle(random, speed) {
+  let number = random;
+  if (dailyIntervel !== 0) {
+    return;
+  }
+  dailyIntervel = setInterval(() => {
+    if (d == 8) {
+      d = 0;
+    }
+    if (!dailySpin[d].className.includes('luckyInimate')) {
+      dailySpin[d].classList.add('luckyInimate');
+    }
+    if (d > 0) {
+      dailySpin[d - 1].classList.remove('luckyInimate');
+    } else {
+      dailySpin[7].classList.remove('luckyInimate');
+    }
+    d++;
+    number--;
+    if (number == 0) {
+      clearInterval(dailyIntervel);
+      win(d - 1);
+      setTimeout(() => {
+        selectSound.play();
+        dailySpin[d - 1].classList.remove('luckyInimate');
+        setTimeout(() => {
+          selectSound.play();
+          dailySpin[d - 1].classList.add('luckyInimate');
+        }, 200);
+        setTimeout(() => {
+          selectSound.play();
+          dailySpin[d - 1].classList.remove('luckyInimate');
+        }, 400);
+        setTimeout(() => {
+          selectSound.play();
+          dailySpin[d - 1].classList.add('luckyInimate');
+        }, 600);
+        setTimeout(() => {
+          selectSound.play();
+          dailySpin[d - 1].classList.remove('luckyInimate');
+        }, 800);
+        setTimeout(() => {
+          selectSound.play();
+          dailySpin[d - 1].classList.add('luckyInimate');
+        }, 1000);
+        setTimeout(() => {
+          selectSound.play();
+          dailySpin[d - 1].classList.remove('luckyInimate');
+        }, 1200);
+        setTimeout(() => {
+          selectSound.play();
+          dailySpin[d - 1].classList.add('luckyInimate');
+        }, 1400);
+        setTimeout(() => {
+          dailySpin[d - 1].classList.remove('luckyInimate');
+        }, 1600);
+      }, 500);
+      setTimeout(() => {
+        resultWinOrDraw(d - 1);
+        dailyResult.style.display = 'flex';
+      }, 1000);
+      setTimeout(() => {
+        dailyResult.style.display = 'none';
+        dailyResultImg.src = '';
+        dailyResultItext.classList.remove('fa-face-sad-tear');
+        dailyNumber = true;
+        dailyIntervel = 0;
+      }, 5000);
+    }
+    bubbleClick.play();
+  }, speed);
+}
+
+spinBtn.addEventListener('click', function () {
+  bubbleClick.play();
+  if (counting == 0) {
+    return;
+  } else {
+    if (!dailyNumber) {
+      return;
+    } else {
+      counting--;
+      spinCount.textContent = 'Free Spin : ' + counting;
+      dailyNumber = false;
+      let random = getRandomInt(25);
+      dailySpinCircle(null, 100);
+      setTimeout(() => {
+        clearInterval(dailyIntervel);
+        dailyIntervel = 0;
+        dailySpinCircle(null, 200);
+      }, 2000);
+      setTimeout(() => {
+        clearInterval(dailyIntervel);
+        dailyIntervel = 0;
+        dailySpinCircle(null, 300);
+      }, 2500);
+      setTimeout(() => {
+        clearInterval(dailyIntervel);
+        dailyIntervel = 0;
+        dailySpinCircle(random, 350);
+      }, 4000);
+      if (counting == 0) {
+        spinCount.style.display = 'none';
+        spinCountDown.style.display = 'block';
+        spinGO.style.color = 'red';
+        spinCountingStart();
+      }
+    }
+  }
+});
+
+function win(x) {
+  if (x == 0) {
+    myOwnCoin.firstElementChild.textContent =
+      +myOwnCoin.firstElementChild.textContent + 48;
+    showMenuCoin.textContent = +myOwnCoin.firstElementChild.textContent;
+    showCoinInProfile.textContent = +myOwnCoin.firstElementChild.textContent;
+    console.log(myOwnCoin.firstElementChild);
+  }
+  if (x == 1) {
+    myOwnCoin.firstElementChild.textContent =
+      +myOwnCoin.firstElementChild.textContent + 24;
+    showMenuCoin.textContent = +myOwnCoin.firstElementChild.textContent;
+    showCoinInProfile.textContent = +myOwnCoin.firstElementChild.textContent;
+    console.log(myOwnCoin.firstElementChild);
+  }
+  if (x == 2 || x == 6) {
+    myOwnCoin.firstElementChild.textContent =
+      +myOwnCoin.firstElementChild.textContent + 12;
+    showMenuCoin.textContent = +myOwnCoin.firstElementChild.textContent;
+    showCoinInProfile.textContent = +myOwnCoin.firstElementChild.textContent;
+    console.log(myOwnCoin.firstElementChild);
+  }
+  if (x == 3 || x == 7) {
+    myOwnCoin.firstElementChild.textContent =
+      +myOwnCoin.firstElementChild.textContent + 4;
+    showMenuCoin.textContent = +myOwnCoin.firstElementChild.textContent;
+    showCoinInProfile.textContent = +myOwnCoin.firstElementChild.textContent;
+    console.log(myOwnCoin.firstElementChild);
+  }
+  if (x == 4 || x == 5) {
+    myOwnCoin.firstElementChild.textContent =
+      +myOwnCoin.firstElementChild.textContent + 0;
+    showMenuCoin.textContent = +myOwnCoin.firstElementChild.textContent;
+    showCoinInProfile.textContent = +myOwnCoin.firstElementChild.textContent;
+    console.log(myOwnCoin.firstElementChild);
+  }
+}
+
+let spinTimer = 86400;
+let spinTimerId = 0;
+
+function spinCountingStart() {
+  if (spinTimerId !== 0) {
+    return;
+  }
+  spinTimerId = setInterval(function () {
+    spinTimer--;
+    updateText(spinTimer);
+    if (spinTimer < 0) {
+      spinCountingStop();
+      spinTimerId = 0;
+    }
+  }, 1000);
+}
+
+function spinCountingStop() {
+  clearInterval(spinTimerId);
+  spinTimer = 86400;
+  counting = 5;
+  spinGO.style.color = '#00ff2a';
+  spinCountDown.style.display = 'none';
+  spinCount.style.display = 'block';
+  spinCount.textContent = 'Free Spin : ' + counting;
+  updateText(spinTimer);
+}
+
+function updateText(timer) {
+  const hour = Math.floor(timer / 3600);
+  const min = Math.floor(timer / 60) % 60;
+  const sec = timer % 60;
+  spinHour.textContent = hour < 10 ? '0' + hour.toString() : hour;
+  SpinMin.textContent = min < 10 ? '0' + min.toString() : min;
+  spinSec.textContent = sec < 10 ? '0' + sec.toString() : sec;
+}
+
+function resultWinOrDraw(x) {
+  if (x == 0) {
+    dailyResultImg.src = './assets/images/square-buttons/whale(top corner).png';
+    dailyResultPText.textContent = 'You Win : 48 Coins';
+  }
+  if (x == 1) {
+    dailyResultImg.src = './assets/images/square-buttons/bird.png';
+    dailyResultPText.textContent = 'You Win : 24 Coins';
+  }
+  if (x == 2) {
+    dailyResultImg.src = './assets/images/square-buttons/dolphin(bottom).png';
+    dailyResultPText.textContent = 'You Win : 12 Coins';
+  }
+  if (x == 3) {
+    dailyResultImg.src =
+      './assets/images/square-buttons/seahorse(right side).png';
+    dailyResultPText.textContent = 'You Win : 4 Coins';
+  }
+  if (x == 6) {
+    dailyResultImg.src = './assets/images/square-buttons/sheep(left side).png';
+    dailyResultPText.textContent = 'You Win : 12 Coins';
+  }
+  if (x == 7) {
+    dailyResultImg.src = './assets/images/square-buttons/dog(top corner).png';
+    dailyResultPText.textContent = 'You Win : 4 Coins';
+  }
+  if (x == 4 || x == 5) {
+    dailyResultItext.classList = 'fa-solid fa-face-sad-tear';
+    dailyResultPText.textContent = 'Good Luck Next Time';
+  }
 }

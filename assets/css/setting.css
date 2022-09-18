@@ -248,6 +248,7 @@
 .signOutBtn {
   width: 15rem;
   padding: 10px 0;
+  /* width: 200px; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -283,4 +284,9 @@
 .aboutBettingSlotsBtn,
 .signOutBtn {
   padding: 10px 45px;
+}
+.privacy p,
+.userAgreement p,
+.aboutBettingSlotsBtn p {
+  text-align: center;
 }
