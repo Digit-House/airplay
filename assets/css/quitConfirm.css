@@ -74,7 +74,6 @@
   border-radius: 1rem;
   box-shadow: rgba(255, 255, 255, 0.15) 0 1px 0 inset,
     rgba(46, 54, 80, 0.075) 0 1px 1px;
-  box-sizing: border-box;
   color: #ffffff;
   cursor: pointer;
   display: inline-block;
