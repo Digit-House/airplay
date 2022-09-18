@@ -91,6 +91,10 @@ const dailyResultPText = document.querySelector(".dailyResultPText");
 const getMoreCoin = document.querySelector(".get-coin");
 const dailyRewardContainer = document.querySelector(".dailyRewardContainer");
 const DailyRewardBackBtn = document.querySelector(".DailyRewardBackBtn");
+const dailyRewardSpinHistoryBtn = document.querySelector(".dailyRewardSpinHistoryBtn");
+const dailyRewardSpinHistory = document.querySelector(".dailyRewardSpinHistory");
+const dailyRewardSpinHistoryBackBtn = document.querySelector(".dailyRewardSpinHistoryBackBtn");
+const historyCointainer = document.querySelector(".historyCointainer");
 const userAgreement_container = document.querySelector(
   ".userAgreement_container"
 );
@@ -246,7 +250,7 @@ function gamePreloader() {
   });
 }
 let menuController = true;
-welcomePlay.addEventListener("click", function () {
+  welcomePlay.addEventListener("click", function () {
   bubbleClick.play();
   mainBackgroundSound.play();
   menuController = false;
@@ -570,13 +574,13 @@ for (let i = 0; i < betBtn.length; i++) {
   });
 }
 
-getCoinBtn.addEventListener("click", function () {
-  coinDropAudio.play();
-  this.classList.add("zoomoutAnimate");
-  setTimeout(() => {
-    this.classList.remove("zoomoutAnimate");
-  }, 210);
-});
+// getCoinBtn.addEventListener("click", function () {
+//   coinDropAudio.play();
+//   this.classList.add("zoomoutAnimate");
+//   setTimeout(() => {
+//     this.classList.remove("zoomoutAnimate");
+//   }, 210);
+// });
 
 let count = setting.bettingTime;
 let timerId = 0;
@@ -1011,9 +1015,14 @@ function animationCircle(random, speed) {
   }, speed);
 }
 
-getMoreCoin.addEventListener("click", () => {
-  gameContainer.style.display = "none";
-  dailyRewardContainer.style.display = "flex";
+getMoreCoin.addEventListener("click", function() {
+  coinDropAudio.play();
+  this.classList.add("zoomoutAnimate");
+  setTimeout(() => {
+    this.classList.remove("zoomoutAnimate");
+    gameContainer.style.display = "none";
+    dailyRewardContainer.style.display = "flex";
+  }, 210);
 });
 
 DailyRewardBackBtn.addEventListener("click", function () {
@@ -1021,13 +1030,33 @@ DailyRewardBackBtn.addEventListener("click", function () {
   this.classList.add("zoomoutAnimate");
   setTimeout(() => {
     this.classList.remove("zoomoutAnimate");
+    dailyRewardContainer.style.display = "none";
+    gameContainer.style.display = "flex";
   }, 210);
   if (dailyIntervel) {
     return;
   }
-  dailyRewardContainer.style.display = "none";
-  gameContainer.style.display = "flex";
 });
+
+dailyRewardSpinHistoryBtn.addEventListener("click", function(){
+  bubbleClick.play();
+  this.classList.add("zoomoutAnimate");
+  setTimeout(() => {
+    this.classList.remove("zoomoutAnimate");
+    dailyRewardContainer.style.display = "none";
+    dailyRewardSpinHistory.style.display = "flex";
+  }, 210);
+})
+
+dailyRewardSpinHistoryBackBtn.addEventListener("click", function(){
+  bubbleClick.play();
+  this.classList.add("zoomoutAnimate");
+  setTimeout(() => {
+    this.classList.remove("zoomoutAnimate");
+    dailyRewardContainer.style.display = "flex";
+    dailyRewardSpinHistory.style.display = "none";
+  }, 210);
+})
 
 let dailyIntervel = 0;
 let d = 0;
@@ -1225,30 +1254,108 @@ function resultWinOrDraw(x) {
   if (x == 0) {
     dailyResultImg.src = "./assets/images/square-buttons/whale(top corner).png";
     dailyResultPText.textContent = "You Win : 48 Coins";
+    var currentdate = new Date();
+    spinHistoryList.unshift({src: "./assets/images/square-buttons/whale(top corner).png", 
+                            time: currentdate.getHours() + ":" + currentdate.getMinutes() + ":" + currentdate.getSeconds(),
+                            date: currentdate.getDate() + "/" + (currentdate.getMonth()+1)  + "/" + currentdate.getFullYear()})
+    renderSpinHistoryList(historyCointainer,spinHistoryList);
   }
   if (x == 1) {
     dailyResultImg.src = "./assets/images/square-buttons/bird.png";
     dailyResultPText.textContent = "You Win : 24 Coins";
+    var currentdate = new Date();
+    spinHistoryList.unshift({src: "./assets/images/square-buttons/bird.png",
+                            time: currentdate.getHours() + ":" + currentdate.getMinutes() + ":" + currentdate.getSeconds(),
+                            date: currentdate.getDate() + "/" + (currentdate.getMonth()+1)  + "/" + currentdate.getFullYear()})
+    renderSpinHistoryList(historyCointainer,spinHistoryList);
   }
   if (x == 2) {
     dailyResultImg.src = "./assets/images/square-buttons/dolphin(bottom).png";
     dailyResultPText.textContent = "You Win : 12 Coins";
+    var currentdate = new Date();
+    spinHistoryList.unshift({src: "./assets/images/square-buttons/dolphin(bottom).png",
+                            time: currentdate.getHours() + ":" + currentdate.getMinutes() + ":" + currentdate.getSeconds(),
+                            date: currentdate.getDate() + "/" + (currentdate.getMonth()+1)  + "/" + currentdate.getFullYear()})
+    renderSpinHistoryList(historyCointainer,spinHistoryList);
   }
   if (x == 3) {
     dailyResultImg.src =
       "./assets/images/square-buttons/seahorse(right side).png";
     dailyResultPText.textContent = "You Win : 4 Coins";
+    var currentdate = new Date();
+    spinHistoryList.unshift({src: "./assets/images/square-buttons/seahorse(right side).png",
+                            time: currentdate.getHours() + ":" + currentdate.getMinutes() + ":" + currentdate.getSeconds(),
+                            date: currentdate.getDate() + "/" + (currentdate.getMonth()+1)  + "/" + currentdate.getFullYear()})
+    renderSpinHistoryList(historyCointainer,spinHistoryList);
   }
   if (x == 6) {
     dailyResultImg.src = "./assets/images/square-buttons/sheep(left side).png";
     dailyResultPText.textContent = "You Win : 12 Coins";
+    var currentdate = new Date();
+    spinHistoryList.unshift({src: "./assets/images/square-buttons/sheep(left side).png",
+                            time: currentdate.getHours() + ":" + currentdate.getMinutes() + ":" + currentdate.getSeconds(),
+                            date: currentdate.getDate() + "/" + (currentdate.getMonth()+1)  + "/" + currentdate.getFullYear()})
+    renderSpinHistoryList(historyCointainer,spinHistoryList);
   }
   if (x == 7) {
     dailyResultImg.src = "./assets/images/square-buttons/dog(top corner).png";
     dailyResultPText.textContent = "You Win : 4 Coins";
+    var currentdate = new Date();
+    spinHistoryList.unshift({src: "./assets/images/square-buttons/dog(top corner).png",
+                            time: currentdate.getHours() + ":" + currentdate.getMinutes() + ":" + currentdate.getSeconds(),
+                            date: currentdate.getDate() + "/" + (currentdate.getMonth()+1)  + "/" + currentdate.getFullYear()})
+    renderSpinHistoryList(historyCointainer,spinHistoryList);
   }
   if (x == 4 || x == 5) {
     dailyResultItext.classList = "fa-solid fa-face-sad-tear";
     dailyResultPText.textContent = "Good Luck Next Time";
+    var currentdate = new Date();
+    spinHistoryList.unshift({src: "./assets/images/square-buttons/thankYou.png",
+                            time: currentdate.getHours() + ":" + currentdate.getMinutes() + ":" + currentdate.getSeconds(),
+                            date: currentdate.getDate() + "/" + (currentdate.getMonth()+1)  + "/" + currentdate.getFullYear()})
+    renderSpinHistoryList(historyCointainer,spinHistoryList);
   }
+}
+
+let spinHistoryList = [];
+
+function renderSpinHistoryList(historyCointainer, spinHistoryList) {
+  cleanHistoryList();
+  if (spinHistoryList.length > 5) {
+    for (let i = 0; i < 5; i++) {
+      const animal = spinHistoryList[i] ;
+      const animalItem = generateHistoryList(animal);
+      historyCointainer.appendChild(animalItem);
+    }
+  } else {
+    for (let i = 0; i < spinHistoryList.length; i++) {
+      const animal = spinHistoryList[i];
+      const animalItem = generateHistoryList(animal);
+      historyCointainer.appendChild(animalItem);
+    }
+  }
+}
+
+function cleanHistoryList() {
+  let historyCointainer = document.querySelector(".historyCointainer");
+  while (historyCointainer.firstChild) {
+    historyCointainer.removeChild(historyCointainer.firstChild);
+  }
+}
+
+function generateHistoryList(item) {
+  const rewardSpinHistoryList = document.createElement("div");
+  rewardSpinHistoryList.className = "rewardSpinHistoryList";
+  const randomImg = document.createElement("img");
+  randomImg.className = "randomImg";
+  randomImg.src = item.src;
+  const currentTime = document.createElement("p");
+  currentTime.className = "currentTime";
+  currentTime.innerText = item.time;
+  const currentDate = document.createElement("p");
+  currentDate.className = "currentDate";
+  currentDate.innerText = item.date;
+
+  rewardSpinHistoryList.append(randomImg,currentTime,currentDate);
+  return rewardSpinHistoryList;
 }

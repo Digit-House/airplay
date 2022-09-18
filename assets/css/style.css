@@ -12,6 +12,7 @@
 @import url(./userAgreements.css);
 @import url(./dailyReward.css);
 @import url(./weeklyRewards.css);
+@import url(./dailyRewardsSpinHistory.css);
 
 html {
   font-family: "Mouse Memoirs", sans-serif;
