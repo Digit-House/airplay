@@ -79,9 +79,9 @@
   justify-content: flex-start !important;
 }
 
-.center {
+/* .center {
   justify-content: center !important;
-}
+} */
 
 .settingContainer .volCon {
   width: 200px;
@@ -185,14 +185,14 @@
 
 .switch input::before {
   color: #ff7b01;
-  content: "OFF";
+  content: 'OFF';
   left: 10px;
   transition: color 0.5s;
 }
 
 .switch input::after {
   color: #fff;
-  content: "ON";
+  content: 'ON';
   right: 15px;
   transition: color 0.5s;
 }
@@ -244,8 +244,10 @@
 
 .privacy,
 .userAgreement,
-.aboutBettingSlotsBtn {
-  /* width: 180px; */
+.aboutBettingSlotsBtn,
+.signOutBtn {
+  width: 15rem;
+  padding: 10px 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -253,7 +255,7 @@
   font-size: 1.9rem;
   font-weight: 500;
   text-align: unset !important;
-  padding: 10px 36px;
+  /* padding: 10px 36px; */
   border-radius: 30px;
   background: linear-gradient(to bottom, #ffe600, #ff7b01);
   box-shadow: rgb(0 0 0 / 9%) 0px 2px 1px, rgb(0 0 0 / 9%) 0px 4px 2px,
@@ -263,11 +265,22 @@
 }
 
 .privacy,
-.userAgreement > p {
-  display: inline-block;
+.userAgreement,
+.aboutBettingSlotsBtn,
+.signOutBtn > p {
   white-space: nowrap;
 }
 
-.aboutBettingSlots {
-  padding: 10px 60px;
+.signOutBtn > p {
+  background-color: blue;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: rgba(255, 255, 255, 0.5) 0px 3px 3px;
+}
+
+.aboutBettingSlotsBtn,
+.signOutBtn {
+  padding: 10px 45px;
 }

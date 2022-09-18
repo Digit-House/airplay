@@ -1,0 +1,28 @@
+{
+  "name": "airplay",
+  "version": "1.0.0",
+  "description": "Game repo for AirPlay",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Digit-House/airplay.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Digit-House/airplay/issues"
+  },
+  "homepage": "https://github.com/Digit-House/airplay#readme",
+  "dependencies": {
+    "firebase": "^9.9.4"
+  },
+  "devDependencies": {
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0"
+  }
+}
