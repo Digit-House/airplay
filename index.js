@@ -36,8 +36,8 @@ const aboutBettingSlotsBtn = document.querySelector(".aboutBettingSlotsBtn");
 const aboutBettingSlotsBackBtn = document.querySelector(
   ".aboutBettingSlotsBackBtn"
 );
-const loginContainer = document.querySelector(".loginContainer");
-const loginBtn = document.querySelector(".loginBtn");
+
+const signInBtn = document.querySelector(".signInBtn");
 const name = document.querySelectorAll(".name");
 const signOutBtn = document.querySelector(".signOutBtn");
 const privacy = document.querySelector(".privacy");
@@ -116,6 +116,9 @@ const btnNext = document.getElementById("next");
 const btnPrev = document.getElementById("prev");
 const progressBar = document.getElementById("progress-bar");
 
+const coinCon = document.querySelector(".game__welcome-top-item2-coin");
+const profilePhoto = document.querySelectorAll(".profilePhoto");
+
 let circleActive = document.querySelector(".active");
 
 btnNext.addEventListener("click", function () {
@@ -187,26 +190,13 @@ const auth = getAuth();
 // setPersistence(auth, browserLocalPersistence);
 
 let user;
-let uId;
-const token = localStorage.getItem("token");
-
-if (token == null) {
-  loadingScreen.style.display = "none";
-  loginContainer.style.display = "flex";
-  signOutUser();
-} else {
-  const docSnap = await getDoc(doc(db, "users", token));
+let uId = localStorage.getItem("token");
+if (uId) {
+  const docSnap = await getDoc(doc(db, "users", uId));
   if (docSnap.exists()) {
-    uId = token;
     user = docSnap.data();
-    myOwnCoin.firstElementChild.textContent = user.coin;
-    showMenuCoin.textContent = +myOwnCoin.firstElementChild.textContent;
-    showCoinInProfile.textContent = +myOwnCoin.firstElementChild.textContent;
-    name.forEach((n) => (n.textContent = user.name));
   } else {
-    signOutUser();
-    loadingScreen.style.display = "none";
-    loginContainer.style.display = "flex";
+    uId = null;
   }
 }
 
@@ -214,7 +204,24 @@ onAuthStateChanged(auth, (u) => {
   if (u) {
     const unsub = onSnapshot(doc(db, "users", u.uid), (doc) => {
       user = doc.data();
+      uId = u.uid;
+      localStorage.setItem("token", u.uid);
+      signInBtn.style.display = "none";
+      profilePhoto.forEach((v) => (v.src = user.profilePicUrl));
+      myOwnCoin.firstElementChild.textContent = user.coin;
+      showMenuCoin.textContent = +myOwnCoin.firstElementChild.textContent;
+      showCoinInProfile.textContent = +myOwnCoin.firstElementChild.textContent;
+      name.forEach((n) => (n.textContent = user.name));
+      coinCon.style.display = "flex";
+      profileBtn.style.display = "flex";
     });
+  } else {
+    uId = null;
+    user = null;
+    localStorage.removeItem("token");
+    coinCon.style.display = "none";
+    profileBtn.style.display = "none";
+    signInBtn.style.display = "flex";
   }
 });
 
@@ -234,54 +241,43 @@ function isUserSignedIn() {
   return !!auth.currentUser;
 }
 
-loginBtn.addEventListener("click", async () => {
+async function signInUser() {
   signIn().then(async () => {
     const { uid, displayName, email, photoURL } = auth.currentUser;
     uId = uid;
     const docSanp = await getDoc(doc(db, "users", uid));
-    if (docSanp.exists()) {
-      user = docSanp.data();
-      myOwnCoin.firstElementChild.textContent = user.coin;
-      showMenuCoin.textContent = +myOwnCoin.firstElementChild.textContent;
-      showCoinInProfile.textContent = +myOwnCoin.firstElementChild.textContent;
-      name.forEach((n) => (n.textContent = user.name));
-      // loginContainer.style.display = 'none';
-      // gameWelcome.style.display = 'block';
-    } else {
+    if (!docSanp.exists()) {
       try {
         setDoc(doc(db, "users", uid), {
           name: displayName,
           email: email,
           profilePicUrl: photoURL,
           coin: 600,
-        }).then(async () => {
-          const docSanp = await getDoc(doc(db, "users", uid));
-          user = docSanp.data();
-          myOwnCoin.firstElementChild.textContent = user.coin;
-          showMenuCoin.textContent = +myOwnCoin.firstElementChild.textContent;
-          showCoinInProfile.textContent =
-            +myOwnCoin.firstElementChild.textContent;
-          name.forEach((n) => (n.textContent = user.name));
-          // loginContainer.style.display = 'none';
-          // gameWelcome.style.display = 'block';
         });
       } catch (error) {
         console.error("Error writing new message to Firebase Database", error);
       }
     }
-    localStorage.setItem("token", uid);
   });
+}
+
+signInBtn.addEventListener("click", function () {
+  bubbleClick.play();
+  this.classList.add("zoomoutAnimate");
+  setTimeout(() => {
+    this.classList.remove("zoomoutAnimate");
+    signInUser();
+  }, 250);
 });
 
 signOutBtn.addEventListener("click", function () {
+  bubbleClick.play();
   this.classList.add("zoomoutAnimate");
   setTimeout(() => {
     this.classList.remove("zoomoutAnimate");
     signOutUser();
     settingContainer.style.display = "none";
-    loginContainer.style.display = "flex";
-    user = null;
-    localStorage.removeItem("token");
+    gameWelcome.style.display = "block";
   }, 250);
 });
 
@@ -343,13 +339,8 @@ function menuBoardPreloader() {
     getImage("./assets/images/gameicon copy 2.png"),
   ])
     .then(() => {
-      onAuthStateChanged(auth, (user) => {
-        if (user) {
-          loginContainer.style.display = "none";
-          loadingScreen.style.display = "none";
-          gameWelcome.style.display = "block";
-        }
-      });
+      loadingScreen.style.display = "none";
+      gameWelcome.style.display = "block";
     })
     .catch((e) => console.log(e));
 }
@@ -408,13 +399,17 @@ let menuController = true;
 welcomePlay.addEventListener("click", function () {
   bubbleClick.play();
   mainBackgroundSound.play();
-  menuController = false;
   this.classList.add("zoomoutAnimate");
   setTimeout(() => {
     this.classList.remove("zoomoutAnimate");
+    if (!isUserSignedIn()) {
+      signInUser();
+    } else {
+      menuController = false;
+      loadingBox.style.display = "flex";
+      gamePreloader();
+    }
   }, 210);
-  loadingBox.style.display = "flex";
-  gamePreloader();
 });
 
 let setting = JSON.parse(localStorage.getItem("setting")) || {
@@ -1365,6 +1360,9 @@ function win(x) {
     showCoinInProfile.textContent = +myOwnCoin.firstElementChild.textContent;
     console.log(myOwnCoin.firstElementChild);
   }
+  updateDoc(doc(db, "users", uId), {
+    coin: +myOwnCoin.firstElementChild.textContent,
+  });
 }
 
 let spinTimer = 86400;

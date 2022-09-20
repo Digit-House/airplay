@@ -72,7 +72,7 @@
   height: 40%;
   background-image: linear-gradient(to bottom, #ffe600, #ff7b01);
   border-radius: 38px;
-  display: flex;
+  display: none;
   align-items: center;
   gap: 0.5rem;
   box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
@@ -137,12 +137,13 @@
   height: auto;
 }
 
-.game__welcome-top-item2-coin {
+.game__welcome-top-item2-coin,
+.signInBtn {
   width: 95%;
   height: 40%;
   background-image: linear-gradient(to bottom, #ffe600, #ff7b01);
   border-radius: 38px;
-  display: flex;
+  display: none;
   margin-top: 0.8rem;
   align-items: center;
   gap: 0.8rem;
@@ -220,6 +221,32 @@
 
 .zoomoutAnimate {
   animation: zoomout 200ms;
+}
+
+.signInBtn {
+  margin: 0;
+  display: flex;
+  background: whitesmoke;
+  font-family: inherit;
+  font-size: 2rem;
+  letter-spacing: 4px;
+  font-weight: 700;
+  color: rgb(255, 10, 10);
+  justify-content: space-evenly;
+}
+
+.signInBtn svg {
+  height: 90%;
+}
+
+.signInBtn:active {
+  background: rgb(220, 220, 220);
+}
+
+.boderRadius {
+  width: 19.5% !important;
+  border-radius: 50%;
+  margin-right: 8px;
 }
 
 @keyframes zoomout {
