@@ -8,7 +8,7 @@ const coinDropAudio2 = document.querySelector(".coinDropAudio2");
 const selectSound = document.querySelector(".selectSound");
 const backGroundSound = document.querySelector(".backGroundSound");
 backGroundSound.loop = true;
-
+const luckySpin = document.querySelector(".luckySpin");
 const clockTick = document.querySelector(".clockTick");
 const winSound = document.querySelector(".winSound");
 const loseSound = document.querySelector(".loseSound");
@@ -36,46 +36,7 @@ const aboutBettingSlotsBtn = document.querySelector(".aboutBettingSlotsBtn");
 const aboutBettingSlotsBackBtn = document.querySelector(
   ".aboutBettingSlotsBackBtn"
 );
-// const privacy = document.querySelector('.privacy');
-// const userAgreement = document.querySelector('.userAgreement');
-// const aboutBettingSlots = document.querySelector('.aboutBettingSlots');
-// const volumeBtn = document.querySelector('.volumeBtn');
-// const gameContainer = document.querySelector('.game__container');
-// const betBtn = document.querySelectorAll('.animalCircleImg');
-// const myValue = document.querySelectorAll('.myValue');
-// const centerImg = document.querySelectorAll('.img');
-// const betCoins = document.querySelector('.betCoins');
-// const myOwnCoin = document.querySelector('.myOwnCoin');
-// const startBtn = document.querySelector('.startBtn');
-// const removeBetBtn = document.querySelector('.removeBetBtn');
-// const showWinOrLose = document.querySelector('.showWinOrLose');
-// const winCount = document.querySelector('.winCount');
-// const getCoinBtn = document.querySelector('.get-coin');
-// const quitBtn = document.querySelector('.quitBtn');
-// const warning = document.querySelector('.warning');
-// const okBtn = document.querySelector('.okBtn');
-// const outOfCoinWarning = document.querySelector('.outOfCoinWarning');
-// const okBtn2 = document.querySelector('.okBtn2');
-// const outOfCoinAnimation = document.querySelector('.outOfCoinAnimation');
-// const countDown = document.getElementById('count-down');
-// const circleEle = document.getElementById('circle');
-// const secondSpan = document.querySelector('#count-down span');
-// const quitConfirm = document.querySelector('.quitConfirm');
-// const yesBtn = document.querySelector('.yesBtn');
-// const noBtn = document.querySelector('.noBtn');
-// const randomAnimal = document.querySelector('.randomAnimal');
-// const showMenuCoin = document.querySelector('.wellcomeTotal');
-// const showCoinInProfile = document.querySelector('.showCoinInProfile');
-// const winOne = document.querySelector('.winning1');
-// const winTwo = document.querySelector('.winning2');
-// const winThree = document.querySelector('.winning3');
-// const winFour = document.querySelector('.winning4');
-// const loseGif = document.querySelector('.loserGif');
-// const celebration = document.querySelector('.celebration');
-// const loserDolphin = document.querySelector('.loserDolphin');
-// const privacyContainer = document.querySelector('.privacy__container');
-// const privacyBackBtnOne = document.querySelector('.privacyBack');
-// const privacyBackBtnTwo = document.querySelector('.privacyBackBtn');
+
 const signInBtn = document.querySelector(".signInBtn");
 const name = document.querySelectorAll(".name");
 const signOutBtn = document.querySelector(".signOutBtn");
@@ -230,12 +191,13 @@ const auth = getAuth();
 
 let user;
 let uId = localStorage.getItem("token");
-signOutUser();
-const docSnap = await getDoc(doc(db, "users", uId));
-if (docSnap.exists()) {
-  user = docSnap.data();
-} else {
-  uId = null;
+if (uId) {
+  const docSnap = await getDoc(doc(db, "users", uId));
+  if (docSnap.exists()) {
+    user = docSnap.data();
+  } else {
+    uId = null;
+  }
 }
 
 onAuthStateChanged(auth, (u) => {
@@ -762,15 +724,6 @@ for (let i = 0; i < betBtn.length; i++) {
     clearInterval(betHold);
   });
 }
-
-getCoinBtn.addEventListener("click", function () {
-  coinDropAudio.play();
-  this.classList.add("zoomoutAnimate");
-  setTimeout(() => {
-    this.classList.remove("zoomoutAnimate");
-  }, 210);
-});
-
 let count = setting.bettingTime;
 let timerId = 0;
 let playPermission = true;
@@ -1210,9 +1163,15 @@ function animationCircle(random, speed) {
   }, speed);
 }
 
-getMoreCoin.addEventListener("click", () => {
-  gameContainer.style.display = "none";
-  dailyRewardContainer.style.display = "flex";
+getMoreCoin.addEventListener("click", function () {
+  bubbleClick.play();
+  this.classList.add("zoomoutAnimate");
+  setTimeout(() => {
+    this.classList.remove("zoomoutAnimate");
+    if (!playPermission) return;
+    gameContainer.style.display = "none";
+    dailyRewardContainer.style.display = "flex";
+  }, 210);
 });
 
 DailyRewardBackBtn.addEventListener("click", function () {
@@ -1220,12 +1179,12 @@ DailyRewardBackBtn.addEventListener("click", function () {
   this.classList.add("zoomoutAnimate");
   setTimeout(() => {
     this.classList.remove("zoomoutAnimate");
+    if (dailyIntervel) {
+      return;
+    }
+    dailyRewardContainer.style.display = "none";
+    gameContainer.style.display = "flex";
   }, 210);
-  if (dailyIntervel) {
-    return;
-  }
-  dailyRewardContainer.style.display = "none";
-  gameContainer.style.display = "flex";
 });
 
 dailyRewardSpinHistoryBtn.addEventListener("click", function () {
@@ -1323,7 +1282,7 @@ function dailySpinCircle(random, speed) {
         dailyIntervel = 0;
       }, 5000);
     }
-    bubbleClick.play();
+    luckySpin.play();
   }, speed);
 }
 
