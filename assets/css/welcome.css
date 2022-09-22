@@ -6,6 +6,7 @@
   border-radius: 45px;
   cursor: pointer;
   display: none;
+  position: relative;
 }
 
 .game__welcome-top {
@@ -65,6 +66,7 @@
   height: 100%;
   margin-top: 1.2rem;
   margin-right: 1.5rem;
+  z-index: 100;
 }
 
 .game__welcome-top-item2-name {
@@ -135,6 +137,11 @@
 .game__welcome-top-item2-name img {
   width: 16%;
   height: auto;
+}
+
+.signInBtnCon {
+  height: 100%;
+  position: relative;
 }
 
 .game__welcome-top-item2-coin,
@@ -235,6 +242,38 @@
   justify-content: space-evenly;
 }
 
+.signInBtnCon i {
+  position: absolute;
+  bottom: 43px;
+  left: 45%;
+  font-size: 2.5rem;
+  color: white;
+  animation: handAnimation 1s infinite ease-in-out;
+}
+
+@keyframes handAnimation {
+  0% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.signInTuto {
+  position: absolute;
+  bottom: -45px;
+  left: 4.5%;
+  border-radius: 4px;
+  padding: 20px;
+  color: whitesmoke;
+  font-size: 2rem;
+  background-color: rgba(29, 38, 48, 0.75);
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
+    rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
 .signInBtn svg {
   height: 90%;
 }
@@ -247,6 +286,17 @@
   width: 19.5% !important;
   border-radius: 50%;
   margin-right: 8px;
+}
+
+.gray::after {
+  background: rgba(106, 105, 105, 0.6);
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
 }
 
 @keyframes zoomout {
