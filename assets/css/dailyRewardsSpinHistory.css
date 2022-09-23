@@ -28,6 +28,14 @@
 .historyCointainer {
   width: 40%;
 }
+
+.noHistoryText{
+  color: #9d9a9a57;
+  font-size: 4rem;
+  margin-top: 17%;
+  display: block;
+}
+
 .rewardSpinHistoryList,
 .historyHeader {
   width: 100%;
