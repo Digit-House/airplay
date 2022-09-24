@@ -197,7 +197,7 @@ if (uId) {
   if (docSnap.exists()) {
     user = docSnap.data();
   } else {
-    uId = null;
+    signOutUser();
   }
 }
 
@@ -223,9 +223,7 @@ onAuthStateChanged(auth, async (u) => {
     });
     const docSnap = await getDoc(doc(db, 'users', uId)).then((res) => {
       user = res.data();
-      console.log(user);
       if (user.luckySpin == null) {
-        console.log('entered');
         updateDoc(doc(db, 'users', uId), {
           luckySpin: {
             spinCount: 5,
@@ -293,6 +291,10 @@ async function signInUser() {
           email: email,
           profilePicUrl: photoURL,
           coin: 600,
+          luckySpin: {
+            spinCount: 5,
+            startTime: null,
+          },
         });
       } catch (error) {
         console.error('Error writing new message to Firebase Database', error);
@@ -1433,7 +1435,6 @@ function spinCountingStart() {
 }
 
 function spinCountingStop() {
-  console.log('stopped');
   clearInterval(spinTimerId);
   spinTimerId = 0;
   spinTimer = 86400;
