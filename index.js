@@ -198,15 +198,18 @@ if (uId) {
   if (docSnap.exists()) {
     user = docSnap.data();
   } else {
-    uId = null;
+    signOutUser();
   }
 }
 
-onAuthStateChanged(auth, (u) => {
+let counting;
+let spinTimer = 86400;
+let spinTimerId = 0;
+onAuthStateChanged(auth, async (u) => {
   if (u) {
-    const unsub = onSnapshot(doc(db, 'users', u.uid), (doc) => {
-      user = doc.data();
-      uId = u.uid;
+    uId = u.uid;
+    const unsub = onSnapshot(doc(db, 'users', u.uid), (document) => {
+      user = document.data();
       localStorage.setItem('token', u.uid);
       signInBtn.style.display = 'none';
       profilePhoto.forEach((v) => (v.src = user.profilePicUrl));
@@ -219,9 +222,39 @@ onAuthStateChanged(auth, (u) => {
       signInBtnCon.style.display = 'none';
       gameWelcome.classList.remove('gray');
     });
-  } else {
+    const docSnap = await getDoc(doc(db, 'users', uId)).then((res) => {
+      user = res.data();
+      if (user.luckySpin == null) {
+        updateDoc(doc(db, 'users', uId), {
+          luckySpin: {
+            spinCount: 5,
+            startTime: null,
+          },
+        }).then(() => {
+          counting = 5;
+          spinCountingStop();
+        });
+        return;
+      }
+      counting = user.luckySpin.spinCount;
+      spinCount.textContent = 'Free Spin : ' + counting;
+      if (counting == 0) {
+        spinCount.style.display = 'none';
+        spinCountDown.style.display = 'block';
+        spinGO.style.color = 'red';
+        const passedTime = Date.now() / 1000 - user.luckySpin.startTime;
+        spinTimer = 86400 - Math.round(passedTime);
+        spinCountingStart();
+      } else if (counting != 0) {
+        spinCountingStop();
+      }
+    });
+  }
+  if (!u) {
     uId = null;
     user = null;
+    counting = 5;
+    spinCountingStop();
     localStorage.removeItem('token');
     gameWelcome.classList.add('gray');
     coinCon.style.display = 'none';
@@ -251,18 +284,24 @@ async function signInUser() {
   signIn().then(async () => {
     const { uid, displayName, email, photoURL } = auth.currentUser;
     uId = uid;
-    const docSanp = await getDoc(doc(db, 'users', uid));
-    if (!docSanp.exists()) {
+    const docSnap = await getDoc(doc(db, 'users', uid));
+    if (!docSnap.exists()) {
       try {
         setDoc(doc(db, 'users', uid), {
           name: displayName,
           email: email,
           profilePicUrl: photoURL,
           coin: 600,
+          luckySpin: {
+            spinCount: 5,
+            startTime: null,
+          },
         });
       } catch (error) {
         console.error('Error writing new message to Firebase Database', error);
       }
+    } else {
+      user = docSnap.data();
     }
   });
 }
@@ -1216,8 +1255,8 @@ dailyRewardSpinHistoryBackBtn.addEventListener('click', function () {
 let dailyIntervel = 0;
 let d = 0;
 let dailyNumber = true;
-let counting = 5;
-spinCount.textContent = 'Free Spin : ' + counting;
+// let counting = 5;
+// spinCount.textContent = 'Free Spin : ' + counting;
 
 function dailySpinCircle(random, speed) {
   let number = random;
@@ -1301,6 +1340,12 @@ spinBtn.addEventListener('click', function () {
       return;
     } else {
       counting--;
+      updateDoc(doc(db, 'users', uId), {
+        luckySpin: {
+          spinCount: counting,
+          startTime: null,
+        },
+      });
       spinCount.textContent = 'Free Spin : ' + counting;
       dailyNumber = false;
       let random = getRandomInt(25);
@@ -1321,6 +1366,12 @@ spinBtn.addEventListener('click', function () {
         dailySpinCircle(random, 350);
       }, 4000);
       if (counting == 0) {
+        updateDoc(doc(db, 'users', uId), {
+          luckySpin: {
+            spinCount: counting,
+            startTime: Date.now() / 1000,
+          },
+        });
         spinCount.style.display = 'none';
         spinCountDown.style.display = 'block';
         spinGO.style.color = 'red';
@@ -1371,9 +1422,6 @@ function win(x) {
   });
 }
 
-let spinTimer = 86400;
-let spinTimerId = 0;
-
 function spinCountingStart() {
   if (spinTimerId !== 0) {
     return;
@@ -1383,15 +1431,23 @@ function spinCountingStart() {
     updateText(spinTimer);
     if (spinTimer < 0) {
       spinCountingStop();
-      spinTimerId = 0;
     }
   }, 1000);
 }
 
 function spinCountingStop() {
   clearInterval(spinTimerId);
+  spinTimerId = 0;
   spinTimer = 86400;
-  counting = 5;
+  if (counting == 0) {
+    counting = 5;
+    updateDoc(doc(db, 'users', uId), {
+      luckySpin: {
+        spinCount: 5,
+        startTime: null,
+      },
+    });
+  }
   spinGO.style.color = '#00ff2a';
   spinCountDown.style.display = 'none';
   spinCount.style.display = 'block';
