@@ -101,6 +101,7 @@ const dailyRewardSpinHistoryBtn = document.querySelector(
 const dailyRewardSpinHistory = document.querySelector(
   '.dailyRewardSpinHistory'
 );
+const noHistoryText = document.querySelector('.noHistoryText');
 const dailyRewardSpinHistoryBackBtn = document.querySelector(
   '.dailyRewardSpinHistoryBackBtn'
 );
@@ -1617,6 +1618,11 @@ function resultWinOrDraw(x) {
 let spinHistoryList = [];
 
 function renderSpinHistoryList(historyCointainer, spinHistoryList) {
+  if(spinHistoryList.length == 0){
+    noHistoryText.style.display = "block";
+  }else{
+    noHistoryText.style.display = "none";
+  }
   cleanHistoryList();
   if (spinHistoryList.length > 5) {
     for (let i = 0; i < 5; i++) {
