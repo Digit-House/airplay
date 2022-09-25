@@ -8,7 +8,7 @@
 }
 .weekely {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 1rem;
@@ -31,13 +31,14 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 70px;
-  height: 70px;
+  width: 100px;
+  height: 130px;
   border-radius: 20px;
   background-image: linear-gradient(to bottom, #ffe600, #ff7b01);
+  gap: 2rem;
 }
 .days img {
-  width: 30px;
+  width: 50px;
 }
 
 .Progresscontainer {
@@ -145,4 +146,21 @@
 
 .btnss:focus {
   outline: none;
+}
+
+.bb {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 130px;
+  border-radius: 20px;
+  background-image: linear-gradient(to bottom, #ffe600, #ff7b01);
+  gap: 1.5rem;
+}
+
+.bb img {
+  width: 50px;
 }
