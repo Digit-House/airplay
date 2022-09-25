@@ -122,6 +122,9 @@ const profilePhoto = document.querySelectorAll(".profilePhoto");
 
 let circleActive = document.querySelector(".active");
 const signInBtnCon = document.querySelector(".signInBtnCon");
+const luckySpinBtn = document.querySelector(".luckySpinBtn");
+const luckySpinContainer = document.querySelector(".luckySpinContainer");
+const luckySpinBackBtn = document.querySelector(".luckSpinBackBtn");
 
 // btnNext.addEventListener("click", function () {
 //   circleActive = circleActive.nextElementSibling;
@@ -1247,8 +1250,31 @@ dailyRewardSpinHistoryBackBtn.addEventListener("click", function () {
   this.classList.add("zoomoutAnimate");
   setTimeout(() => {
     this.classList.remove("zoomoutAnimate");
-    dailyRewardContainer.style.display = "flex";
+    luckySpinContainer.style.display = "flex";
     dailyRewardSpinHistory.style.display = "none";
+  }, 210);
+});
+
+luckySpinBtn.addEventListener("click", function () {
+  bubbleClick.play();
+  this.classList.add("zoomoutAnimate");
+  setTimeout(() => {
+    this.classList.remove("zoomoutAnimate");
+    dailyRewardContainer.style.display = "none";
+    luckySpinContainer.style.display = "flex";
+  }, 210);
+});
+
+luckySpinBackBtn.addEventListener("click", function () {
+  bubbleClick.play();
+  this.classList.add("zoomoutAnimate");
+  setTimeout(() => {
+    this.classList.remove("zoomoutAnimate");
+    if (dailyIntervel) {
+      return;
+    }
+    luckySpinContainer.style.display = "none";
+    dailyRewardContainer.style.display = "flex";
   }, 210);
 });
 
@@ -1327,6 +1353,7 @@ function dailySpinCircle(random, speed) {
         dailyIntervel = 0;
       }, 5000);
     }
+    luckySpin.load();
     luckySpin.play();
   }, speed);
 }
@@ -1353,12 +1380,12 @@ spinBtn.addEventListener("click", function () {
       setTimeout(() => {
         clearInterval(dailyIntervel);
         dailyIntervel = 0;
-        dailySpinCircle(null, 200);
+        dailySpinCircle(null, 150);
       }, 2000);
       setTimeout(() => {
         clearInterval(dailyIntervel);
         dailyIntervel = 0;
-        dailySpinCircle(null, 300);
+        dailySpinCircle(null, 180);
       }, 2500);
       setTimeout(() => {
         clearInterval(dailyIntervel);
@@ -1387,35 +1414,30 @@ function win(x) {
       +myOwnCoin.firstElementChild.textContent + 48;
     showMenuCoin.textContent = +myOwnCoin.firstElementChild.textContent;
     showCoinInProfile.textContent = +myOwnCoin.firstElementChild.textContent;
-    console.log(myOwnCoin.firstElementChild);
   }
   if (x == 1) {
     myOwnCoin.firstElementChild.textContent =
       +myOwnCoin.firstElementChild.textContent + 24;
     showMenuCoin.textContent = +myOwnCoin.firstElementChild.textContent;
     showCoinInProfile.textContent = +myOwnCoin.firstElementChild.textContent;
-    console.log(myOwnCoin.firstElementChild);
   }
   if (x == 2 || x == 6) {
     myOwnCoin.firstElementChild.textContent =
       +myOwnCoin.firstElementChild.textContent + 12;
     showMenuCoin.textContent = +myOwnCoin.firstElementChild.textContent;
     showCoinInProfile.textContent = +myOwnCoin.firstElementChild.textContent;
-    console.log(myOwnCoin.firstElementChild);
   }
   if (x == 3 || x == 7) {
     myOwnCoin.firstElementChild.textContent =
       +myOwnCoin.firstElementChild.textContent + 4;
     showMenuCoin.textContent = +myOwnCoin.firstElementChild.textContent;
     showCoinInProfile.textContent = +myOwnCoin.firstElementChild.textContent;
-    console.log(myOwnCoin.firstElementChild);
   }
   if (x == 4 || x == 5) {
     myOwnCoin.firstElementChild.textContent =
       +myOwnCoin.firstElementChild.textContent + 0;
     showMenuCoin.textContent = +myOwnCoin.firstElementChild.textContent;
     showCoinInProfile.textContent = +myOwnCoin.firstElementChild.textContent;
-    console.log(myOwnCoin.firstElementChild);
   }
   updateDoc(doc(db, "users", uId), {
     coin: +myOwnCoin.firstElementChild.textContent,

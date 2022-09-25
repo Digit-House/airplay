@@ -240,10 +240,53 @@
   cursor: pointer;
 }
 
+.luckSpinHistory {
+  width: 98%;
+  height: 80px;
+  background: #ece9e6; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #ffffff,
+    #ece9e6
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #ffffff,
+    #ece9e6
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 45px;
+  margin-top: 1rem;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.luckSpinHistory i {
+  font-size: 2rem;
+  background-image: linear-gradient(to bottom, #ffe600, #ff7b01);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.luckSpinHistory p {
+  font-size: 2rem;
+  font-weight: 500;
+  background-image: linear-gradient(to bottom, #ffe600, #ff7b01);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.luckSpinHistory button {
+  margin: 0;
+  border-radius: 30px;
+}
+
 @media (min-width: 1000px) and (max-width: 1399px) {
   .dailyRewardContainer h2 {
-    font-size: 2.5rem;
-    padding-top: 1rem;
+    font-size: 3rem;
+    padding-top: 2rem;
   }
   .dailyRewairdSpin {
     margin-top: 1rem;

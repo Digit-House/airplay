@@ -126,7 +126,7 @@
 }
 
 .level-bar::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 55%;
   height: 100%;
@@ -290,7 +290,7 @@
 
 .gray::after {
   background: rgba(106, 105, 105, 0.6);
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
