@@ -1,17 +1,18 @@
 .weeklyRewards {
+  position: relative;
   margin-top: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 2.5rem;
 }
 .weekely {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 2rem;
 }
 .weekely h1 {
   font-size: 2rem;
@@ -35,7 +36,7 @@
   height: 130px;
   border-radius: 20px;
   background-image: linear-gradient(to bottom, #ffe600, #ff7b01);
-  gap: 2rem;
+  gap: 0.5rem;
 }
 .days img {
   width: 50px;
@@ -72,6 +73,7 @@
 }
 
 .circles-container {
+  z-index: 0;
   display: flex;
   justify-content: space-between;
   max-width: 100%;
@@ -148,7 +150,7 @@
   outline: none;
 }
 
-.bb {
+.plusClass {
   color: white;
   display: flex;
   flex-direction: column;
@@ -158,9 +160,58 @@
   height: 130px;
   border-radius: 20px;
   background-image: linear-gradient(to bottom, #ffe600, #ff7b01);
-  gap: 1.5rem;
+  gap: 0.5rem;
+  animation: bounce2 2s ease infinite;
 }
-
-.bb img {
+@keyframes bounce2 {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+.plusClass img {
   width: 50px;
 }
+/* .dailyPrize {
+  position: absolute;
+  top: 40px;
+  width: 150px;
+  height: 150px;
+  background-color: orange;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 23px;
+  color: white;
+  z-index: 1;
+  border: 2px orange solid;
+  animation: hithere 1s ease infinite;
+}
+@keyframes hithere {
+  30% {
+    transform: scale(1.2);
+  }
+  40%,
+  60% {
+    transform: rotate(-20deg) scale(1.2);
+  }
+  50% {
+    transform: rotate(20deg) scale(1.2);
+  }
+  70% {
+    transform: rotate(0deg) scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+} */

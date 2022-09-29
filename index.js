@@ -1744,16 +1744,13 @@ function generateHistoryList(item) {
   return rewardSpinHistoryList;
 }
 
-let today = new Date();
-if (today.getDay() == 6) {
-}
-
 const Days = document.querySelectorAll('.days');
 const dateName = document.querySelectorAll('.days p');
 const weekName = document.querySelector('.weekName');
-
+// const dailyPrize = document.querySelector(".dailyPrize");
+const small = document.querySelectorAll('.small');
 let getDay = new Date().getDay();
-console.log(Days, Days[getDay]);
+// console.log(Days, Days[getDay]);
 
 let getWeek = new Date().getDate();
 if (getWeek >= 1 && getWeek <= 7) {
@@ -1765,9 +1762,35 @@ if (getWeek >= 1 && getWeek <= 7) {
 } else if (getWeek >= 21 && getWeek <= 28) {
   weekName.textContent = 'Week 4';
 }
+function randomCoin(min, max) {
+  return Math.floor(Math.random() * (max - min) + min);
+}
+
+let euqal = randomCoin(20, 50);
 
 let day = getDay === 0 ? 6 : getDay - 1;
-Days[day].classList = 'bb';
+Days[day].className = 'plusClass';
 
 dateName[day].textContent = 'Today';
 // dateName[day].className = "bb";
+const rewardsDay = Days[day];
+let claimed = false;
+rewardsDay.addEventListener('click', function () {
+  if (claimed) return;
+  claimed = true;
+  bubbleClick.play();
+  // dailyPrize.style.display = "flex";
+  rewardsDay.className = 'days';
+  // setTimeout(() => {
+  //   dailyPrize.style.display = 'none';
+  // }, '5000');
+  if (day === 6) {
+    // small.style.display = "flex";
+    myOwnCoin.firstElementChild.textContent =
+      +myOwnCoin.firstElementChild.textContent + euqal;
+  } else {
+    // small.style.display = "flex";
+    myOwnCoin.firstElementChild.textContent =
+      +myOwnCoin.firstElementChild.textContent + 20;
+  }
+});
