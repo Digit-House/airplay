@@ -52,7 +52,7 @@
 }
 
 .progress-bar-container::before {
-  content: "";
+  content: '';
   position: absolute;
   background-color: yellow;
   height: 10px;
