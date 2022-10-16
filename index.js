@@ -54,7 +54,6 @@ const startBtn = document.querySelector('.startBtn');
 const removeBetBtn = document.querySelector('.removeBetBtn');
 const showWinOrLose = document.querySelector('.showWinOrLose');
 const winCount = document.querySelector('.winCount');
-const getCoinBtn = document.querySelector('.get-coin');
 const quitBtn = document.querySelector('.quitBtn');
 const warning = document.querySelector('.warning');
 const okBtn = document.querySelector('.okBtn');
