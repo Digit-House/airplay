@@ -23,13 +23,13 @@
       src="https://www.googletagmanager.com/gtag/js?id=G-6YGD65ZH1D"
     ></script>
     <script>
-      window.dataLayer = window.dataLayer || []
+      window.dataLayer = window.dataLayer || [];
       function gtag() {
-        dataLayer.push(arguments)
+        dataLayer.push(arguments);
       }
-      gtag('js', new Date())
+      gtag("js", new Date());
 
-      gtag('config', 'G-6YGD65ZH1D')
+      gtag("config", "G-6YGD65ZH1D");
     </script>
     <script
       async
@@ -68,7 +68,10 @@
 
         <!-- profileContainer start -->
         <div class="profileContainer">
-          <i class="profilebackBtn fa-solid fa-caret-left"></i>
+          <i
+            class="profilebackBtn fa-solid fa-caret-left"
+            id="profileBackBtn"
+          ></i>
           <div class="leftprofileContainer">
             <p class="name"></p>
             <div class="levelLine2">
@@ -95,7 +98,10 @@
 
         <!-- LeaderBoard_Start -->
         <div class="achievementContainer">
-          <i class="achievementbackBtn fa-solid fa-caret-left"></i>
+          <i
+            class="achievementbackBtn fa-solid fa-caret-left"
+            id="achievementbackBtn"
+          ></i>
           <h5>Leaderboard</h5>
           <div class="achievementTable">
             <div class="achievementTableCon">
@@ -114,7 +120,7 @@
             </div>
             <div class="right">
               <div class="switch">
-                <input type="checkbox" class="musicBtn" />
+                <input type="checkbox" class="musicBtn" id="musicBtn" />
                 <label for="switcher"></label>
               </div>
             </div>
@@ -141,36 +147,39 @@
               <span>Betting Time</span>
             </div>
             <div class="right">
-              <div class="bettingTimeMinusBtn">-</div>
+              <div class="bettingTimeMinusBtn" id="bettingTimeReduce">-</div>
               <p class="bettingTime">30</p>
-              <div class="bettingTimePlusBtn">+</div>
+              <div class="bettingTimePlusBtn" id="bettingTimeIncrease">+</div>
             </div>
           </div>
           <div>
             <div>
-              <div class="privacy">
+              <div class="privacy" id="privacyBtn">
                 <p>Privacy & Policy</p>
               </div>
             </div>
             <div class="right">
-              <div class="userAgreement">
+              <div class="userAgreement" id="userAgreementBtn">
                 <p>Terms & Conditions</p>
               </div>
             </div>
           </div>
           <div>
             <div>
-              <div class="aboutBettingSlotsBtn">
+              <div class="aboutBettingSlotsBtn" id="aboutBettingSlotsBtn">
                 <p>About Betting Slots</p>
               </div>
             </div>
             <div class="right">
-              <div class="signOutBtn">
+              <div class="signOutBtn" id="signOutBtn">
                 <p>Sign out account</p>
               </div>
             </div>
           </div>
-          <i class="settingBackBtn fa-solid fa-caret-left"></i>
+          <i
+            class="settingBackBtn fa-solid fa-caret-left"
+            id="settingBackBtn"
+          ></i>
         </div>
         <!-- settingContainer end -->
 
@@ -189,7 +198,7 @@
               <p>1065</p>
             </div>
           </div>
-          <div class="aboutBettingSlotsBackBtn">
+          <div class="aboutBettingSlotsBackBtn" id="aboutBettingSlotsBackBtn">
             <i class="fa-solid fa-caret-left"></i>
           </div>
         </div>
@@ -414,9 +423,9 @@
             best efforts to promptly remove such information from our records.
           </p>
 
-          <button class="privacyBack">Go Setting</button>
+          <button class="privacyBack" id="privacyBackBtn">Go Setting</button>
 
-          <div class="privacyBackBtn">
+          <div class="privacyBackBtn" id="privacyBackBtn">
             <i class="fa-solid fa-caret-left"></i>
           </div>
         </div>
@@ -851,7 +860,7 @@
           <div class="agreebtn">
             <span> I Agree </span>
           </div>
-          <div class="termsBackBtn">
+          <div class="termsBackBtn" id="userAgreementBackBtn">
             <i class="fa-solid fa-caret-left"></i>
           </div>
           <p style="margin-top: 5em; font-size: 0.7em">
@@ -867,7 +876,7 @@
         <div class="game__welcome gray">
           <div class="game__welcome-top">
             <div class="game__welcome-top-item1">
-              <div class="volumeBtn">
+              <div class="volumeBtn" id="myButton">
                 <i class="fa-solid fa-volume-high"></i>
               </div>
               <!-- <img src="./assets/images/menu-board/sound.png" alt="" class="vloume"> -->
@@ -875,15 +884,17 @@
                 src="./assets/images/menu-board/victory.png"
                 alt=""
                 class="achievementBtn"
+                id="achievementBtn"
               />
               <img
                 src="./assets/images/menu-board/setting.png"
                 alt=""
                 class="settingBtn"
+                id="settingBtn"
               />
             </div>
             <div class="game__welcome-top-item2">
-              <div class="game__welcome-top-item2-name">
+              <div class="game__welcome-top-item2-name" id="profileBtn">
                 <div class="game__welcome-top-item2-name-left">
                   <p class="name"></p>
                   <div class="game__welcome-top-item2-name-left-level">
@@ -901,7 +912,7 @@
                 <p class="wellcomeTotal">600</p>
               </div>
               <div class="signInBtnCon">
-                <button class="signInBtn">
+                <button class="signInBtn" id="signInBtn">
                   <svg
                     version="1.1"
                     xmlns="http://www.w3.org/2000/svg"
@@ -935,7 +946,7 @@
               </div>
             </div>
           </div>
-          <div class="game__welcome-center">
+          <div class="game__welcome-center" id="playBtn">
             <img
               src="./assets/images/menu-board/play.png"
               alt=""
@@ -965,6 +976,7 @@
                 <div class="btnGroup">
                   <img
                     class="animalCircleImg"
+                    id="dogBtn"
                     src="./assets/images/round-buttons/dog.png"
                     alt=""
                   />
@@ -978,6 +990,7 @@
                 <div class="btnGroup">
                   <img
                     class="animalCircleImg"
+                    id="monkey"
                     src="./assets/images/round-buttons/monkey.png"
                     alt=""
                   />
@@ -991,6 +1004,7 @@
                 <div class="btnGroup">
                   <img
                     class="animalCircleImg"
+                    id="sheep"
                     src="./assets/images/round-buttons/sheep.png"
                     alt=""
                   />
@@ -1004,6 +1018,7 @@
                 <div class="btnGroup">
                   <img
                     class="animalCircleImg"
+                    id="elephant"
                     src="./assets/images/round-buttons/elephant.png"
                     alt=""
                   />
@@ -1020,6 +1035,7 @@
                 <div class="btnGroup">
                   <img
                     class="animalCircleImg"
+                    id="seahorse"
                     src="./assets/images/round-buttons/seahorse.png"
                     alt=""
                   />
@@ -1033,6 +1049,7 @@
                 <div class="btnGroup">
                   <img
                     class="animalCircleImg"
+                    id="jellyfish"
                     src="./assets/images/round-buttons/jellyfish.png"
                     alt=""
                   />
@@ -1046,6 +1063,7 @@
                 <div class="btnGroup">
                   <img
                     class="animalCircleImg"
+                    id="dolphin"
                     src="./assets/images/round-buttons/dolphin.png"
                     alt=""
                   />
@@ -1059,6 +1077,7 @@
                 <div class="btnGroup">
                   <img
                     class="animalCircleImg"
+                    id="shark"
                     src="./assets/images/round-buttons/shark.png"
                     alt=""
                   />
@@ -1410,6 +1429,7 @@
               <div class="btnContainer">
                 <img
                   class="animalCircleImg birdCircleImg"
+                  id="bird"
                   src="./assets/images/round-buttons/bird.png"
                   alt=""
                 />
@@ -1427,6 +1447,7 @@
               <div class="btnContainer">
                 <img
                   class="animalCircleImg"
+                  id="whale"
                   src="./assets/images/round-buttons/whale.png"
                   alt=""
                 />
@@ -1444,6 +1465,7 @@
               <div class="btnContainer">
                 <img
                   class="animalCircleImg"
+                  id="sea"
                   src="./assets/images/round-buttons/sea.png"
                   alt=""
                 />
@@ -1461,6 +1483,7 @@
               <div class="btnContainer">
                 <img
                   class="animalCircleImg"
+                  id="land"
                   src="./assets/images/round-buttons/land.png"
                   alt=""
                 />
@@ -1475,18 +1498,24 @@
               </div>
             </div>
             <div class="btn">
-              <img class="startBtn" src="./assets/images/btn/play.png" alt="" />
+              <img
+                class="startBtn"
+                src="./assets/images/btn/play.png"
+                alt=""
+                id="gameStartBtn"
+              />
               <img
                 class="removeBetBtn"
                 src="./assets/images/btn/cross.png"
                 alt=""
+                id="gameRestartBtn"
               />
             </div>
-            <div class="get-coin">
+            <div class="get-coin" id="getMoreCoinBtn">
               <img src="./assets/images/btn/coin1.png" alt="" />
               <span>Get more coins</span>
             </div>
-            <div class="quitBtn">
+            <div class="quitBtn" id="gamQuitBtn">
               <span>QUIT</span>
             </div>
           </div>
@@ -1588,11 +1617,11 @@
             <div class="luckSpinHistory">
               <i class="fa-sharp fa-solid fa-gifts"></i>
               <p>luckySpin</p>
-              <button class="luckySpinBtn">GO</button>
+              <button class="luckySpinBtn" id="luckySpinBtn">GO</button>
             </div>
           </div>
 
-          <div class="DailyRewardBackBtn">
+          <div class="DailyRewardBackBtn" id="getMoreCoinBackBtn">
             <i class="fa-solid fa-caret-left"></i>
           </div>
         </div>
@@ -1609,7 +1638,10 @@
               <p class="currentDate">18/9/2022</p>
             </div> -->
           </div>
-          <div class="dailyRewardSpinHistoryBackBtn">
+          <div
+            class="dailyRewardSpinHistoryBackBtn"
+            id="dailyRewardSpinHistoryBackBtn"
+          >
             <i class="fa-solid fa-caret-left"></i>
           </div>
         </div>
@@ -1682,7 +1714,7 @@
                 <span>4 coins</span>
               </div>
             </div>
-            <div class="dailyItem item9 spinBtn">
+            <div class="dailyItem item9 spinBtn" id="luckSpinStartBtn">
               <strong class="spinGO">GO</strong>
               <span class="spinCount">free spin: 5</span>
               <div class="spinCountDown">
@@ -1696,11 +1728,11 @@
               <i class="dailyResultItext"></i>
               <p class="dailyResultPText">You Win : 48 coins</p>
             </div>
-            <div class="dailyRewardSpinHistoryBtn">
+            <div class="dailyRewardSpinHistoryBtn" id="dailyRewardSpinHistory">
               Daily Rewards Spin History
             </div>
           </div>
-          <div class="luckSpinBackBtn">
+          <div class="luckSpinBackBtn" id="luckSpinBackBtn">
             <i class="fa-solid fa-caret-left"></i>
           </div>
         </div>
@@ -1772,5 +1804,6 @@
     <audio src="./assets/audios/CoinDrop2.wav" class="coinDropAudio2"></audio>
     <script src="./dist/bundle.js"></script>
     <!-- <script src="./index.js"></script> -->
+    <script src="./assets/analytics.js"></script>
   </body>
 </html>
